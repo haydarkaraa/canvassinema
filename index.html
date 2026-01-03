@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Sinema | Sanatın Işığında Film Keşfi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+    <div class="top-left-logo">
+        <img src="canvas-logo.svg" alt="Canvas Sinema Logosu">
+    </div>
+
+    <div class="top-bar">
+        <div class="icon-nav">
+            <div class="nav-item">
+                <i class="fa-solid fa-dice-five" id="random-movie-btn"></i>
+                <span class="tooltip">rastgele film</span>
+            </div>
+            <div class="nav-item">
+                <i class="fa-solid fa-plus" id="suggest-movie-btn"></i>
+                <span class="tooltip">film tavsiye et</span>
+            </div>
+            <div class="nav-item">
+                <i class="fa-solid fa-envelope" id="contact-btn"></i>
+                <span class="tooltip">iletişime geç</span>
+            </div>
+            <div class="nav-item">
+                <i class="fa-solid fa-sun" id="theme-toggle-btn"></i>
+                <span class="tooltip">temayı değiştir</span>
+            </div>
+            <div class="nav-item">
+                <i class="fa-solid fa-language" id="lang-toggle-btn"></i>
+                <span class="tooltip">dili değiştir</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="start-screen" class="screen">
+            <div class="hero-poster-wrapper">
+                <img id="random-hero-poster" src="" alt="Sinematik Keşif">
+            </div>
+            <button id="start-test-btn" class="main-cta-btn">Film tavsiyesi</button>
+        </div>
+
+        <div id="selection-screen" class="screen hidden">
+            <h2 id="selection-question"></h2>
+            <div id="image-selection-grid" class="selection-grid"></div>
+        </div>
+
+        <div id="recommendation-screen" class="screen hidden">
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p id="loading-text"></p>
+            </div>
+            <div id="recommendation-content"></div>
+            <div class="recommendation-buttons">
+                <button id="share-story-btn" class="main-cta-btn secondary">
+                    <i class="fa-brands fa-instagram"></i> Hikaye Olarak Paylaş
+                </button>
+                <button id="main-page-button" class="main-cta-btn secondary">Ana Sayfa</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="insta-story-container">
+        <div class="story-branding">
+            <img src="canvas-logo.svg" alt="Logo" class="story-logo">
+            <h2 class="story-brand-name">Canvas Sinema</h2>
+        </div>
+        <div class="story-movie-content">
+            <img id="story-movie-poster" src="" alt="Poster" crossorigin="anonymous">
+            <h1 id="story-movie-title"></h1>
+        </div>
+        <div class="story-footer">canvassinema.com</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
