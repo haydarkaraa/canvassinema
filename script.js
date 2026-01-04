@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function setRandomHeroPoster() {
         const posterImg = document.getElementById('random-hero-poster');
         if (posterImg) {
-            // images2 klasöründeki f1.jpg - f10.jpg arası rastgele kapak
-            const rnd = Math.floor(Math.random() * 10) + 1;
+            // images2 klasöründeki f1.jpg - f29.jpg arası rastgele kapak
+            const rnd = Math.floor(Math.random() * 29) + 1;
             posterImg.src = `images2/f${rnd}.jpg`;
             posterImg.onerror = () => { posterImg.src = 'https://via.placeholder.com/260x380?text=Canvas+Sinema'; };
         }
