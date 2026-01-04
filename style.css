@@ -56,7 +56,7 @@ body {
 /* Ana Ekran Poster */
 .hero-poster-wrapper { margin-bottom: 2.5rem; display: flex; justify-content: center; }
 #random-hero-poster {
-    width: 260px; height: 380px; object-fit: cover;
+    width: 620px; height: 420px; object-fit: cover;
     border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     transition: transform 0.3s ease;
 }
