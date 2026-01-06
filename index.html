@@ -17,10 +17,6 @@
     <div class="top-bar">
         <div class="icon-nav">
             <div class="nav-item">
-                <i class="fa-solid fa-dice-five" id="random-movie-btn"></i>
-                <span class="tooltip">rastgele film</span>
-            </div>
-            <div class="nav-item">
                 <i class="fa-solid fa-plus" id="suggest-movie-btn"></i>
                 <span class="tooltip">canvassinema@gmail.com</span>
             </div>
@@ -30,11 +26,11 @@
             </div>
             <div class="nav-item">
                 <i class="fa-solid fa-palette" id="theme-toggle-btn"></i>
-                <span class="tooltip">temayı değiştir</span>
+                <span class="tooltip" id="tooltip-theme">temayı değiştir</span>
             </div>
             <div class="nav-item">
                 <i class="fa-solid fa-language" id="lang-toggle-btn"></i>
-                <span class="tooltip">dili değiştir</span>
+                <span class="tooltip" id="tooltip-lang">English</span>
             </div>
         </div>
     </div>
@@ -57,12 +53,15 @@
                 <div class="spinner"></div>
                 <p id="loading-text"></p>
             </div>
-            <div id="recommendation-content"></div>
+            <div id="recommendation-content" class="centered-content"></div>
+            
             <div class="recommendation-buttons">
                 <button id="share-story-btn" class="main-cta-btn secondary">
-                    <i class="fa-brands fa-instagram"></i> Hikaye Olarak Paylaş
+                    <i class="fa-brands fa-instagram"></i> <span id="text-share">Hikaye Olarak Paylaş</span>
                 </button>
-                <button id="main-page-button" class="main-cta-btn secondary">Ana Sayfa</button>
+                <button id="main-page-button" class="main-cta-btn secondary">
+                    <span id="text-home">Ana Sayfa</span>
+                </button>
             </div>
         </div>
     </div>
@@ -74,13 +73,13 @@
         </div>
         
         <div class="story-movie-content">
-            <p class="story-label">SENİN İÇİN SEÇİLEN BAŞYAPIT</p>
+            <p class="story-label" id="story-label-rec">ÖNERİLEN FİLM</p>
             <img id="story-movie-poster" src="" alt="Poster" crossorigin="anonymous">
             <h1 id="story-movie-title"></h1>
         </div>
 
         <div class="story-user-choices">
-            <p class="story-label">RUH HALİNİ YANSITAN SEÇİMLER</p>
+            <p class="story-label" id="story-label-mood">RUH HALİNİ YANSITAN SEÇİMLER</p>
             <div id="story-choices-grid"></div>
         </div>
 
