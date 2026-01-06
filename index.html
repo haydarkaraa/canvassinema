@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    
 </head>
-<body>
+<body data-theme="dark">
 
     <div class="top-left-logo">
         <img src="canvas-logo.svg" alt="Canvas Sinema Logosu">
@@ -23,14 +22,14 @@
             </div>
             <div class="nav-item">
                 <i class="fa-solid fa-plus" id="suggest-movie-btn"></i>
-                <span class="tooltip">film tavsiye et</span>
+                <span class="tooltip">canvassinema@gmail.com</span>
             </div>
             <div class="nav-item">
                 <i class="fa-solid fa-envelope" id="contact-btn"></i>
-                <span class="tooltip">iletişime geç</span>
+                <span class="tooltip">canvassinema@gmail.com</span>
             </div>
             <div class="nav-item">
-                <i class="fa-solid fa-sun" id="theme-toggle-btn"></i>
+                <i class="fa-solid fa-palette" id="theme-toggle-btn"></i>
                 <span class="tooltip">temayı değiştir</span>
             </div>
             <div class="nav-item">
@@ -45,7 +44,7 @@
             <div class="hero-poster-wrapper">
                 <img id="random-hero-poster" src="" alt="Sinematik Keşif">
             </div>
-            <button id="start-test-btn" class="main-cta-btn">Film tavsiyesi</button>
+            <button id="start-test-btn" class="main-cta-btn">Film tavsiyesi al</button>
         </div>
 
         <div id="selection-screen" class="screen hidden">
@@ -73,22 +72,21 @@
             <img src="canvas-logo.svg" alt="Logo" class="story-logo">
             <h2 class="story-brand-name">Canvas Sinema</h2>
         </div>
+        
         <div class="story-movie-content">
+            <p class="story-label">SENİN İÇİN SEÇİLEN BAŞYAPIT</p>
             <img id="story-movie-poster" src="" alt="Poster" crossorigin="anonymous">
             <h1 id="story-movie-title"></h1>
         </div>
+
+        <div class="story-user-choices">
+            <p class="story-label">RUH HALİNİ YANSITAN SEÇİMLER</p>
+            <div id="story-choices-grid"></div>
+        </div>
+
         <div class="story-footer">canvassinema.com</div>
     </div>
 
     <script src="script.js"></script>
-    <div id="instaShareModal" class="insta-modal">
-  <div class="insta-modal-content">
-    <span class="insta-close-btn">&times;</span>
-    <h3>Instagram İçin Hazır!</h3>
-    <p>Görüntüyü basılı tutup kaydedin (veya sağ tıklayıp kaydedin), ardından Instagram Hikayeler'de paylaşın.</p>
-    <img id="instaGeneratedImage" src="" alt="Instagram Share Image">
-  </div>
-</div>
-<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
