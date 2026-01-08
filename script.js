@@ -8,11 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
         "Ingmar Bergman", "Akira Kurosawa","Wim Wenders" , " Emir Kusturica"
     ];
     const weightedMovies = [
-    "Oldboy", "One Flew Over the Cuckoo's Nest","Anatomy of a Murder","Come and See","The Godfather","The Godfather 2","The Godfather 3",
-    "Three Colors: Red / Krzysztof Kieślowski", 
-    "Mulholland Drive", "Das Boot", 
-    "Underground",
-    "Eyes Wide Shut"
+    "670", "510","93","25237","238","240","242",
+    "110", 
+    "1018", "968", 
+    "11902"
 ];
 
     let questionIndex = 0;
@@ -138,12 +137,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let movieData;
 
         // %50 şansla ağırlıklı film listesinden, %50 şansla yönetmen listesinden seç
-        if (Math.random() > 0.5) {
-            // AĞIRLIKLI FİLM SEÇİMİ
-            const movieTitle = weightedMovies[Math.floor(Math.random() * weightedMovies.length)];
-            const resp = await fetch(`/api/get-movie-by-title?title=${encodeURIComponent(movieTitle)}&lang=${currentLang}`);
-            const data = await resp.json();
-            movieData = data.results[0]; // API'den gelen ilk sonucu al
+      if (Math.random() > 0.5) {
+            const movieId = weightedMovies[Math.floor(Math.random() * weightedMovies.length)];
+            // Mevcut get-movie endpoint'ini ID destekleyecek şekilde kullanıyoruz
+            const resp = await fetch(`/api/get-movie?id=${movieId}&lang=${currentLang}`);
+            movieData = await resp.json();
         } else {
             // AĞIRLIKLI YÖNETMEN SEÇİMİ (Mevcut mantığın)
             const director = weightedDirectors[Math.floor(Math.random() * weightedDirectors.length)];
