@@ -4,9 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const weightedDirectors = [
         "Nuri Bilge Ceylan", "Nuri Bilge Ceylan", "Stanley Kubrick", 
-        "Stanley Kubrick", "Andrei Tarkovsky", "Zeki Demirkubuz", 
-        "Ingmar Bergman", "Akira Kurosawa"
+        "Stanley Kubrick", "Andrei Tarkovsky", "Zeki Demirkubuz", "Zeki Demirkubuz" ,"Fatih Akın", "Fatih Akın","Krzysztof Kieślowski" ,
+        "Ingmar Bergman", "Akira Kurosawa","Wim Wenders" , " Emir Kusturica"
     ];
+    const weightedMovies = [
+    "Oldboy", "One Flew Over the Cuckoo's Nest","Anatomy of a Murder","Come and See","The Godfather","The Godfather 2","The Godfather 3",
+    "Three Colors: Red / Krzysztof Kieślowski", 
+    "Mulholland Drive", "Das Boot", 
+    "Underground",
+    "Eyes Wide Shut"
+];
 
     let questionIndex = 0;
     let currentLang = 'tr';
@@ -116,36 +123,58 @@ document.addEventListener('DOMContentLoaded', () => {
         populateImageGrid();
     }
 
-    async function showRecommendation() {
-        const screen = document.getElementById('recommendation-screen');
-        const content = document.getElementById('recommendation-content');
-        const loader = document.getElementById('loading');
-        
-        document.getElementById('selection-screen').classList.add('hidden');
-        screen.classList.remove('hidden');
-        loader.classList.remove('hidden');
-        document.getElementById('loading-text').textContent = texts[currentLang].loading;
-        content.innerHTML = '';
+  async function showRecommendation() {
+    const screen = document.getElementById('recommendation-screen');
+    const content = document.getElementById('recommendation-content');
+    const loader = document.getElementById('loading');
+    
+    document.getElementById('selection-screen').classList.add('hidden');
+    screen.classList.remove('hidden');
+    loader.classList.remove('hidden');
+    document.getElementById('loading-text').textContent = texts[currentLang].loading;
+    content.innerHTML = '';
 
-        try {
+    try {
+        let movieData;
+
+        // %50 şansla ağırlıklı film listesinden, %50 şansla yönetmen listesinden seç
+        if (Math.random() > 0.5) {
+            // AĞIRLIKLI FİLM SEÇİMİ
+            const movieTitle = weightedMovies[Math.floor(Math.random() * weightedMovies.length)];
+            const resp = await fetch(`/api/get-movie-by-title?title=${encodeURIComponent(movieTitle)}&lang=${currentLang}`);
+            const data = await resp.json();
+            movieData = data.results[0]; // API'den gelen ilk sonucu al
+        } else {
+            // AĞIRLIKLI YÖNETMEN SEÇİMİ (Mevcut mantığın)
             const director = weightedDirectors[Math.floor(Math.random() * weightedDirectors.length)];
             const resp = await fetch(`/api/get-movie?director=${encodeURIComponent(director)}&lang=${currentLang}`);
             const data = await resp.json();
-            const movie = data.crew.filter(m => m.job === 'Director' && m.poster_path)[0];
-            
-            currentMovie = { title: movie.title, poster: `https://image.tmdb.org/t/p/w780${movie.poster_path}` };
+            movieData = data.crew.filter(m => m.job === 'Director' && m.poster_path)[0];
+        }
+        
+        // Ortak Obje Yapısı Oluştur (Hikaye paylaşımı için kritik)
+        currentMovie = { 
+            title: movieData.title, 
+            poster: `https://image.tmdb.org/t/p/w780${movieData.poster_path}`,
+            overview: movieData.overview,
+            director: movieData.director_name || "Özel Seçki" 
+        };
 
-            content.innerHTML = `
-                <div class="recommendation-item">
-                    <img src="${currentMovie.poster}" style="width:280px; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                    <h2 style="margin: 1.5rem 0 0.5rem 0;">${currentMovie.title}</h2>
-                    <p style="color:var(--accent-color); font-weight:bold;">Yönetmen: ${director}</p>
-                    <p style="max-width:600px; margin-top:1rem; opacity:0.8;">${movie.overview.substring(0, 250)}...</p>
-                </div>`;
-        } catch (e) {
-            content.innerHTML = "<p>Öneri yüklenemedi.</p>";
-        } finally { loader.classList.add('hidden'); }
+        // Ekranda Göster
+        content.innerHTML = `
+            <div class="recommendation-item">
+                <img src="${currentMovie.poster}" style="width:280px; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                <h2 style="margin: 1.5rem 0 0.5rem 0;">${currentMovie.title}</h2>
+                <p style="color:var(--accent-color); font-weight:bold;">Tavsiye Edilen</p>
+                <p style="max-width:600px; margin-top:1rem; opacity:0.8;">${currentMovie.overview.substring(0, 250)}...</p>
+            </div>`;
+
+    } catch (e) {
+        content.innerHTML = "<p>Öneri yüklenemedi. Lütfen tekrar deneyin.</p>";
+    } finally { 
+        loader.classList.add('hidden'); 
     }
+}
 
     document.getElementById('share-story-btn').onclick = async () => {
         const storyContainer = document.getElementById('insta-story-container');

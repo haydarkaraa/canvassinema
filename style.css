@@ -40,8 +40,11 @@ body {
 }
 
 #random-hero-poster {
-    width: 620px; height: 420px; object-fit: cover;
-    border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    width: 90%; /* Mobilde ekranın %90'ını kaplar */
+    max-width: 620px; /* Bilgisayarda 620px'i geçmez */
+    height: auto; /* Orantıyı korur */
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 }
 
 .main-cta-btn {
