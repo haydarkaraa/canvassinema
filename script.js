@@ -133,45 +133,94 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('loading-text').textContent = texts[currentLang].loading;
     content.innerHTML = '';
 
+    // ... Diğer kısımlar aynı ...
+
+async function showRecommendation() {
+    const screen = document.getElementById('recommendation-screen');
+    const content = document.getElementById('recommendation-content');
+    const loader = document.getElementById('loading');
+    
+    document.getElementById('selection-screen').classList.add('hidden');
+    screen.classList.remove('hidden');
+    loader.classList.remove('hidden');
+    document.getElementById('loading-text').textContent = texts[currentLang].loading;
+    content.innerHTML = '';
+
     try {
         let movieData;
+        // Olasılığı %70 yaparak ağırlıklı filmlerin daha sık gelmesini sağlayabilirsin
+        const useWeightedMovie = Math.random() > 0.4; 
 
-        // %50 şansla ağırlıklı film listesinden, %50 şansla yönetmen listesinden seç
-      if (Math.random() > 0.5) {
+        if (useWeightedMovie) {
             const movieId = weightedMovies[Math.floor(Math.random() * weightedMovies.length)];
-            // Mevcut get-movie endpoint'ini ID destekleyecek şekilde kullanıyoruz
             const resp = await fetch(`/api/get-movie?id=${movieId}&lang=${currentLang}`);
             movieData = await resp.json();
+            // ID ile gelen veride director_name olmayabilir, "Özel Seçki" olarak işaretliyoruz
+            movieData.director_name = "Özel Seçki";
         } else {
-            // AĞIRLIKLI YÖNETMEN SEÇİMİ (Mevcut mantığın)
-            const director = weightedDirectors[Math.floor(Math.random() * weightedDirectors.length)];
+            const director = weightedDirectors[Math.floor(Math.random() * weightedDirectors.length)].trim();
             const resp = await fetch(`/api/get-movie?director=${encodeURIComponent(director)}&lang=${currentLang}`);
             const data = await resp.json();
-            movieData = data.crew.filter(m => m.job === 'Director' && m.poster_path)[0];
+            const directorMovies = data.crew.filter(m => m.job === 'Director' && m.poster_path);
+            movieData = directorMovies[Math.floor(Math.random() * directorMovies.length)];
         }
         
-        // Ortak Obje Yapısı Oluştur (Hikaye paylaşımı için kritik)
+        if (!movieData) throw new Error("Film bulunamadı");
+
         currentMovie = { 
             title: movieData.title, 
             poster: `https://image.tmdb.org/t/p/w780${movieData.poster_path}`,
             overview: movieData.overview,
-            director: movieData.director_name || "Özel Seçki" 
+            director: movieData.director_name || "Bilinmiyor"
         };
 
-        // Ekranda Göster
         content.innerHTML = `
             <div class="recommendation-item">
                 <img src="${currentMovie.poster}" style="width:280px; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
                 <h2 style="margin: 1.5rem 0 0.5rem 0;">${currentMovie.title}</h2>
-                <p style="color:var(--accent-color); font-weight:bold;">Tavsiye Edilen</p>
+                <p style="color:var(--accent-color); font-weight:bold;">${currentMovie.director === "Özel Seçki" ? "Özel Seçki" : "Tavsiye Edilen"}</p>
                 <p style="max-width:600px; margin-top:1rem; opacity:0.8;">${currentMovie.overview.substring(0, 250)}...</p>
             </div>`;
 
     } catch (e) {
+        console.error(e);
         content.innerHTML = "<p>Öneri yüklenemedi. Lütfen tekrar deneyin.</p>";
     } finally { 
         loader.classList.add('hidden'); 
     }
+}
+
+// HİKAYE PAYLAŞ BUTONU DÜZENLEMESİ (Posteri Göstermeyen Kısım)
+document.getElementById('share-story-btn').onclick = async () => {
+    const storyContainer = document.getElementById('insta-story-container');
+    const storyPoster = document.getElementById('story-movie-poster');
+    
+    document.getElementById('story-movie-title').textContent = currentMovie.title;
+    
+    // TEK PROXY KULLANIMI: Daha stabil olan weserv.nl üzerinden yüklüyoruz
+    const proxyUrl = "https://images.weserv.nl/?url=" + encodeURIComponent(currentMovie.poster);
+    storyPoster.src = proxyUrl;
+
+    document.getElementById('story-choices-grid').innerHTML = userSelections.map(src => `<img src="${src}">`).join('');
+
+    // Resmin yüklenmesini bekle
+    await new Promise((resolve) => {
+        if (storyPoster.complete) resolve();
+        else {
+            storyPoster.onload = resolve;
+            storyPoster.onerror = resolve; // Hata alsa bile devam et
+        }
+    });
+
+    await new Promise(r => setTimeout(r, 600)); // Render için kısa bekleme
+
+    html2canvas(storyContainer, { useCORS: true, scale: 2 }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = `canvas-cinema-story.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    });
+};
 }
 
     document.getElementById('share-story-btn').onclick = async () => {
