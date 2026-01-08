@@ -148,11 +148,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('share-story-btn').onclick = async () => {
         const storyContainer = document.getElementById('insta-story-container');
+        const storyPoster = document.getElementById('story-movie-poster');
         document.getElementById('story-movie-title').textContent = currentMovie.title;
         document.getElementById('story-movie-poster').src = currentMovie.poster.replace('image.tmdb.org', 'corsproxy.io/?https://image.tmdb.org');
         document.getElementById('story-choices-grid').innerHTML = userSelections.map(src => `<img src="${src}">`).join('');
 
-        await new Promise(r => setTimeout(r, 600));
+        const proxyUrl = "https://images.weserv.nl/?url=" + encodeURIComponent(currentMovie.poster);
+    storyPoster.src = proxyUrl;
+
+       await new Promise((resolve) => {
+        if (storyPoster.complete) resolve();
+        else storyPoster.onload = resolve;
+    });
+
+    await new Promise(r => setTimeout(r, 500));
 
         html2canvas(storyContainer, { useCORS: true, scale: 2 }).then(canvas => {
             const link = document.createElement('a');
