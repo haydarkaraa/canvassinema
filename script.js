@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. VERİ HAVUZLARI
-    const localImagePool = ["17.120.234", "29.100.113", "30.95.250", "32.100.11", "48.190.2", "49.30", "56.13", "56.135.1","64.210","71.23","71.60","71.75","71.123","1972.118.281","1978.493","1997.149.2","2000.51"]; 
+    const localImagePool = ["17.120.234", "29.100.113", "30.95.250", "32.100.11", "48.190.2", "49.30", "56.13", "56.135.1", "64.210", "71.23", "71.60", "71.75", "71.123", "1972.118.281", "1978.493", "1997.149.2", "2000.51"]; 
     
     const weightedDirectors = [
         "Nuri Bilge Ceylan", "Stanley Kubrick", "Andrei Tarkovsky", 
@@ -8,20 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
         "Ingmar Bergman", "Akira Kurosawa"
     ];
 
-    // İSİM BAZLI FİLM LİSTESİ (İngilizce isimler tavsiye edilir)
+    // ÖNEMLİ: Sadece global İngilizce isimleri yazın (Yıl veya yönetmen eklemeyin)
     const weightedMovies = [
-    "The Godfather",
-    "Pulp Fiction",
-    "The 400 Blows",
-  "Oldboy"
-];
+        "Le Trou", "The Shining", "Stalker", "Winter Sleep", 
+        "Once Upon a Time in Anatolia", "The Godfather", "Pulp Fiction"
+    ];
 
     let questionIndex = 0;
     let currentLang = 'tr';
     let currentMovie = { title: '', poster: '', overview: '', director: '' };
     let userSelections = [];
-    const themes = ['dark', 'light', 'retro', 'midnight'];
     let themeIndex = 0;
+    const themes = ['dark', 'light', 'retro', 'midnight'];
 
     const texts = {
         tr: {
@@ -57,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('story-label-mood').textContent = t.storyMood;
         document.getElementById('tooltip-theme').textContent = t.themeTooltip;
         document.getElementById('tooltip-lang').textContent = t.langTooltip;
-        if (document.getElementById('selection-screen').offsetParent !== null) {
+        if (!document.getElementById('selection-screen').classList.contains('hidden')) {
             document.getElementById('selection-question').textContent = t.questions[questionIndex];
         }
     }
@@ -95,6 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('selection-screen').classList.remove('hidden');
         updateSelectionScreen();
     };
+
+    document.getElementById('main-page-button').onclick = () => initializePage();
 
     async function populateImageGrid() {
         const grid = document.getElementById('image-selection-grid');
@@ -135,14 +135,12 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             let movieData;
             let directorLabel;
-            
-            // %50 Şansla İsimle Arama, %50 Şansla Yönetmenle Arama
-            if (Math.random() > 0.5) {
-                const movieTitle = weightedMovies[Math.floor(Math.random() * weightedMovies.length)];
-                // DİKKAT: Backend'de 'title' parametresinin çalıştığından emin olmalısın
-                const resp = await fetch(`/api/get-movie?title=${encodeURIComponent(movieTitle)}&lang=${currentLang}`);
+            const useWeighted = Math.random() > 0.4;
+
+            if (useWeighted) {
+                const movieName = weightedMovies[Math.floor(Math.random() * weightedMovies.length)];
+                const resp = await fetch(`/api/get-movie?title=${encodeURIComponent(movieName)}&lang=${currentLang}`);
                 const data = await resp.json();
-                // Arama sonuçları genellikle bir liste (results) döner
                 movieData = data.results ? data.results[0] : data;
                 directorLabel = "Özel Seçki";
             } else {
@@ -151,10 +149,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await resp.json();
                 const movies = data.crew.filter(m => m.job === 'Director' && m.poster_path);
                 movieData = movies[Math.floor(Math.random() * movies.length)];
-                directorLabel = `Yönetmen: ${director}`;
+                directorLabel = director;
             }
 
-            if (!movieData) throw new Error("Film bulunamadı");
+            if (!movieData || !movieData.poster_path) throw new Error("Film veya poster bulunamadı");
 
             currentMovie = { 
                 title: movieData.title, 
@@ -167,34 +165,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="recommendation-item">
                     <img src="${currentMovie.poster}" style="width:280px; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
                     <h2 style="margin: 1.5rem 0 0.5rem 0;">${currentMovie.title}</h2>
-                    <p style="color:var(--accent-color); font-weight:bold;">${directorLabel}</p>
+                    <p style="color:var(--accent-color); font-weight:bold;">${directorLabel === "Özel Seçki" ? directorLabel : "Yönetmen: " + directorLabel}</p>
                     <p style="max-width:600px; margin-top:1rem; opacity:0.8;">${currentMovie.overview.substring(0, 250)}...</p>
                 </div>`;
         } catch (e) {
-            console.error(e);
             content.innerHTML = "<p>Öneri yüklenemedi. Lütfen tekrar deneyin.</p>";
-        } finally { 
-            loader.classList.add('hidden'); 
-        }
+        } finally { loader.classList.add('hidden'); }
     }
 
     document.getElementById('share-story-btn').onclick = async () => {
         const storyContainer = document.getElementById('insta-story-container');
         const storyPoster = document.getElementById('story-movie-poster');
+        
         document.getElementById('story-movie-title').textContent = currentMovie.title;
         document.getElementById('story-choices-grid').innerHTML = userSelections.map(src => `<img src="${src}">`).join('');
-
+        
+        // TEK VE GÜVENLİ PROXY: weserv.nl (corsproxy.io ile çakışma yapmıyoruz)
         const proxyUrl = "https://images.weserv.nl/?url=" + encodeURIComponent(currentMovie.poster);
         storyPoster.src = proxyUrl;
 
         await new Promise((resolve) => {
             if (storyPoster.complete) resolve();
-            else storyPoster.onload = resolve;
+            else { storyPoster.onload = resolve; storyPoster.onerror = resolve; }
         });
 
-        await new Promise(r => setTimeout(r, 1200));
+        await new Promise(r => setTimeout(r, 1000)); // Render için tam 1 saniye bekle
 
-        html2canvas(storyContainer, { useCORS: true, scale: 2 }).then(canvas => {
+        html2canvas(storyContainer, { 
+            useCORS: true, 
+            scale: 2,
+            allowTaint: false 
+        }).then(canvas => {
             const link = document.createElement('a');
             link.download = `canvas-cinema-story.png`;
             link.href = canvas.toDataURL('image/png');
@@ -202,6 +203,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    document.getElementById('main-page-button').onclick = () => initializePage();
     initializePage();
 });
