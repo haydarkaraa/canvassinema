@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Öne çıkarılmasını istediğin özel filmlerin TMDB ID listesi
-    const weightedMovies = ["670", "510", "93", "25237", "238", "240", "242", "110", "1018", "968", "11902"];
+    const weightedMovies = ["Sarmaşık"];
 
     let questionIndex = 0;
     let currentLang = 'tr';
