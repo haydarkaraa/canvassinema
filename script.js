@@ -142,18 +142,18 @@ async function showRecommendation() {
             const resp = await fetch(`/api/get-movie?id=${movieId}&lang=${currentLang}`);
             const data = await resp.json();
             
-            // ID ile gelen veri bir liste değil, direkt objedir.
-            movieData = data; 
-            movieData.director_name = "Özel Seçki";
+           movieData = data.results ? data.results[0] : data; 
+
+movieData.director_name = "Özel Seçki";
+movieData.overview = movieData.overview || "";
         } else {
             const director = weightedDirectors[Math.floor(Math.random() * weightedDirectors.length)].trim();
             const resp = await fetch(`/api/get-movie?director=${encodeURIComponent(director)}&lang=${currentLang}`);
             const data = await resp.json();
             const directorMovies = data.crew.filter(m => m.job === 'Director' && m.poster_path);
-            movieData = directorMovies[Math.floor(Math.random() * directorMovies.length)];
-        }
-        
-        if (!movieData) throw new Error("Film bulunamadı");
+            const directorMovies = data.crew.filter(m => m.job === 'Director' && m.poster_path);
+if (directorMovies.length === 0) throw new Error("Film bulunamadı"); // Bu satırı ekle
+movieData = directorMovies[Math.floor(Math.random() * directorMovies.length)];
 
         currentMovie = { 
             title: movieData.title, 
@@ -200,7 +200,7 @@ document.getElementById('share-story-btn').onclick = async () => {
         }
     });
 
-    await new Promise(r => setTimeout(r, 600)); // Render için kısa bekleme
+    await new Promise(r => setTimeout(r, 1200)); // Render için kısa bekleme
 
     html2canvas(storyContainer, { useCORS: true, scale: 2 }).then(canvas => {
         const link = document.createElement('a');
