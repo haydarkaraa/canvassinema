@@ -12,12 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const weightedMovies = [
     "The Godfather",
     "Pulp Fiction",
-    "Le Trou",
     "The 400 Blows",
-    "Stalker",
-    "Once Upon a Time in Anatolia",
-    "Portrait of a Lady on Fire",
-    "Oldboy"
+  "Oldboy"
 ];
 
     let questionIndex = 0;
