@@ -3,19 +3,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const localImagePool = ["17.120.234", "29.100.113", "30.95.250", "32.100.11", "48.190.2", "49.30", "56.13", "56.135.1","64.210","71.23","71.60","71.75","71.123","1972.118.281","1978.493","1997.149.2","2000.51"]; 
     
     const weightedDirectors = [
-        "Nuri Bilge Ceylan", "Nuri Bilge Ceylan", "Stanley Kubrick", 
-        "Stanley Kubrick", "Andrei Tarkovsky", "Zeki Demirkubuz", 
+        "Nuri Bilge Ceylan", "Stanley Kubrick", "Andrei Tarkovsky", 
+        "Zeki Demirkubuz", "Fatih Akın", "Krzysztof Kieślowski", 
         "Ingmar Bergman", "Akira Kurosawa"
     ];
 
-    // Öne çıkarılmasını istediğin özel filmlerin TMDB ID listesi
-    const weightedMovies = ["Sarmaşık"];
+    // İSİM BAZLI FİLM LİSTESİ (İngilizce isimler tavsiye edilir)
+    const weightedMovies = [
+        "American History X"
+    ];
 
     let questionIndex = 0;
     let currentLang = 'tr';
     let currentMovie = { title: '', poster: '', overview: '', director: '' };
     let userSelections = [];
-
     const themes = ['dark', 'light', 'retro', 'midnight'];
     let themeIndex = 0;
 
@@ -126,18 +127,20 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('selection-screen').classList.add('hidden');
         screen.classList.remove('hidden');
         loader.classList.remove('hidden');
-        document.getElementById('loading-text').textContent = texts[currentLang].loading;
         content.innerHTML = '';
 
         try {
             let movieData;
             let directorLabel;
-
-            // %50 şansla ID bazlı ağırlıklı film, %50 şansla yönetmen bazlı seçim
+            
+            // %50 Şansla İsimle Arama, %50 Şansla Yönetmenle Arama
             if (Math.random() > 0.5) {
-                const movieId = weightedMovies[Math.floor(Math.random() * weightedMovies.length)];
-                const resp = await fetch(`/api/get-movie?id=${movieId}&lang=${currentLang}`);
-                movieData = await resp.json();
+                const movieTitle = weightedMovies[Math.floor(Math.random() * weightedMovies.length)];
+                // DİKKAT: Backend'de 'title' parametresinin çalıştığından emin olmalısın
+                const resp = await fetch(`/api/get-movie?title=${encodeURIComponent(movieTitle)}&lang=${currentLang}`);
+                const data = await resp.json();
+                // Arama sonuçları genellikle bir liste (results) döner
+                movieData = data.results ? data.results[0] : data;
                 directorLabel = "Özel Seçki";
             } else {
                 const director = weightedDirectors[Math.floor(Math.random() * weightedDirectors.length)];
@@ -165,18 +168,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p style="max-width:600px; margin-top:1rem; opacity:0.8;">${currentMovie.overview.substring(0, 250)}...</p>
                 </div>`;
         } catch (e) {
-            content.innerHTML = "<p>Öneri yüklenemedi.</p>";
-        } finally { loader.classList.add('hidden'); }
+            console.error(e);
+            content.innerHTML = "<p>Öneri yüklenemedi. Lütfen tekrar deneyin.</p>";
+        } finally { 
+            loader.classList.add('hidden'); 
+        }
     }
 
     document.getElementById('share-story-btn').onclick = async () => {
         const storyContainer = document.getElementById('insta-story-container');
         const storyPoster = document.getElementById('story-movie-poster');
-        
         document.getElementById('story-movie-title').textContent = currentMovie.title;
         document.getElementById('story-choices-grid').innerHTML = userSelections.map(src => `<img src="${src}">`).join('');
 
-        // Stabil bir görüntüleme için weserv proxy kullanımı
         const proxyUrl = "https://images.weserv.nl/?url=" + encodeURIComponent(currentMovie.poster);
         storyPoster.src = proxyUrl;
 
@@ -185,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
             else storyPoster.onload = resolve;
         });
 
-        await new Promise(r => setTimeout(r, 600));
+        await new Promise(r => setTimeout(r, 1200));
 
         html2canvas(storyContainer, { useCORS: true, scale: 2 }).then(canvas => {
             const link = document.createElement('a');
