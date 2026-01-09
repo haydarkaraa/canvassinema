@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const weightedDirectors = [
         "Nuri Bilge Ceylan", "Nuri Bilge Ceylan", "Stanley Kubrick", 
         "Stanley Kubrick", "Andrei Tarkovsky", "Zeki Demirkubuz", "Zeki Demirkubuz" ,"Fatih Akın", "Fatih Akın","Krzysztof Kieślowski" ,
-        "Ingmar Bergman", "Akira Kurosawa","Wim Wenders" , " Emir Kusturica"
+        "Ingmar Bergman", "Akira Kurosawa","Wim Wenders" , "Emir Kusturica"
     ];
     const weightedMovies = [
     "670", "510","93","25237","238","240","242",
@@ -121,20 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('selection-question').textContent = texts[currentLang].questions[questionIndex];
         populateImageGrid();
     }
-
-  async function showRecommendation() {
-    const screen = document.getElementById('recommendation-screen');
-    const content = document.getElementById('recommendation-content');
-    const loader = document.getElementById('loading');
-    
-    document.getElementById('selection-screen').classList.add('hidden');
-    screen.classList.remove('hidden');
-    loader.classList.remove('hidden');
-    document.getElementById('loading-text').textContent = texts[currentLang].loading;
-    content.innerHTML = '';
-
-    // ... Diğer kısımlar aynı ...
-
 async function showRecommendation() {
     const screen = document.getElementById('recommendation-screen');
     const content = document.getElementById('recommendation-content');
@@ -157,6 +143,7 @@ async function showRecommendation() {
             movieData = await resp.json();
             // ID ile gelen veride director_name olmayabilir, "Özel Seçki" olarak işaretliyoruz
             movieData.director_name = "Özel Seçki";
+            movieData.overview = movieData.overview || "";
         } else {
             const director = weightedDirectors[Math.floor(Math.random() * weightedDirectors.length)].trim();
             const resp = await fetch(`/api/get-movie?director=${encodeURIComponent(director)}&lang=${currentLang}`);
@@ -221,32 +208,7 @@ document.getElementById('share-story-btn').onclick = async () => {
         link.click();
     });
 };
-}
 
-    document.getElementById('share-story-btn').onclick = async () => {
-        const storyContainer = document.getElementById('insta-story-container');
-        const storyPoster = document.getElementById('story-movie-poster');
-        document.getElementById('story-movie-title').textContent = currentMovie.title;
-        document.getElementById('story-movie-poster').src = currentMovie.poster.replace('image.tmdb.org', 'corsproxy.io/?https://image.tmdb.org');
-        document.getElementById('story-choices-grid').innerHTML = userSelections.map(src => `<img src="${src}">`).join('');
-
-        const proxyUrl = "https://images.weserv.nl/?url=" + encodeURIComponent(currentMovie.poster);
-    storyPoster.src = proxyUrl;
-
-       await new Promise((resolve) => {
-        if (storyPoster.complete) resolve();
-        else storyPoster.onload = resolve;
-    });
-
-    await new Promise(r => setTimeout(r, 500));
-
-        html2canvas(storyContainer, { useCORS: true, scale: 2 }).then(canvas => {
-            const link = document.createElement('a');
-            link.download = `canvas-cinema-story.png`;
-            link.href = canvas.toDataURL('image/png');
-            link.click();
-        });
-    };
 
     document.getElementById('main-page-button').onclick = () => initializePage();
     initializePage();
