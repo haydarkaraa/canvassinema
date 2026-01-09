@@ -140,10 +140,11 @@ async function showRecommendation() {
         if (useWeightedMovie) {
             const movieId = weightedMovies[Math.floor(Math.random() * weightedMovies.length)];
             const resp = await fetch(`/api/get-movie?id=${movieId}&lang=${currentLang}`);
-            movieData = await resp.json();
-            // ID ile gelen veride director_name olmayabilir, "Özel Seçki" olarak işaretliyoruz
+            const data = await resp.json();
+            
+            // ID ile gelen veri bir liste değil, direkt objedir.
+            movieData = data; 
             movieData.director_name = "Özel Seçki";
-            movieData.overview = movieData.overview || "";
         } else {
             const director = weightedDirectors[Math.floor(Math.random() * weightedDirectors.length)].trim();
             const resp = await fetch(`/api/get-movie?director=${encodeURIComponent(director)}&lang=${currentLang}`);
