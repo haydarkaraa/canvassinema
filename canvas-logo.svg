@@ -1,27 +1,21 @@
-<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="woodGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#E6C9A8" />
-      <stop offset="100%" style="stop-color:#A0785A" />
-    </linearGradient>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/><feOffset dx="2" dy="2"/><feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-
-  <g filter="url(#shadow)">
-    <path d="M100,240 C50,220 30,150 60,100 C80,50 150,20 220,20 C300,20 360,80 360,150 C360,220 300,260 220,260 C180,260 150,230 130,220 C110,210 110,245 100,240 Z" fill="url(#woodGrad)" stroke="#8D6E63" stroke-width="1"/>
-    
-    <polygon points="90,120 90,170 135,145" fill="white" transform="rotate(-5, 100, 145)"/>
-    
-    <circle cx="230" cy="50" r="12" fill="#C62828" />
-    <circle cx="270" cy="65" r="12" fill="#FBC02D" />
-    <circle cx="305" cy="95" r="12" fill="#1565C0" />
-    <circle cx="320" cy="135" r="12" fill="#2E7D32" />
+<svg width="300" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+  <path d="M60,20 C20,20 10,50 10,75 C10,100 35,115 75,115 C115,115 140,95 140,70 C140,55 125,50 110,50 C100,50 90,55 85,65 C80,75 70,80 60,80 C50,80 40,70 40,55 C40,35 50,20 60,20 Z" 
+        fill="currentColor" />
+        
+  <g fill="white">
+    <rect x="25" y="35" width="6" height="4" rx="1" />
+    <rect x="20" y="55" width="6" height="4" rx="1" />
+    <rect x="25" y="75" width="6" height="4" rx="1" />
+    <rect x="45" y="100" width="4" height="6" rx="1" />
+    <rect x="70" y="105" width="4" height="6" rx="1" />
+    <rect x="95" y="100" width="4" height="6" rx="1" />
   </g>
 
-  <g font-family="'Times New Roman', serif" text-anchor="middle">
-    <text x="215" y="180" font-weight="bold" font-size="34" fill="#5D3A1A" opacity="0.9">CANVAS</text>
-    <text x="215" y="215" font-weight="normal" font-size="22" fill="#000000" opacity="0.8" letter-spacing="4">SİNEMA</text>
-  </g>
+  <circle cx="60" cy="55" r="12" fill="white" />
+  <circle cx="60" cy="55" r="8" fill="currentColor" />
+  <rect x="68" y="52" width="10" height="6" fill="white" />
+
+  <text x="150" y="65" font-family="Brush Script MT, cursive" font-size="38" fill="currentColor">Canvas</text>
+  
+  <text x="150" y="95" font-family="Courier New, monospace" font-size="24" letter-spacing="4" font-weight="bold" fill="currentColor">CINEMA</text>
 </svg>
