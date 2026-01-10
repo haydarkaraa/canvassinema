@@ -166,34 +166,37 @@ const specialMovies = [
 
     try {
         let movieData;
-        let directorLabel;
-        let rand = Math.random(); // 0 ile 1 arasında rastgele sayı üretir
-
-        // --- OLASILIK MANTIĞI ---
+        let directorLabel = "";
+        let rand = Math.random();
+        const API_KEY = "ff03b5e166257c0a8a91dc2a3d85360d"; // API anahtarını buraya ekliyoruz
 
         if (rand < 0.4) { 
-            // 1. %40 İhtimal: Ağırlıklı Yönetmen Listesi (API'den çekmeye çalışır)
+            // 1. %40: Yönetmen Listesi (Mevcut mantık doğru)
             const director = weightedDirectors[Math.floor(Math.random() * weightedDirectors.length)];
             const resp = await fetch(`/api/get-movie?director=${encodeURIComponent(director)}&lang=${currentLang}`);
             const data = await resp.json();
             const movies = data.crew.filter(m => m.job === 'Director' && m.poster_path);
             movieData = movies[Math.floor(Math.random() * movies.length)];
             directorLabel = director;
+            movieData.isLocal = false;
 
         } else if (rand < 0.8) { 
-            // 2. %40 İhtimal: Ağırlıklı Film Listesi (Senin script.js'deki weightedMovies listen)
-            movieData = weightedMovies[Math.floor(Math.random() * weightedMovies.length)];
-            directorLabel = movieData.director_name;
+            // 2. %40: ID Listesinden Film Çekme (DÜZELTİLDİ)
+            const movieId = weightedMovies[Math.floor(Math.random() * weightedMovies.length)];
+            // ID'den film detaylarını çekmek için TMDB'ye doğrudan istek atıyoruz
+            const resp = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=${currentLang}`);
+            movieData = await resp.json();
+            directorLabel = "Kült Seçki"; 
+            movieData.isLocal = false;
 
         } else { 
-            // 3. %20 İhtimal: ÖZEL LİSTE (Sadece images3 posterli filmler)
+            // 3. %20: Özel Liste (Mevcut mantık doğru)
             movieData = specialMovies[Math.floor(Math.random() * specialMovies.length)];
             directorLabel = movieData.director_name;
+            // movieData.isLocal zaten specialMovies objelerinde true olarak tanımlı
         }
 
-        // --- VERİ HAZIRLAMA ---
-
-        if (!movieData) throw new Error("Film bulunamadı");
+        if (!movieData || !movieData.title) throw new Error("Film verisi eksik");
 
         currentMovie = { 
             title: movieData.title, 
@@ -201,8 +204,6 @@ const specialMovies = [
             overview: movieData.overview || "",
             director: directorLabel
         };
-
-        // --- EKRANA BASMA ---
 
         content.innerHTML = `
             <div class="recommendation-item">
@@ -214,11 +215,11 @@ const specialMovies = [
 
     } catch (e) {
         console.error("Hata detayı:", e);
-        // Fallback: API hata verirse özel listeden bir film göstererek kullanıcıyı boşta bırakma
         const fallbackMovie = specialMovies[0];
-        content.innerHTML = `<p>Öneri yüklenirken bir sorun oluştu, ama senin için şunu seçtim:</p>
+        content.innerHTML = `<p>Öneri hazırlanırken bir sorun oluştu, ama senin için şunu seçtim:</p>
                              <h3>${fallbackMovie.title}</h3>`;
     } finally { loader.classList.add('hidden'); }
+
 }
 
     document.getElementById('share-story-btn').onclick = async () => {
