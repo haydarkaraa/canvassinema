@@ -5,8 +5,8 @@ export default async function handler(req, res) {
     const { lang = 'tr' } = req.query;
     const API_KEY = "ff03b5e166257c0a8a91dc2a3d85360d"; 
 
-    const weightedDirectors = ["Nuri Bilge Ceylan", "Stanley Kubrick", "Andrei Tarkovsky", "Zeki Demirkubuz", "Fatih Akın", "Krzysztof Kieślowski", "Ingmar Bergman", "Akira Kurosawa"];
-    const weightedMovies = ["The Godfather", "Parasite", "Citizen Kane"];
+    const weightedDirectors = ["Nuri Bilge Ceylan", "Stanley Kubrick", "Andrei Tarkovsky", "Zeki Demirkubuz", "Fatih Akın", "Krzysztof Kieślowski", "Ingmar Bergman", "Akira Kurosawa", "Wim Wenders"];
+    const weightedMovies = ["The Godfather", "No Country for Old Men", "Citizen Kane", "Mulholland Drive", "Manchester by the Sea", "Holy Spider"];
     const specialMovies = [
         { title: "12 Angry Men", poster_path: "images3/12angrymen.jpg", overview: "Hukuk draması.", director_name: "Sidney Lumet", isLocal: true },
         { title: "One Flew Over the Cuckoo’s Nest", poster_path: "images3/gugukkusu.jpg", overview: "Özgür ruhlu bir mahkum.", director_name: "Miloš Forman", isLocal: true }
