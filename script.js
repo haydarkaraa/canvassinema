@@ -6,6 +6,44 @@ document.addEventListener('DOMContentLoaded', () => {
         "Stanley Kubrick", "Andrei Tarkovsky", "Zeki Demirkubuz", 
         "Ingmar Bergman", "Akira Kurosawa"
     ];
+    const weightedMovies = [
+    "670", "510","93","25237","238","240","242",
+    "110", 
+    "1018", "968", 
+    "11902"
+];
+// 1. ADIM: Özel Listeyi Tanımla (images3 klasöründen)
+const specialMovies = [
+    {
+        title: "Anatomy of a Murder",
+        poster_path: "images3/anatomyofmurder.jpg",
+        overview: "James Stewart, karısına asılan bir barmeni öldürmekle suçlanan subayı (Ben Gazzara) savunan kasaba avukatı rolünde.",
+        director_name: "Otto Preminger",
+        isLocal: true
+    },
+    {
+            title: "Come and See",
+            poster_path: "images3/comeandsee.jpg",
+            overview: "1943 yılında Belarus’ta Naziler tarafından gerçekleştirilen vahşeti küçük bir çocuğun hikayesi üzerinden bu sarsıcı ve rahatsız edici film, gelmiş geçmiş en korkunç savaş filmlerinden biridir.",
+            director_name: "Elem Klimov",
+            isLocal: true
+        },
+         {
+            title: "12 Angry Men",
+            poster_path: "images3/12angrymen.jpg",
+            overview: "Latin kökenli bir Amerikalı genç babasını bıçaklayarak öldürdüğü gerekçesiyle birinci dereceden cinayetle suçlanır ve mahkeme önüne çıkarılır.",
+            director_name: "Sidney Lumet",
+            isLocal: true
+        },
+        {
+            title: "One Flew Over the Cuckoo’s Nest",
+            poster_path: "images3/gugukkusu.jpg",
+            overview: "Randle P. McMurphy, deli numarası yaparak damarlarında kan yerine elektrik dolaşan, ağzı çok iyi laf yapan özgür ruhlu bir mahkumdur.",
+            director_name: "Miloš Forman",
+            isLocal: true
+        },
+    // Buraya images3 içinde posteri olan diğer özel filmlerini ekle
+];
 
     let questionIndex = 0;
     let currentLang = 'tr';
@@ -116,35 +154,72 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function showRecommendation() {
-        const screen = document.getElementById('recommendation-screen');
-        const content = document.getElementById('recommendation-content');
-        const loader = document.getElementById('loading');
-        
-        document.getElementById('selection-screen').classList.add('hidden');
-        screen.classList.remove('hidden');
-        loader.classList.remove('hidden');
-        document.getElementById('loading-text').textContent = texts[currentLang].loading;
-        content.innerHTML = '';
+    const screen = document.getElementById('recommendation-screen');
+    const content = document.getElementById('recommendation-content');
+    const loader = document.getElementById('loading');
+    
+    document.getElementById('selection-screen').classList.add('hidden');
+    screen.classList.remove('hidden');
+    loader.classList.remove('hidden');
+    document.getElementById('loading-text').textContent = texts[currentLang].loading;
+    content.innerHTML = '';
 
-        try {
+    try {
+        let movieData;
+        let directorLabel;
+        let rand = Math.random(); // 0 ile 1 arasında rastgele sayı üretir
+
+        // --- OLASILIK MANTIĞI ---
+
+        if (rand < 0.4) { 
+            // 1. %40 İhtimal: Ağırlıklı Yönetmen Listesi (API'den çekmeye çalışır)
             const director = weightedDirectors[Math.floor(Math.random() * weightedDirectors.length)];
             const resp = await fetch(`/api/get-movie?director=${encodeURIComponent(director)}&lang=${currentLang}`);
             const data = await resp.json();
-            const movie = data.crew.filter(m => m.job === 'Director' && m.poster_path)[0];
-            
-            currentMovie = { title: movie.title, poster: `https://image.tmdb.org/t/p/w780${movie.poster_path}` };
+            const movies = data.crew.filter(m => m.job === 'Director' && m.poster_path);
+            movieData = movies[Math.floor(Math.random() * movies.length)];
+            directorLabel = director;
 
-            content.innerHTML = `
-                <div class="recommendation-item">
-                    <img src="${currentMovie.poster}" style="width:280px; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                    <h2 style="margin: 1.5rem 0 0.5rem 0;">${currentMovie.title}</h2>
-                    <p style="color:var(--accent-color); font-weight:bold;">Yönetmen: ${director}</p>
-                    <p style="max-width:600px; margin-top:1rem; opacity:0.8;">${movie.overview.substring(0, 250)}...</p>
-                </div>`;
-        } catch (e) {
-            content.innerHTML = "<p>Öneri yüklenemedi.</p>";
-        } finally { loader.classList.add('hidden'); }
-    }
+        } else if (rand < 0.8) { 
+            // 2. %40 İhtimal: Ağırlıklı Film Listesi (Senin script.js'deki weightedMovies listen)
+            movieData = weightedMovies[Math.floor(Math.random() * weightedMovies.length)];
+            directorLabel = movieData.director_name;
+
+        } else { 
+            // 3. %20 İhtimal: ÖZEL LİSTE (Sadece images3 posterli filmler)
+            movieData = specialMovies[Math.floor(Math.random() * specialMovies.length)];
+            directorLabel = movieData.director_name;
+        }
+
+        // --- VERİ HAZIRLAMA ---
+
+        if (!movieData) throw new Error("Film bulunamadı");
+
+        currentMovie = { 
+            title: movieData.title, 
+            poster: movieData.isLocal ? movieData.poster_path : `https://image.tmdb.org/t/p/w780${movieData.poster_path}`,
+            overview: movieData.overview || "",
+            director: directorLabel
+        };
+
+        // --- EKRANA BASMA ---
+
+        content.innerHTML = `
+            <div class="recommendation-item">
+                <img src="${currentMovie.poster}" style="width:280px; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                <h2 style="margin: 1.5rem 0 0.5rem 0;">${currentMovie.title}</h2>
+                <p style="color:var(--accent-color); font-weight:bold;">Yönetmen: ${currentMovie.director}</p>
+                <p style="max-width:600px; margin-top:1rem; opacity:0.8;">${currentMovie.overview.substring(0, 250)}...</p>
+            </div>`;
+
+    } catch (e) {
+        console.error("Hata detayı:", e);
+        // Fallback: API hata verirse özel listeden bir film göstererek kullanıcıyı boşta bırakma
+        const fallbackMovie = specialMovies[0];
+        content.innerHTML = `<p>Öneri yüklenirken bir sorun oluştu, ama senin için şunu seçtim:</p>
+                             <h3>${fallbackMovie.title}</h3>`;
+    } finally { loader.classList.add('hidden'); }
+}
 
     document.getElementById('share-story-btn').onclick = async () => {
         const storyContainer = document.getElementById('insta-story-container');
