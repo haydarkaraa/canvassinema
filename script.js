@@ -22,7 +22,45 @@ document.addEventListener('DOMContentLoaded', () => {
             overview: "Derek Vinyard, beyaz ırkın üstünlüğüne inanan bir grubun lideridir...",
             director_name: "Tony Kaye",
             isLocal: true
+        },
+        {
+            title: "Anatomy of a Murder",
+            poster_path: "images3/anatomyofmurder.jpg",
+            overview: "James Stewart, karısına asılan bir barmeni öldürmekle suçlanan subayı (Ben Gazzara) savunan kasaba avukatı rolünde. ",
+            director_name: "Otto Preminger",
+            isLocal: true
+        },
+         {
+            title: "Come and See",
+            poster_path: "images3/comeandsee.jpg",
+            overview: "1943 yılında Belarus’ta Naziler tarafından gerçekleştirilen vahşeti küçük bir çocuğun hikayesi üzerinden bu sarsıcı ve rahatsız edici film, gelmiş geçmiş en korkunç savaş filmlerinden biridir.",
+            director_name: "Elem Klimov",
+            isLocal: true
+        },
+    {
+            title: "12 Angry Men",
+            poster_path: "images3/12angrymen.jpg",
+            overview: "Latin kökenli bir Amerikalı genç babasını bıçaklayarak öldürdüğü gerekçesiyle birinci dereceden cinayetle suçlanır ve mahkeme önüne çıkarılır.",
+            director_name: "Sidney Lumet",
+            isLocal: true
+        },
+            {
+            title: "One Flew Over the Cuckoo’s Nest",
+            poster_path: "images3/gugukkusu.jpg",
+            overview: "Eyalet Akıl Hastanesi'nde kısa bir tatil kulağa pek de kötü gelmiyor, öyle değil mi? Randle P. McMurphy, damarlarında kan yerine elektrik dolaşan, ağzı çok iyi laf yapan özgür ruhlu bir mahkumdur. McMurphy, deli numarası yaparak kendisini "kaçıklar" olarak nitelediği adamların yanına aldırır. Hemen ardından, onun bulaşıcı düzensizlik sevdası, yeni geldiği yerdeki uyuşturucu rutinle karşı karşıya gelir. McMurphy, Dünya Kupası maçları oynanırken yeni arkadaşlarının yatıştırıcı ilaçlara boğulmuş bir şekilde ortalıkta bornozlarla dolaşmasına dayanamaz.",
+            director_name: "Miloš Forman",
+            isLocal: true
+        },
+{
+            title: "Citizen Kane",
+            poster_path: "images3/citizenkane.jpg",
+            overview: "Zengin medya patronu Charles Foster Kane kendi özel şatosu Xanadu'da ölür. Ölürken son söz olan Rosabud'u fısıldar. Bütün gazetelerde Kane ile ilgili değişik hayat hikayeleri yayınlanır. Genç bir gazeteci Kane'nin son sözünün ne anlama geldiğini araştırmak için görevlendirilir. Gazeteci Kane'nin yakınlarıyla iletişime geçer. Biz de Kane'nin geçmişine tanık oluruz. Bu bireysel hikaye aynı zamanda mükemmelliyetçiliğin ve otoriter yönetimin hazin sonuçlarını da göstermektedir.",
+            director_name: "Orson Welles",
+            isLocal: true
         }
+
+
+
     ];
 
     let questionIndex = 0;
