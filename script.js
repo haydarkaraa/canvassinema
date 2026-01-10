@@ -7,10 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Ingmar Bergman", "Akira Kurosawa"
     ];
     const weightedMovies = [
-    "670", "510","93","25237","238","240","242",
-    "110", 
-    "1018", "968", 
-    "11902"
+"The Godfather", "Parasite", "Citizen Kane"
 ];
 // 1. ADIM: Özel Listeyi Tanımla (images3 klasöründen)
 const specialMovies = [

@@ -15,25 +15,39 @@ export default async function handler(req, res) {
     ];
 
     const weightedMovies = [
-        "Inception", "The Godfather", "Pulp Fiction", "The Dark Knight", 
-        "Fight Club", "Interstellar", "Parasite", "The Matrix"
+        "The Godfather", "Parasite", "Citizen Kane"
     ];
 
     const specialMovies = [
         { 
-            title: "Persona", 
-            poster_path: "images3/persona.jpg", 
-            director_name: "Ingmar Bergman", 
-            isLocal: true, 
-            overview: "Ruhsal bir yer değiştirme ve kimlik karmaşası hikayesi." 
+            title: "12 Angry Men",
+            poster_path: "images3/12angrymen.jpg",
+            overview: "Latin kökenli bir Amerikalı genç babasını bıçaklayarak öldürdüğü gerekçesiyle birinci dereceden cinayetle suçlanır ve mahkeme önüne çıkarılır.",
+            director_name: "Sidney Lumet",
+            isLocal: true
         },
         { 
-            title: "Kış Uykusu", 
-            poster_path: "images3/kisuykusu.jpg", 
-            director_name: "Nuri Bilge Ceylan", 
-            isLocal: true, 
-            overview: "Kapadokya'da bir otelde geçen, insan doğasına dair derin bir yüzleşme." 
+            title: "One Flew Over the Cuckoo’s Nest",
+            poster_path: "images3/gugukkusu.jpg",
+            overview: "Randle P. McMurphy, deli numarası yaparak damarlarında kan yerine elektrik dolaşan, ağzı çok iyi laf yapan özgür ruhlu bir mahkumdur.",
+            director_name: "Miloš Forman",
+            isLocal: true
+        },
+        {
+        title: "Anatomy of a Murder",
+        poster_path: "images3/anatomyofmurder.jpg",
+        overview: "James Stewart, karısına asılan bir barmeni öldürmekle suçlanan subayı (Ben Gazzara) savunan kasaba avukatı rolünde.",
+        director_name: "Otto Preminger",
+        isLocal: true
+    },
+    {
+            title: "Come and See",
+            poster_path: "images3/comeandsee.jpg",
+            overview: "1943 yılında Belarus’ta Naziler tarafından gerçekleştirilen vahşeti küçük bir çocuğun hikayesi üzerinden bu sarsıcı ve rahatsız edici film, gelmiş geçmiş en korkunç savaş filmlerinden biridir.",
+            director_name: "Elem Klimov",
+            isLocal: true
         }
+
     ];
 
     try {
