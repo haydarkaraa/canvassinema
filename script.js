@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. VERİ HAVUZLARI
-    const localImagePool = ["17.120.234", "29.100.113", "30.95.250", "32.100.11", "48.190.2", "49.30", "56.13", "56.135.1", "64.210", "71.23", "71.60", "71.75", "71.123", "1972.118.281", "1978.493", "1997.149.2", "2000.51"]; 
+    const localImagePool = ["17.120.234", "29.100.113", "30.95.250", "32.100.11", "48.190.2", "49.30", "56.13", "56.135.1","64.210","71.23","71.60","71.75","71.123","1972.118.281","1978.493","1997.149.2","2000.51"]; 
     
     const weightedDirectors = [
         "Nuri Bilge Ceylan", "Stanley Kubrick", "Andrei Tarkovsky", 
@@ -8,18 +8,29 @@ document.addEventListener('DOMContentLoaded', () => {
         "Ingmar Bergman", "Akira Kurosawa"
     ];
 
-    // ÖNEMLİ: Sadece global İngilizce isimleri yazın (Yıl veya yönetmen eklemeyin)
     const weightedMovies = [
-        "Le Trou", "The Shining", "Stalker", "Winter Sleep", 
-        "Once Upon a Time in Anatolia", "The Godfather", "Pulp Fiction"
+        {
+            title: "Oldboy",
+            poster_path: "images3/oldboy.jpg",
+            overview: "Oh Dae-su, bir gün kendisini küçük karanlık bir hücrede bulur...",
+            director_name: "Park Chan-wook",
+            isLocal: true // Yerel dosya olduğunu belirtmek için ekledik
+        },
+        {
+            title: "American History X",
+            poster_path: "images3/americanhistoryx.jpg",
+            overview: "Derek Vinyard, beyaz ırkın üstünlüğüne inanan bir grubun lideridir...",
+            director_name: "Tony Kaye",
+            isLocal: true
+        }
     ];
 
     let questionIndex = 0;
     let currentLang = 'tr';
     let currentMovie = { title: '', poster: '', overview: '', director: '' };
     let userSelections = [];
-    let themeIndex = 0;
     const themes = ['dark', 'light', 'retro', 'midnight'];
+    let themeIndex = 0;
 
     const texts = {
         tr: {
@@ -29,9 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             share: "Hikaye Olarak Paylaş",
             home: "Ana Sayfa",
             storyRec: "ÖNERİLEN FİLM",
-            storyMood: "RUH HALİNİ YANSITAN SEÇİMLER",
-            themeTooltip: "temayı değiştir",
-            langTooltip: "English"
+            storyMood: "RUH HALİNİ YANSITAN SEÇİMLER"
         },
         en: {
             startBtn: "Get movie advice",
@@ -40,9 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             share: "Share as Story",
             home: "Home",
             storyRec: "RECOMMENDED MOVIE",
-            storyMood: "CHOICES REFLECTING YOUR MOOD",
-            themeTooltip: "change theme",
-            langTooltip: "Türkçe"
+            storyMood: "CHOICES REFLECTING YOUR MOOD"
         }
     };
 
@@ -53,8 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('text-home').textContent = t.home;
         document.getElementById('story-label-rec').textContent = t.storyRec;
         document.getElementById('story-label-mood').textContent = t.storyMood;
-        document.getElementById('tooltip-theme').textContent = t.themeTooltip;
-        document.getElementById('tooltip-lang').textContent = t.langTooltip;
         if (!document.getElementById('selection-screen').classList.contains('hidden')) {
             document.getElementById('selection-question').textContent = t.questions[questionIndex];
         }
@@ -130,19 +135,16 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('selection-screen').classList.add('hidden');
         screen.classList.remove('hidden');
         loader.classList.remove('hidden');
+        document.getElementById('loading-text').textContent = texts[currentLang].loading;
         content.innerHTML = '';
 
         try {
             let movieData;
             let directorLabel;
-            const useWeighted = Math.random() > 0.4;
 
-            if (useWeighted) {
-                const movieName = weightedMovies[Math.floor(Math.random() * weightedMovies.length)];
-                const resp = await fetch(`/api/get-movie?title=${encodeURIComponent(movieName)}&lang=${currentLang}`);
-                const data = await resp.json();
-                movieData = data.results ? data.results[0] : data;
-                directorLabel = "Özel Seçki";
+            if (Math.random() > 0.5) {
+                movieData = weightedMovies[Math.floor(Math.random() * weightedMovies.length)];
+                directorLabel = movieData.director_name;
             } else {
                 const director = weightedDirectors[Math.floor(Math.random() * weightedDirectors.length)];
                 const resp = await fetch(`/api/get-movie?director=${encodeURIComponent(director)}&lang=${currentLang}`);
@@ -152,11 +154,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 directorLabel = director;
             }
 
-            if (!movieData || !movieData.poster_path) throw new Error("Film veya poster bulunamadı");
+            if (!movieData) throw new Error("Film bulunamadı");
 
             currentMovie = { 
                 title: movieData.title, 
-                poster: `https://image.tmdb.org/t/p/w780${movieData.poster_path}`,
+                poster: movieData.isLocal ? movieData.poster_path : `https://image.tmdb.org/t/p/w780${movieData.poster_path}`,
                 overview: movieData.overview || "",
                 director: directorLabel
             };
@@ -165,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="recommendation-item">
                     <img src="${currentMovie.poster}" style="width:280px; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
                     <h2 style="margin: 1.5rem 0 0.5rem 0;">${currentMovie.title}</h2>
-                    <p style="color:var(--accent-color); font-weight:bold;">${directorLabel === "Özel Seçki" ? directorLabel : "Yönetmen: " + directorLabel}</p>
+                    <p style="color:var(--accent-color); font-weight:bold;">Yönetmen: ${currentMovie.director}</p>
                     <p style="max-width:600px; margin-top:1rem; opacity:0.8;">${currentMovie.overview.substring(0, 250)}...</p>
                 </div>`;
         } catch (e) {
@@ -180,8 +182,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('story-movie-title').textContent = currentMovie.title;
         document.getElementById('story-choices-grid').innerHTML = userSelections.map(src => `<img src="${src}">`).join('');
         
-        // TEK VE GÜVENLİ PROXY: weserv.nl (corsproxy.io ile çakışma yapmıyoruz)
-        const proxyUrl = "https://images.weserv.nl/?url=" + encodeURIComponent(currentMovie.poster);
+        const proxyUrl = currentMovie.poster.includes('http') 
+            ? "https://images.weserv.nl/?url=" + encodeURIComponent(currentMovie.poster)
+            : currentMovie.poster;
+            
         storyPoster.src = proxyUrl;
 
         await new Promise((resolve) => {
@@ -189,13 +193,9 @@ document.addEventListener('DOMContentLoaded', () => {
             else { storyPoster.onload = resolve; storyPoster.onerror = resolve; }
         });
 
-        await new Promise(r => setTimeout(r, 1000)); // Render için tam 1 saniye bekle
+        await new Promise(r => setTimeout(r, 1000));
 
-        html2canvas(storyContainer, { 
-            useCORS: true, 
-            scale: 2,
-            allowTaint: false 
-        }).then(canvas => {
+        html2canvas(storyContainer, { useCORS: true, scale: 2 }).then(canvas => {
             const link = document.createElement('a');
             link.download = `canvas-cinema-story.png`;
             link.href = canvas.toDataURL('image/png');
