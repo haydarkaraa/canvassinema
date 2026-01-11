@@ -1,15 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const localImagePool = ["17.120.234", "29.100.113", "30.95.250", "32.100.11", "48.190.2", "49.30", "56.13", "56.135.1","64.210","71.23","71.60","71.75","71.123","1972.118.281","1978.493","1997.149.2","2000.51"]; 
     
-    const weightedDirectors = [
-        "Nuri Bilge Ceylan", "Wim Wenders", "Fatih Akın", 
-        "Stanley Kubrick", "Andrei Tarkovsky", "Zeki Demirkubuz", 
-        "Ingmar Bergman", "Akira Kurosawa"
-    ];
-    const weightedMovies = [
-"The Godfather", "No Country for Old Men", "Citizen Kane", "Mulholland Drive", "Manchester by the Sea", "Holy Spider","City of God","Dead Poets Society","Eternal Sunshine of the Spotless Mind","Insomnia",
-"Seven","The Silence of the Lambs","Jojo Rabbit","Prisoners","Memento","Uncut Gems","Babylon","Der Himmel über Berlin","The Usual Suspects","The Butterfly Effect"
-];
+    
 // 1. ADIM: Özel Listeyi Tanımla (images3 klasöründen)
 const specialMovies = [
     {
