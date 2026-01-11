@@ -154,34 +154,35 @@ const specialMovies = [
     content.innerHTML = '';
 
     try {
-        // Backend zaten tüm olasılıkları (40/40/20) hesaplayıp tek bir film döndürüyor
         const resp = await fetch(`/api/get-movie?lang=${currentLang}`);
+        if (!resp.ok) throw new Error("Backend Yanıt Vermedi");
+        
         const movieData = await resp.json();
-
-        if (!movieData || movieData.error) throw new Error("Film alınamadı");
 
         currentMovie = { 
             title: movieData.title, 
-            poster: movieData.poster_path, // Backend tam linki veya images3/ yolunu zaten hazırladı
+            poster: movieData.poster_path, // Backend'den gelen hazır yol
             overview: movieData.overview || "",
             director: movieData.director_name
         };
 
         content.innerHTML = `
             <div class="recommendation-item">
-                <img src="${currentMovie.poster}" style="width:280px; border-radius:12px;">
+                <img src="${currentMovie.poster}" style="width:280px; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
                 <h2>${currentMovie.title}</h2>
-                <p><b>Yönetmen:</b> ${currentMovie.director}</p>
-                <p>${currentMovie.overview.substring(0, 250)}...</p>
+                <p style="color:var(--accent-color);"><b>Yönetmen:</b> ${currentMovie.director}</p>
+                <p style="opacity:0.8; margin-top:10px;">${currentMovie.overview.substring(0, 250)}...</p>
             </div>`;
-
     } catch (e) {
-        const fallback = specialMovies[0];
-        content.innerHTML = `<p>Hata oluştu, yedek öneri: <h3>${fallback.title}</h3></p>`;
+        console.error("Detaylı Hata:", e);
+        // Eğer her şey çökerse en azından Anatomy of a Murder gösterir
+        const fallback = specialMovies[0]; 
+        content.innerHTML = `<h3>${fallback.title}</h3><p>Bağlantı sorunu yaşandı.</p>`;
     } finally { 
         loader.classList.add('hidden'); 
     }
 }
+
 
     document.getElementById('share-story-btn').onclick = async () => {
         const storyContainer = document.getElementById('insta-story-container');
