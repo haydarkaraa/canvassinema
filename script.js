@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const localImagePool = ["17.120.234", "29.100.113", "30.95.250", "32.100.11", "48.190.2", "49.30", "56.13", "56.135.1","64.210","71.23","71.60","71.75","71.123","1972.118.281","1978.493","1997.149.2","2000.51"]; 
+    const localImagePool = ["13.66","17.120.234","1972.118.281","1974.356.32","1975.1.160","1975.1.163","1975.1.164","1975.1.167","1975.1.180","1975.1.182","1975.1.194","1975.1.202","1975.1.209","1975.1.642","1975.1.644","1975.1.691","1978.493","1980.342","1984.433.323","1994.420","1997.149.2","1998.325.1",
+         "2000.51","2002.62.3","2003.42.40","2003.42.54","2009.400.109","2009.400.110","29.100.113", "29.100.64","29.100.67","29.100.112","29.100.113","29.100.194",
+         "32.100.11", "39.182",
+         "49.30", 
+         "54.143.2","56.13","56.135.1","56.135.7","56.135.8","56.135.9","57.181","59.16.5",
+         "61.190","61.101.5","64.124","64.210",
+         "71.23","71.60","71.75","71.123",]; 
     
     
 // 1. ADIM: Özel Listeyi Tanımla (images3 klasöründen)
@@ -46,7 +52,7 @@ const specialMovies = [
     const texts = {
         tr: {
             startBtn: "Film tavsiyesi al",
-            questions: ["Ruh halini hangi atmosfer yansıtıyor?", "Hangi detay seni içine çekiyor?", "Hangi manzarada kaybolmak istersin?", "Sessizliği hangisi daha iyi anlatıyor?"],
+            questions: ["Bugün hayatını hangi fırça darbesiyle özetlerdin?Sert ve kaotik mi, yoksa yumuşak ve belirsiz mi?", "Bakışların hangi odak noktasında takılıp kalıyor?","Hangi soyut detay seni gerçeklikten koparıp götürüyor?", "Bunlardan hangisini bir film karesi olarak görmek isterdin?"],
             loading: "Seçimlerin analiz ediliyor...",
             share: "Hikaye Olarak Paylaş",
             home: "Ana Sayfa",
@@ -57,7 +63,7 @@ const specialMovies = [
         },
         en: {
             startBtn: "Get movie advice",
-            questions: ["Which atmosphere reflects your mood?", "Which detail draws you in?", "Which landscape would you get lost in?", "Which one speaks silence better?"],
+            questions: ["Which brushstroke would you use to define your life today? Bold and chaotic, or soft and ethereal?", "Where does your gaze find its focus?", "Which abstract detail whisks you away from reality?", "Which of these would you envision as a frame from a film?"],
             loading: "Analyzing your choices...",
             share: "Share as Story",
             home: "Home",
@@ -166,13 +172,14 @@ const specialMovies = [
             director: movieData.director_name
         };
 
-        content.innerHTML = `
-            <div class="recommendation-item">
-                <img src="${currentMovie.poster}" style="width:280px; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
-                <h2>${currentMovie.title}</h2>
-                <p style="color:var(--accent-color);"><b>Yönetmen:</b> ${currentMovie.director}</p>
-                <p style="opacity:0.8; margin-top:10px;">${currentMovie.overview.substring(0, 250)}...</p>
-            </div>`;
+        // script.js içindeki ilgili kısım
+content.innerHTML = `
+    <div class="recommendation-item">
+        <img src="${currentMovie.poster}" class="rec-poster">
+        <h2 class="rec-title">${currentMovie.title}</h2>
+        <p class="rec-director"><span>Yönetmen:</span> ${currentMovie.director}</p>
+        <p class="rec-overview">${currentMovie.overview.substring(0, 180)}...</p>
+    </div>`;
     } catch (e) {
         console.error("Detaylı Hata:", e);
         // Eğer her şey çökerse en azından Anatomy of a Murder gösterir
