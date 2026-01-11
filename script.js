@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "Ingmar Bergman", "Akira Kurosawa"
     ];
     const weightedMovies = [
-"The Godfather", "No Country for Old Men", "Citizen Kane", "Mulholland Drive", "Manchester by the Sea", "Holy Spider"
+"The Godfather", "No Country for Old Men", "Citizen Kane", "Mulholland Drive", "Manchester by the Sea", "Holy Spider","City of God","Dead Poets Society","Eternal Sunshine of the Spotless Mind","Insomnia",
+"Seven","The Silence of the Lambs","Jojo Rabbit","Prisoners","Memento","Uncut Gems","Babylon","Der Himmel über Berlin","The Usual Suspects","The Butterfly Effect"
 ];
 // 1. ADIM: Özel Listeyi Tanımla (images3 klasöründen)
 const specialMovies = [
