@@ -1,71 +1,54 @@
 // /api/get-movie.js
 export default async function handler(req, res) {
-    if (req.method !== 'GET') return res.status(405).json({ error: 'Method Not Allowed' });
-
     const { lang = 'tr' } = req.query;
     const API_KEY = "ff03b5e166257c0a8a91dc2a3d85360d"; 
 
-    const weightedDirectors = ["Nuri Bilge Ceylan", "Stanley Kubrick", "Andrei Tarkovsky", "Zeki Demirkubuz", "Fatih Akın", "Krzysztof Kieślowski", "Ingmar Bergman", "Akira Kurosawa", "Wim Wenders"];
-    const weightedMovies = ["The Godfather", "No Country for Old Men", "Citizen Kane", "Mulholland Drive", "Manchester by the Sea", "Holy Spider","City of God","Dead Poets Society","Eternal Sunshine of the Spotless Mind","Insomnia",
-        "Seven","The Silence of the Lambs","Jojo Rabbit","Prisoners","Memento","Uncut Gems","Babylon","Der Himmel über Berlin","The Usual Suspects","The Butterfly Effect"
-    ];
+    const weightedDirectors = ["Nuri Bilge Ceylan", "Stanley Kubrick", "Andrei Tarkovsky", "Zeki Demirkubuz", "Ingmar Bergman", "Akira Kurosawa"];
+    const weightedMovies = ["The Godfather", "Parasite", "Citizen Kane", "Inception", "12 Angry Men"];
     const specialMovies = [
-        { title: "12 Angry Men", poster_path: "images3/12angrymen.jpg", overview: "Hukuk draması.", director_name: "Sidney Lumet", isLocal: true },
-        { title: "One Flew Over the Cuckoo’s Nest", poster_path: "images3/gugukkusu.jpg", overview: "Özgür ruhlu bir mahkum.", director_name: "Miloš Forman", isLocal: true }
+        { title: "Anatomy of a Murder", poster_path: "images3/anatomyofmurder.jpg", director_name: "Otto Preminger", isLocal: true, overview: "James Stewart'ın devleştiği bir mahkeme dramı." },
+        { title: "Come and See", poster_path: "images3/comeandsee.jpg", director_name: "Elem Klimov", isLocal: true, overview: "Savaşın dehşetini bir çocuğun gözünden anlatan sarsıcı bir yapıt." }
     ];
 
     try {
         const rand = Math.random();
-        let selectedMovie = null;
+        let selected = null;
 
-        // --- DURUM 1: %40 - YÖNETMEN ---
+        // %40 Yönetmen Araması
         if (rand < 0.4) {
             const director = weightedDirectors[Math.floor(Math.random() * weightedDirectors.length)];
-            const pResp = await fetch(`https://api.themoviedb.org/3/search/person?api_key=${API_KEY}&query=${encodeURIComponent(director)}&language=${lang}`);
-            const pData = await pResp.json();
-
+            const pRes = await fetch(`https://api.themoviedb.org/3/search/person?api_key=${API_KEY}&query=${encodeURIComponent(director)}&language=${lang}`);
+            const pData = await pRes.json();
             if (pData.results?.length > 0) {
-                const mResp = await fetch(`https://api.themoviedb.org/3/person/${pData.results[0].id}/movie_credits?api_key=${API_KEY}&language=${lang}`);
-                const mData = await mResp.json();
+                const mRes = await fetch(`https://api.themoviedb.org/3/person/${pData.results[0].id}/movie_credits?api_key=${API_KEY}&language=${lang}`);
+                const mData = await mRes.json();
                 const dMovies = mData.crew.filter(m => m.job === 'Director' && m.poster_path);
-                
                 if (dMovies.length > 0) {
-                    const rMovie = dMovies[Math.floor(Math.random() * dMovies.length)];
-                    selectedMovie = {
-                        title: rMovie.title,
-                        poster_path: `https://image.tmdb.org/t/p/w780${rMovie.poster_path}`,
-                        overview: rMovie.overview,
-                        director_name: director,
-                        isLocal: false
-                    };
+                    const m = dMovies[Math.floor(Math.random() * dMovies.length)];
+                    selected = { title: m.title, poster_path: `https://image.tmdb.org/t/p/w780${m.poster_path}`, overview: m.overview, director_name: director, isLocal: false };
                 }
             }
         } 
-        
-        // --- DURUM 2: %40 - FİLM İSMİ ---
+        // %40 Film İsmi Araması
         else if (rand < 0.8) {
             const title = weightedMovies[Math.floor(Math.random() * weightedMovies.length)];
-            const sResp = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(title)}&language=${lang}`);
-            const sData = await sResp.json();
+            const sRes = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(title)}&language=${lang}`);
+            const sData = await sRes.json();
             if (sData.results?.length > 0) {
-                const top = sData.results[0];
-                selectedMovie = {
-                    title: top.title,
-                    poster_path: `https://image.tmdb.org/t/p/w780${top.poster_path}`,
-                    overview: top.overview,
-                    director_name: director,
-                    isLocal: false
-                };
+                const m = sData.results[0];
+                selected = { title: m.title, poster_path: `https://image.tmdb.org/t/p/w780${m.poster_path}`, overview: m.overview, director_name: "Kült Seçki", isLocal: false };
             }
-        } 
-        
-        // --- DURUM 3: %20 - ÖZEL LİSTE ---
-        if (!selectedMovie) { // Eğer yukarıdakiler başarısız olursa veya rand > 0.8 ise
-            selectedMovie = specialMovies[Math.floor(Math.random() * specialMovies.length)];
         }
 
-        res.status(200).json(selectedMovie);
-    } catch (error) {
-        res.status(500).json({ error: "Sunucu hatası" });
+        // Eğer yukarıdaki API çağrıları başarısız olursa veya %20'lik dilime girilirse Özel Liste döner
+        if (!selected) {
+            selected = specialMovies[Math.floor(Math.random() * specialMovies.length)];
+        }
+
+        return res.status(200).json(selected);
+    } catch (e) {
+        console.error("API Error:", e);
+        // Hata anında boş dönmek yerine özel listeden rastgele bir tane döndür
+        return res.status(200).json(specialMovies[0]);
     }
 }
