@@ -6,13 +6,20 @@ export default async function handler(req, res) {
     const weightedDirectors = ["Nuri Bilge Ceylan", "Stanley Kubrick", "Andrei Tarkovsky", "Zeki Demirkubuz", "Ingmar Bergman", "Akira Kurosawa", "Fatih Akın", "Wim Wenders","Krzysztof Kieślowski"];
     const weightedMovies = ["The Godfather", "The Truman Show", "Citizen Kane", "Mulholland Drive", "Manchester by the Sea", "Holy Spider","American Psycho","Dead Poets Society","Eternal Sunshine of the Spotless Mind","Insomnia",
         "American History X","The Silence of the Lambs","Jojo Rabbit","Prisoners","Memento","Uncut Gems","Babylon","Der Himmel über Berlin","The Usual Suspects","The Butterfly Effect","The Terminal","Anatomy of a Murder","One Flew Over the Cuckoo's Nest",
-    "Perfect Days","Sevmek Zamanı"];
+    "Perfect Days","Sevmek Zamanı","Piano Piano Bacaksız","Susuz Yaz","Duvara Karşı" ];
     const specialMovies = [
         { title: "One Flew Over the Cuckoo's Nest", poster_path: "images3/gugukkusu.jpg", director_name: "Miloš Forman", isLocal: true, overview: "McMurphy, damarlarında kan yerine elektrik dolaşan, ağzı çok iyi laf yapan özgür ruhlu bir mahkumdur." },
         { title: "Come and See", poster_path: "images3/comeandsee.jpg", director_name: "Elem Klimov", isLocal: true, overview: "Savaşın dehşetini bir çocuğun gözünden anlatan sarsıcı bir yapıt." },
         { title: "Sarmaşık", poster_path: "images3/sarmasik.jpg", director_name: "Tolga Karaçelik", isLocal: true, overview: "Bir armatör iflas eder ve o sırada seferde olan gemisindek mürettebat gemide mahsur kalır.." },
-        { title: "Sevmek Zamanı", poster_path: "images3/sevmekzamani.jpg", director_name: "Metin Erksan", isLocal: true, overview: "Fakir bir ressam, İstanbul Adalar'daki devasa villalardan birinde çalışırken bir kadının fotoğrafına aşık olur." }
-
+        { title: "Sevmek Zamanı", poster_path: "images3/sevmekzamani.jpg", director_name: "Metin Erksan", isLocal: true, overview: "Fakir bir ressam, İstanbul Adalar'daki devasa villalardan birinde çalışırken bir kadının fotoğrafına aşık olur." },
+        { title: "Piano Piano Bacaksız", poster_path: "images3/piano.jpg", director_name: "Tunç Başaran", isLocal: true, overview: "1940'lı yılların İstanbul'unda, II. Dünya Savaşı'nın gölgesinde geçen hikaye, eski bir ahşap konağın günlük yaşamını merkeze alır." },
+        { title: "Susuz Yaz", poster_path: "images3/susuzyaz.jpg", director_name: "Metin Erksan", isLocal: true, overview: "Necati Cumalı'nın aynı adlı eserinden uyarlandı. Anadolu'da suyun ve kadının önemi çok büyüktür. Film suya ve kadına sahip olmak için çalışan tütün işçilerinin zorlu çalışmasını perdeye taşıyor." },
+        { title: "Aşk Filmlerinin Unutulmaz Yönetmeni", poster_path: "images3/askfilmlerinin.jpg", director_name: "Yavuz Turgul", isLocal: true, overview: "Aşk filmi çekmekten sıkılmış olan Haşmet, elinde kendi deyimiyle “toplumsal içerik taşıyan dönem filmi” ne ilişkin bir senaryo ile her kapıyı çalar." },
+        { title: "Duvara Karşı", poster_path: "images3/duvarakarsi.jpg", director_name: "Fatih Akın", isLocal: true, overview: "Almanya'da yaşayan 40'lı yaşlarındaki Cahit ile genç Sibel intihardan vazgeçmiş 2 insandır. Psikoloğunun yardımıyla sorunlarını bir nebze de olsa yenmeyi başaran Cahit, Sibel'e yardım etmek ister. Sibel'se çıkış yolunu evlilikte arar ve eşi doğru dürüst tanımadığı Cahit olur." },
+        { title: "Yol", poster_path: "images3/yol.jpg", director_name: "Yılmaz Güney", isLocal: true, overview: "Yol, yarı açık cezaevinden bir haftalığına izine çıkmış beş mahkumun yol hikayesidir. Önce otobüs ve trenle süren yolculuk boyunca, ayrı ayrı beş mahkumun hayat hikayeleri ve yaşantılarından kesitler aracılığıyla, alabildiğine geniş ve ayrıntılı bir Türkiye panoraması çizer." },
+        { title: "Kader", poster_path: "images3/kader.jpg", director_name: "Zeki Demirkubuz", isLocal: true, overview: "Kör düğüm olmuş bir aşk üçgeni, Bekir, Uğur ve Zagor. Bekir Uğur'a, Uğur Zagor'a, Zagor da serseriliğe aşıktır." },
+        { title: "Sonbahar", poster_path: "images3/sonbahar.jpg", director_name: "Özcan Alper", isLocal: true, overview: "Yusuf, 1997 yılında 22 yaşında üniversite öğrencisiyken girdiği cezaevinden 10 yıl sonra sağlık nedenleriyle tahliye edilir." },
+       
     ];
 
     try {
