@@ -4,11 +4,15 @@ export default async function handler(req, res) {
     const API_KEY = "ff03b5e166257c0a8a91dc2a3d85360d"; 
 
     const weightedDirectors = ["Nuri Bilge Ceylan", "Stanley Kubrick", "Andrei Tarkovsky", "Zeki Demirkubuz", "Ingmar Bergman", "Akira Kurosawa", "Fatih Akın", "Wim Wenders","Krzysztof Kieślowski"];
-    const weightedMovies = ["The Godfather", "No Country for Old Men", "Citizen Kane", "Mulholland Drive", "Manchester by the Sea", "Holy Spider","City of God","Dead Poets Society","Eternal Sunshine of the Spotless Mind","Insomnia",
-        "Seven","The Silence of the Lambs","Jojo Rabbit","Prisoners","Memento","Uncut Gems","Babylon","Der Himmel über Berlin","The Usual Suspects","The Butterfly Effect"];
+    const weightedMovies = ["The Godfather", "The Truman Show", "Citizen Kane", "Mulholland Drive", "Manchester by the Sea", "Holy Spider","American Psycho","Dead Poets Society","Eternal Sunshine of the Spotless Mind","Insomnia",
+        "American History X","The Silence of the Lambs","Jojo Rabbit","Prisoners","Memento","Uncut Gems","Babylon","Der Himmel über Berlin","The Usual Suspects","The Butterfly Effect","The Terminal","Anatomy of a Murder","One Flew Over the Cuckoo's Nest",
+    "Perfect Days","Sevmek Zamanı"];
     const specialMovies = [
-        { title: "Anatomy of a Murder", poster_path: "images3/anatomyofmurder.jpg", director_name: "Otto Preminger", isLocal: true, overview: "James Stewart'ın devleştiği bir mahkeme dramı." },
-        { title: "Come and See", poster_path: "images3/comeandsee.jpg", director_name: "Elem Klimov", isLocal: true, overview: "Savaşın dehşetini bir çocuğun gözünden anlatan sarsıcı bir yapıt." }
+        { title: "One Flew Over the Cuckoo's Nest", poster_path: "images3/gugukkusu.jpg", director_name: "Miloš Forman", isLocal: true, overview: "McMurphy, damarlarında kan yerine elektrik dolaşan, ağzı çok iyi laf yapan özgür ruhlu bir mahkumdur." },
+        { title: "Come and See", poster_path: "images3/comeandsee.jpg", director_name: "Elem Klimov", isLocal: true, overview: "Savaşın dehşetini bir çocuğun gözünden anlatan sarsıcı bir yapıt." },
+        { title: "Sarmaşık", poster_path: "images3/sarmasik.jpg", director_name: "Tolga Karaçelik", isLocal: true, overview: "Bir armatör iflas eder ve o sırada seferde olan gemisindek mürettebat gemide mahsur kalır.." },
+        { title: "Sevmek Zamanı", poster_path: "images3/sevmekzamani.jpg", director_name: "Metin Erksan", isLocal: true, overview: "Fakir bir ressam, İstanbul Adalar'daki devasa villalardan birinde çalışırken bir kadının fotoğrafına aşık olur." }
+
     ];
 
     try {
