@@ -3,10 +3,11 @@ export default async function handler(req, res) {
     const { lang = 'tr' } = req.query;
     const API_KEY = "ff03b5e166257c0a8a91dc2a3d85360d"; 
 
-    const weightedDirectors = ["Nuri Bilge Ceylan", "Stanley Kubrick", "Andrei Tarkovsky", "Zeki Demirkubuz", "Ingmar Bergman", "Akira Kurosawa", "Fatih Akın", "Wim Wenders","Krzysztof Kieślowski"];
-    const weightedMovies = ["The Godfather", "The Truman Show", "Citizen Kane", "Mulholland Drive", "Manchester by the Sea", "Holy Spider","American Psycho","Dead Poets Society","Eternal Sunshine of the Spotless Mind","Insomnia",
-        "American History X","The Silence of the Lambs","Jojo Rabbit","Prisoners","Memento","Uncut Gems","Babylon","Der Himmel über Berlin","The Usual Suspects","The Butterfly Effect","The Terminal","Anatomy of a Murder","One Flew Over the Cuckoo's Nest",
-    "Perfect Days","Sevmek Zamanı","Piano Piano Bacaksız","Susuz Yaz","Duvara Karşı","Southpaw","Fargo","Naked","Zodiac","Shutter Island","Memories of Murder","There Will Be Blood","Lincoln","The Wrestler","Requiem for a Dream","The Elephant Man","Eraserhead","Manchester by the Sea","No Country for Old Men" ];
+    const weightedDirectors = ["Nuri Bilge Ceylan", "Stanley Kubrick", "Andrei Tarkovsky", "Zeki Demirkubuz", "Ingmar Bergman", "Akira Kurosawa", "Fatih Akın", "Wim Wenders","Krzysztof Kieślowski","David Lynch","David Fincher"];
+    const weightedMovies = ["The Godfather", "The Truman Show", "Citizen Kane", "Mulholland Drive", "Manchester by the Sea", "Holy Spider","American Psycho","Dead Poets Society","Eternal Sunshine of the Spotless Mind","Insomnia","Birdman or (The Unexpected Virtue of Ignorance)","The Grand Budapest Hotel",
+        "American History X","The Silence of the Lambs","Jojo Rabbit","Prisoners","Memento","Uncut Gems","Babylon","Der Himmel über Berlin","The Usual Suspects","The Butterfly Effect","The Terminal","Anatomy of a Murder","One Flew Over the Cuckoo's Nest","Interstellar","Cidade de Deus","The Silence of the Lambs",
+    "Perfect Days","Sevmek Zamanı","Piano Piano Bacaksız","Susuz Yaz","Duvara Karşı","Southpaw","Fargo","Naked","Zodiac","Shutter Island","Memories of Murder","There Will Be Blood","Lincoln","The Wrestler","Requiem for a Dream","The Elephant Man","Eraserhead","Manchester by the Sea","No Country for Old Men",
+"Léon","The Great Dictator","Modern Times"];
     const specialMovies = [
         { title: "One Flew Over the Cuckoo's Nest", poster_path: "images3/gugukkusu.jpg", director_name: "Miloš Forman", isLocal: true, overview: "McMurphy, damarlarında kan yerine elektrik dolaşan, ağzı çok iyi laf yapan özgür ruhlu bir mahkumdur." },
         { title: "Come and See", poster_path: "images3/comeandsee.jpg", director_name: "Elem Klimov", isLocal: true, overview: "Savaşın dehşetini bir çocuğun gözünden anlatan sarsıcı bir yapıt." },
