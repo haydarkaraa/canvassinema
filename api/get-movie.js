@@ -7,7 +7,8 @@ export default async function handler(req, res) {
     const weightedMovies = ["The Godfather", "The Truman Show", "Citizen Kane", "Mulholland Drive", "Manchester by the Sea", "Holy Spider","American Psycho","Dead Poets Society","Eternal Sunshine of the Spotless Mind","Insomnia","Birdman or (The Unexpected Virtue of Ignorance)","The Grand Budapest Hotel",
         "American History X","The Silence of the Lambs","Jojo Rabbit","Prisoners","Memento","Uncut Gems","Babylon","Der Himmel über Berlin","The Usual Suspects","The Butterfly Effect","The Terminal","Anatomy of a Murder","One Flew Over the Cuckoo's Nest","Interstellar","Cidade de Deus","The Silence of the Lambs",
     "Perfect Days","Sevmek Zamanı","Piano Piano Bacaksız","Susuz Yaz","Duvara Karşı","Southpaw","Fargo","Naked","Zodiac","Shutter Island","Memories of Murder","There Will Be Blood","Lincoln","The Wrestler","Requiem for a Dream","The Elephant Man","Eraserhead","Manchester by the Sea","No Country for Old Men",
-"Léon","The Great Dictator","Modern Times","One Flew Over the Cuckoo's Nest","Sarmaşık","Bir Zamanlar Anadolu'da","Filler ve Çimen","Come and See"];
+"Léon","The Great Dictator","Modern Times","One Flew Over the Cuckoo's Nest","Sarmaşık","Bir Zamanlar Anadolu'da","Filler ve Çimen","Come and See","La Haine","Il buono, il brutto, il cattivo","GoodFellas","Limonata","Sen Aydınlatırsın Geceyi","Dom za vešanje","Подземље","It’s a Wonderful Life","Interstellar",
+"Whiplash","Μια αιωνιότητα και μια μέρα","Paris, Texas","The Thing","Trois couleurs : Rouge"];
     const specialMovies = [
         { title: "Bir Zamanlar Anadolu'da", poster_path: "images3/birzamanlar.jpg", director_name: "Nuri Bilge Ceylan", isLocal: true, overview: "Gece bitmek bilmez. Anadolu’nun bozkırında saatlerdir süren bir cinayet soruşturması herkesi yormuştur. Savcı, komiser, jandarma ve doktordan oluşan bir ekip, Kenan’la Ramazan’ın gömdüğü cesedi aramaktadır. Kenan, Yaşar’ı gömerken sarhoş olduğunu, yalnızca top gibi bir ağacı ve bir çeşmeyi hatırladığını söylemiştir. Ceset ya o tepenin ardındadır, ya bu tepenin… Engebeli, yılankavi yolların sırtında iş uzadıkça uzar.." },
         { title: "Kış Uykusu", poster_path: "images3/kisuykusu.jpg", director_name: "Nuri Bilge Ceylan", isLocal: true, overview: "Aydın emekli bir tiyatrocudur; oyunculuğu bıraktıktan sonra Kapadokya'ya babasından yadigar kalan butik oteli işletmek için geri döner. Aydın o günden sonra başlayan kış uykusu..." },
@@ -18,16 +19,26 @@ export default async function handler(req, res) {
         { title: "Yol", poster_path: "images3/yol.jpg", director_name: "Yılmaz Güney", isLocal: true, overview: "Yol, yarı açık cezaevinden bir haftalığına izine çıkmış beş mahkumun yol hikayesidir. Önce otobüs ve trenle süren yolculuk boyunca, ayrı ayrı beş mahkumun hayat hikayeleri ve yaşantılarından kesitler aracılığıyla, alabildiğine geniş ve ayrıntılı bir Türkiye panoraması çizer." },
         { title: "Kader", poster_path: "images3/kader.jpg", director_name: "Zeki Demirkubuz", isLocal: true, overview: "Kör düğüm olmuş bir aşk üçgeni, Bekir, Uğur ve Zagor. Bekir Uğur'a, Uğur Zagor'a, Zagor da serseriliğe aşıktır." },
         { title: "Sonbahar", poster_path: "images3/sonbahar.jpg", director_name: "Özcan Alper", isLocal: true, overview: "Yusuf, 1997 yılında 22 yaşında üniversite öğrencisiyken girdiği cezaevinden 10 yıl sonra sağlık nedenleriyle tahliye edilir." },
-        { title: "Brothers", poster_path: "images3/brothers.jpg", director_name: "Jim Sheridan", isLocal: true, overview: "Sam Cahill, Afganistan dağlarında terörle savaşmak üzere gönderilmiş bir Amerikan askeridir. Eşi Grace ve çocuklarının yanına erkek kardeşi Tommy taşınır. Tommy kardeşinin ailesini korumak için onların yanındadır, oysa değişken karakteri ve tuhaf alışkanlıkları aile içinde sorun yaratır. Zaman geçtikçe Tommy ve Grace birbirlerini daha iyi anlamaya ve birbirlerinden hoşlanmaya başlarlar. Sam'in Afganistan'da yaşadığı travmalarla birlikte eve dönmesi ise bütün dengeleri değişecektir." },
-       
+        { title: "Uzak", poster_path: "images3/uzak.jpg", director_name: "Nuri Bilge Ceylan", isLocal: true, overview: "Yusuf kasabada ona bir gelecek olmadığına karar vererek İstanbul'a gelmiştir. Daha önce şehre yerleşmiş akrabası Mahmut'un yanında kalıp uzaklara giden gemilerde miço olarak iş bulmak ister. " },
+        { title: "Sen Aydınlatırsın Geceyi", poster_path: "images3/sengeceyi.jpg", director_name: "Onur Ünlü", isLocal: true, overview: "Cemal, Akhisar'da babası ile aynı evde yaşayan ve aynı berber dükkanında çalışan genç bir adamdır. Herkesin birbirini tanıdığı bu kasabada, gayet sıradan gibi görünen insanların bazı olağanüstü güçleri vardır. Ama hiçbiri süper kahraman değildir, bilakis sıradan problemleri olan, sıradan insanlardır. " },
+         { title: "Underground", poster_path: "images3/underground.jpg", director_name: "Emir Kusturica", isLocal: true, overview: "Alman ordusunun bombardımanı altında kalan Belgrad’da komünist Marko’nun hedeflediği ortam fazlasıyla sağlanmıştır. Zekasını sinsiliğiyle birleştiren Marko, arkadaşı Blacky ve yoldaşlarını yeraltında bulunan bir mahzene silah üretmek için yerleştirir. " },
+          { title: "Uzak", poster_path: "images3/uzak.jpg", director_name: "Nuri Bilge Ceylan", isLocal: true, overview: "Yusuf kasabada ona bir gelecek olmadığına karar vererek İstanbul'a gelmiştir. Daha önce şehre yerleşmiş akrabası Mahmut'un yanında kalıp uzaklara giden gemilerde miço olarak iş bulmak ister. " },
+           { title: "Uzak", poster_path: "images3/uzak.jpg", director_name: "Nuri Bilge Ceylan", isLocal: true, overview: "Yusuf kasabada ona bir gelecek olmadığına karar vererek İstanbul'a gelmiştir. Daha önce şehre yerleşmiş akrabası Mahmut'un yanında kalıp uzaklara giden gemilerde miço olarak iş bulmak ister. " },
+            { title: "Uzak", poster_path: "images3/uzak.jpg", director_name: "Nuri Bilge Ceylan", isLocal: true, overview: "Yusuf kasabada ona bir gelecek olmadığına karar vererek İstanbul'a gelmiştir. Daha önce şehre yerleşmiş akrabası Mahmut'un yanında kalıp uzaklara giden gemilerde miço olarak iş bulmak ister. " },
+             { title: "Uzak", poster_path: "images3/uzak.jpg", director_name: "Nuri Bilge Ceylan", isLocal: true, overview: "Yusuf kasabada ona bir gelecek olmadığına karar vererek İstanbul'a gelmiştir. Daha önce şehre yerleşmiş akrabası Mahmut'un yanında kalıp uzaklara giden gemilerde miço olarak iş bulmak ister. " },
+              { title: "Uzak", poster_path: "images3/uzak.jpg", director_name: "Nuri Bilge Ceylan", isLocal: true, overview: "Yusuf kasabada ona bir gelecek olmadığına karar vererek İstanbul'a gelmiştir. Daha önce şehre yerleşmiş akrabası Mahmut'un yanında kalıp uzaklara giden gemilerde miço olarak iş bulmak ister. " },
+               { title: "Uzak", poster_path: "images3/uzak.jpg", director_name: "Nuri Bilge Ceylan", isLocal: true, overview: "Yusuf kasabada ona bir gelecek olmadığına karar vererek İstanbul'a gelmiştir. Daha önce şehre yerleşmiş akrabası Mahmut'un yanında kalıp uzaklara giden gemilerde miço olarak iş bulmak ister. " },
+                { title: "Uzak", poster_path: "images3/uzak.jpg", director_name: "Nuri Bilge Ceylan", isLocal: true, overview: "Yusuf kasabada ona bir gelecek olmadığına karar vererek İstanbul'a gelmiştir. Daha önce şehre yerleşmiş akrabası Mahmut'un yanında kalıp uzaklara giden gemilerde miço olarak iş bulmak ister. " },
+                 { title: "Uzak", poster_path: "images3/uzak.jpg", director_name: "Nuri Bilge Ceylan", isLocal: true, overview: "Yusuf kasabada ona bir gelecek olmadığına karar vererek İstanbul'a gelmiştir. Daha önce şehre yerleşmiş akrabası Mahmut'un yanında kalıp uzaklara giden gemilerde miço olarak iş bulmak ister. " },
+
     ];
 
     try {
         const rand = Math.random();
         let selected = null;
 
-        // --- %40 YÖNETMEN ---
-        if (rand < 0.4) {
+        // --- %20 YÖNETMEN ---
+        if (rand < 0.2) {
             const director = weightedDirectors[Math.floor(Math.random() * weightedDirectors.length)];
             const pRes = await fetch(`https://api.themoviedb.org/3/search/person?api_key=${API_KEY}&query=${encodeURIComponent(director)}&language=${lang}`);
             const pData = await pRes.json();
@@ -41,7 +52,7 @@ export default async function handler(req, res) {
                 }
             }
         } 
-        // --- %40 FİLM İSMİ (YÖNETMEN BİLGİSİ EKLENDİ) ---
+        // --- %60 FİLM İSMİ (YÖNETMEN BİLGİSİ EKLENDİ) ---
         else if (rand < 0.8) {
             const title = weightedMovies[Math.floor(Math.random() * weightedMovies.length)];
             const sRes = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(title)}&language=${lang}`);
