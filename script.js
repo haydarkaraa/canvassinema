@@ -107,16 +107,21 @@ document.addEventListener('DOMContentLoaded', () => {
         updateSelectionScreen();
     };
 
-    async function populateImageGrid() {
-        const grid = document.getElementById('image-selection-grid');
-        grid.innerHTML = '<div class="spinner"></div>';
-        const ids = [...localImagePool].sort(() => 0.5 - Math.random()).slice(0, 4);
-        grid.innerHTML = ids.map(id => `
-            <div class="image-item" onclick="handleChoice('images/${id}.jpg')">
-                <img src="images/${id}.jpg">
-            </div>
-        `).join('');
-    }
+async function populateImageGrid() {
+    const grid = document.getElementById('image-selection-grid');
+    grid.innerHTML = '<div class="spinner"></div>';
+    
+    // Rastgele 4 öğe seç
+    const selectedItems = [...localImagePool].sort(() => 0.5 - Math.random()).slice(0, 4);
+    
+    grid.innerHTML = selectedItems.map(item => `
+        <div class="image-item" onclick="handleChoice('images/${item.id}.jpg')">
+            <img src="images/${item.id}.jpg" 
+                 alt="${item.name}" 
+                 title="${item.name}">
+        </div>
+    `).join('');
+}
 
     window.handleChoice = function(imgSrc) {
         userSelections.push(imgSrc);
