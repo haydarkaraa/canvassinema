@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 { id: "1975.1.209", name: "Evening Calm" },
 { id: "1975.1.642", name: "Landscape with a Distant Town" },
 { id: "1975.1.644", name: "A View of Moulins" },
-{ id: "1975.1.691", name: "Landscape - Auguste RENOIR" },
+{ id: "1975.1.691", name: "Landscape" },
 { id: "1975.280.2", name: "Ship by Moonlight" },
 { id: "1975.280.4", name: "Shepherd with a Flock of Sheep" },
 { id: "1977.258.2", name: "New York Harbor with Brooklyn Bridge" },
@@ -28,18 +28,63 @@ document.addEventListener('DOMContentLoaded', () => {
 { id: "1988.221", name: "Porte de la Reine at Aigues-Mortes" },
 { id: "1990.196", name: "A Forest at Dawn with a Deer Hunt" },
 { id: "1991.130", name: "Arques-la-Bataille" },
+{ id: "1992.103.4", name: "The Seine at Bougival" },
+{ id: "1993.132", name: "Wheat Field with Cypresses" },
+{ id: "1994.420", name: "Mont Sainte-Victoire" },
+{ id: "1997.149.2", name: "View of Cagnes" },
+{ id: "1998.325.1", name: "Olive Trees" },
 
 
 
+{ id: "2000.51", name: "Eserin Adı 1" },
+{ id: "2002.62.3", name: "Eserin Adı 1" },
+{ id: "2003.42.40", name: "Eserin Adı 1" },
+{ id: "2003.42.54", name: "Eserin Adı 1" },
+{ id: "2009.400.109", name: "Eserin Adı 1" },
+{ id: "2009.400.110", name: "Eserin Adı 1" },
+{ id: "29.100.113", name: "Eserin Adı 1" },
+{ id: "29.100.64", name: "Eserin Adı 1" },
+{ id: "29.100.67", name: "Eserin Adı 1" },
+{ id: "29.100.112", name: "Eserin Adı 1" },
+{ id: "29.100.113", name: "Eserin Adı 1" },
+{ id: "29.100.194", name: "Eserin Adı 1" },
 
 
-        "1994.420","1997.149.2","1998.325.1",
-         "2000.51","2002.62.3","2003.42.40","2003.42.54","2009.400.109","2009.400.110","29.100.113", "29.100.64","29.100.67","29.100.112","29.100.113","29.100.194",
-         "32.100.11", "39.182",
-         "49.30", 
-         "54.143.2","56.13","56.135.1","56.135.7","56.135.8","56.135.9","57.181","59.16.5",
-         "61.190","61.101.5","64.124","64.210",
-         "71.23","71.60","71.75","71.123",]; 
+
+{ id: "32.100.11", name: "Eserin Adı 1" },
+{ id: "39.182", name: "Eserin Adı 1" },
+
+
+
+{ id: "49.30", name: "Eserin Adı 1" },
+
+
+
+{ id: "54.143.2", name: "Eserin Adı 1" },
+{ id: "56.13", name: "Eserin Adı 1" },
+{ id: "56.135.1", name: "Eserin Adı 1" },
+{ id: "56.135.7", name: "Eserin Adı 1" },
+{ id: "56.135.8", name: "Eserin Adı 1" },
+{ id: "56.135.9", name: "Eserin Adı 1" },
+{ id: "57.181", name: "Eserin Adı 1" },
+{ id: "59.16.5", name: "Eserin Adı 1" },
+
+
+
+{ id: "61.190", name: "Eserin Adı 1" },
+{ id: "61.101.5", name: "Eserin Adı 1" },
+{ id: "64.124", name: "Eserin Adı 1" },
+{ id: "64.210", name: "Eserin Adı 1" },
+
+
+
+{ id: "71.23", name: "Eserin Adı 1" },
+{ id: "71.60", name: "Eserin Adı 1" },
+{ id: "71.75", name: "Eserin Adı 1" },
+{ id: "71.123", name: "Eserin Adı 1" },
+
+         
+]; 
     
     
 
