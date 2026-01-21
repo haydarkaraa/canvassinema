@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     const localImagePool = [{ id: "13.66", name: "View of the Domaine Saint-Joseph" },
 { id: "13.130", name: "A Ship in a Stormy Sea" },
-{ id: "17.120.234", name: "Eserin Adı 1" },
-{ id: "17.120.234", name: "Eserin Adı 1" },
-{ id: "17.120.234", name: "Eserin Adı 1" },
-{ id: "17.120.234", name: "Eserin Adı 1" },
-{ id: "17.120.234", name: "Eserin Adı 1" },
-{ id: "17.120.234", name: "Eserin Adı 1" },
-{ id: "17.120.234", name: "Eserin Adı 1" },
-{ id: "17.120.234", name: "Eserin Adı 1" },
+{ id: "1972.118.281", name: "Nursery on Schenkweg" },
+{ id: "1974.356.32", name: "A Road in Louveciennes" },
+{ id: "1975.1.160", name: "Trees and Houses Near the Jas de Bouffan" },
+{ id: "1975.1.163", name: "Valley with Fir " },
+{ id: "1975.1.164", name: "Pines Along the Shore" },
+{ id: "1975.1.167", name: "View of Saint-Valéry-sur-Somme" },
+{ id: "1975.1.180", name: "Railroad Bridge over the Marne at Joinville" },
+{ id: "1975.1.182", name: "The Rocky Path in the Morvan" },
 
 
 
 
 
-        "1972.118.281","1974.356.32","1975.1.160","1975.1.163","1975.1.164","1975.1.167","1975.1.180","1975.1.182","1975.1.194","1975.1.202","1975.1.209","1975.1.642","1975.1.644","1975.1.691","1975.280.2","1978.493","1980.342","1984.433.323","1994.420","1997.149.2","1998.325.1",
+        "1975.1.194","1975.1.202","1975.1.209","1975.1.642","1975.1.644","1975.1.691","1975.280.2","1978.493","1980.342","1984.433.323","1994.420","1997.149.2","1998.325.1",
          "2000.51","2002.62.3","2003.42.40","2003.42.54","2009.400.109","2009.400.110","29.100.113", "29.100.64","29.100.67","29.100.112","29.100.113","29.100.194",
          "32.100.11", "39.182",
          "49.30", 
