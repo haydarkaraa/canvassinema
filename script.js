@@ -1,5 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const localImagePool = ["13.66","17.120.234","1972.118.281","1974.356.32","1975.1.160","1975.1.163","1975.1.164","1975.1.167","1975.1.180","1975.1.182","1975.1.194","1975.1.202","1975.1.209","1975.1.642","1975.1.644","1975.1.691","1978.493","1980.342","1984.433.323","1994.420","1997.149.2","1998.325.1",
+    const localImagePool = [{ id: "13.66", name: "View of the Domaine Saint-Joseph" },
+{ id: "13.130", name: "A Ship in a Stormy Sea" },
+{ id: "17.120.234", name: "Eserin Adı 1" },
+{ id: "17.120.234", name: "Eserin Adı 1" },
+{ id: "17.120.234", name: "Eserin Adı 1" },
+{ id: "17.120.234", name: "Eserin Adı 1" },
+{ id: "17.120.234", name: "Eserin Adı 1" },
+{ id: "17.120.234", name: "Eserin Adı 1" },
+{ id: "17.120.234", name: "Eserin Adı 1" },
+{ id: "17.120.234", name: "Eserin Adı 1" },
+
+
+
+
+
+        "1972.118.281","1974.356.32","1975.1.160","1975.1.163","1975.1.164","1975.1.167","1975.1.180","1975.1.182","1975.1.194","1975.1.202","1975.1.209","1975.1.642","1975.1.644","1975.1.691","1975.280.2","1978.493","1980.342","1984.433.323","1994.420","1997.149.2","1998.325.1",
          "2000.51","2002.62.3","2003.42.40","2003.42.54","2009.400.109","2009.400.110","29.100.113", "29.100.64","29.100.67","29.100.112","29.100.113","29.100.194",
          "32.100.11", "39.182",
          "49.30", 
@@ -8,38 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
          "71.23","71.60","71.75","71.123",]; 
     
     
-// 1. ADIM: Özel Listeyi Tanımla (images3 klasöründen)
-const specialMovies = [
-    {
-        title: "Anatomy of a Murder",
-        poster_path: "images3/anatomyofmurder.jpg",
-        overview: "James Stewart, karısına asılan bir barmeni öldürmekle suçlanan subayı (Ben Gazzara) savunan kasaba avukatı rolünde.",
-        director_name: "Otto Preminger",
-        isLocal: true
-    },
-    {
-            title: "Come and See",
-            poster_path: "images3/comeandsee.jpg",
-            overview: "1943 yılında Belarus’ta Naziler tarafından gerçekleştirilen vahşeti küçük bir çocuğun hikayesi üzerinden bu sarsıcı ve rahatsız edici film, gelmiş geçmiş en korkunç savaş filmlerinden biridir.",
-            director_name: "Elem Klimov",
-            isLocal: true
-        },
-         {
-            title: "12 Angry Men",
-            poster_path: "images3/12angrymen.jpg",
-            overview: "Latin kökenli bir Amerikalı genç babasını bıçaklayarak öldürdüğü gerekçesiyle birinci dereceden cinayetle suçlanır ve mahkeme önüne çıkarılır.",
-            director_name: "Sidney Lumet",
-            isLocal: true
-        },
-        {
-            title: "One Flew Over the Cuckoo’s Nest",
-            poster_path: "images3/gugukkusu.jpg",
-            overview: "Randle P. McMurphy, deli numarası yaparak damarlarında kan yerine elektrik dolaşan, ağzı çok iyi laf yapan özgür ruhlu bir mahkumdur.",
-            director_name: "Miloš Forman",
-            isLocal: true
-        },
-    // Buraya images3 içinde posteri olan diğer özel filmlerini ekle
-];
+
 
     let questionIndex = 0;
     let currentLang = 'tr';
