@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-{ id: "39.182", name: "Tahitian Landscape" },
+
 
 
 
@@ -91,9 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-{ id: "71.60", name: "Eserin Adı 1" },
-{ id: "71.75", name: "Eserin Adı 1" },
-{ id: "71.123", name: "Eserin Adı 1" },
+{ id: "71.60", name: "The Farrier" },
+
 
          
 ]; 
