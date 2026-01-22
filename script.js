@@ -31,54 +31,66 @@ document.addEventListener('DOMContentLoaded', () => {
 { id: "1992.103.4", name: "The Seine at Bougival" },
 { id: "1993.132", name: "Wheat Field with Cypresses" },
 { id: "1994.420", name: "Mont Sainte-Victoire" },
+{ id: "1996.382", name: "Surf, Isles of Shoals" },
 { id: "1997.149.2", name: "View of Cagnes" },
 { id: "1998.325.1", name: "Olive Trees" },
+{ id: "1998.325.2", name: "Water Lilies" },
+{ id: "1999.442", name: "The Kearsarge at Boulogne" },
 
 
 
-{ id: "2000.51", name: "Eserin Adı 1" },
-{ id: "2002.62.3", name: "Eserin Adı 1" },
-{ id: "2003.42.40", name: "Eserin Adı 1" },
-{ id: "2003.42.54", name: "Eserin Adı 1" },
-{ id: "2009.400.109", name: "Eserin Adı 1" },
-{ id: "2009.400.110", name: "Eserin Adı 1" },
-{ id: "29.100.113", name: "Eserin Adı 1" },
-{ id: "29.100.64", name: "Eserin Adı 1" },
-{ id: "29.100.67", name: "Eserin Adı 1" },
-{ id: "29.100.112", name: "Eserin Adı 1" },
-{ id: "29.100.113", name: "Eserin Adı 1" },
-{ id: "29.100.194", name: "Eserin Adı 1" },
+{ id: "2001.202.5", name: "Poppy Fields near Argenteuil" },
+{ id: "2001.39", name: "Lago Avernus" },
+{ id: "2001.45", name: "View near Rouen" },
+{ id: "2002.62.3", name: "Gray Weather, Grande Jatte" },
+{ id: "2003.42.1", name: "Edge of a Wood" },
+{ id: "2003.42.3", name: "Classical Landscape with Figures" },
+{ id: "2003.42.4", name: "Lake Fucino and the Abruzzi Mountains" },
+{ id: "2003.42.12", name: "View of Beirut" },
+{ id: "2003.42.13", name: "Waterfall at Terni" },
+{ id: "2003.42.40", name: "A Shepherd and a Rider on a Country Lane" },
+{ id: "2003.42.44", name: "View in the Gardens of the Villa d'Este" },
+{ id: "2003.42.45", name: "View of Porta Pinciana from the Gardens of the Villa Ludovisi" },
+{ id: "2003.42.48", name: "View of the Colosseum and the Arch of Constantine from the Palatine" },
+{ id: "2003.42.54", name: "The Banks of the Rance, Brittany" },
+{ id: "2003.435", name: "The Brook in the Woods" },
+{ id: "2009.400.109", name: "Landscape with the Pyramid of Gaius Cestius, Rome" },
+{ id: "2009.400.110", name: "View of the Colosseum, Rome" },
+{ id: "29.100.64", name: "Mont Sainte-Victoire and the Viaduct of the Arc River Valley" },
+{ id: "29.100.67", name: "The Gulf of Marseille Seen from L'Estaque" },
+{ id: "29.100.112", name: "La Grenouillère" },
+{ id: "29.100.113", name: "Bridge over a Pond of Water Lilies" },
+{ id: "29.100.194", name: "Rocks at Fontainebleau" },
 
 
 
-{ id: "32.100.11", name: "Eserin Adı 1" },
-{ id: "39.182", name: "Eserin Adı 1" },
+
+{ id: "39.182", name: "Tahitian Landscape" },
 
 
 
-{ id: "49.30", name: "Eserin Adı 1" },
+{ id: "49.30", name: "Cypresses" },
 
 
 
-{ id: "54.143.2", name: "Eserin Adı 1" },
-{ id: "56.13", name: "Eserin Adı 1" },
-{ id: "56.135.1", name: "Eserin Adı 1" },
-{ id: "56.135.7", name: "Eserin Adı 1" },
-{ id: "56.135.8", name: "Eserin Adı 1" },
-{ id: "56.135.9", name: "Eserin Adı 1" },
-{ id: "57.181", name: "Eserin Adı 1" },
-{ id: "59.16.5", name: "Eserin Adı 1" },
+{ id: "54.143.2", name: "A Farm in Brittany" },
+{ id: "56.13", name: "The Flowering Orchard" },
+{ id: "56.135.1", name: "View of Vétheuil" },
+{ id: "56.135.4", name: "Morning on the Seine near Giverny" },
+{ id: "56.135.5", name: "Ile aux Fleurs near Vétheuil" },
+{ id: "56.135.7", name: "View of the Seacoast near Wargemont in Normandy" },
+{ id: "56.135.9", name: "Hills around the Bay of Moulin Huet, Guernsey" },
+{ id: "57.181", name: "Gardanne" },
+{ id: "59.16.5", name: "View of the Seine" },
 
 
 
-{ id: "61.190", name: "Eserin Adı 1" },
-{ id: "61.101.5", name: "Eserin Adı 1" },
-{ id: "64.124", name: "Eserin Adı 1" },
-{ id: "64.210", name: "Eserin Adı 1" },
+{ id: "61.190", name: "The Farm at Les Collettes, Cagnes" },
+{ id: "61.101.5", name: "The Pool at Jas de Bouffan" },
+{ id: "64.210", name: "The Bodmer Oak, Fontainebleau Forest" },
 
 
 
-{ id: "71.23", name: "Eserin Adı 1" },
 { id: "71.60", name: "Eserin Adı 1" },
 { id: "71.75", name: "Eserin Adı 1" },
 { id: "71.123", name: "Eserin Adı 1" },
