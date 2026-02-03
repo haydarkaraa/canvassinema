@@ -324,60 +324,87 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // 6. ÖNERİ VE FALLBACK SİSTEMİ
+// GELİŞMİŞ ÖNERİ ALGORİTMASI (Gerçek API Bağlantılı)
     async function showRecommendation() {
         const screen = document.getElementById('recommendation-screen');
         const content = document.getElementById('recommendation-content');
+        const loader = document.getElementById('loading');
         
+        // Ekran geçişleri
         document.getElementById('selection-screen').classList.add('hidden');
         screen.classList.remove('hidden');
-        document.getElementById('loading').classList.remove('hidden');
-        content.innerHTML = '';
+        loader.classList.remove('hidden');
+        content.innerHTML = ''; // İçeriği temizle
 
         try {
-            // API ÇAĞRISI SİMÜLASYONU
-            // Gerçek kodunda burası fetch(...) olacak
-            // Hata simülasyonu için rastgele hata fırlatalım:
-            if(Math.random() < 0.1) throw new Error("TMDB Ulaşılamadı");
-
-            // Normal API akışı...
-            // (Burada fetch kodların olacak)
-            // Örnek başarılı sonuç:
-            renderMovie({
-                title: "Stalker",
-                poster_path: "/lOe9qC9u2b1X6zX4qFw5.jpg",
-                overview: "Bir iz sürücünün hikayesi...",
-                isLocal: false
-            }, "Özel Seçki");
-
-        } catch (error) {
-            console.warn("API Hatası, Yerel Fallback (images3) Devrede:", error);
+            // 1. GERÇEK API İSTEĞİ (Simülasyon Değil!)
+            const resp = await fetch(`/api/get-movie?lang=${currentLang}`);
             
-            // FALLBACK: images3 Klasöründen Rastgele Film
-            const localMovie = privateSpecialList[Math.floor(Math.random() * privateSpecialList.length)];
+            if (!resp.ok) throw new Error("API Bağlantı Hatası");
             
-            renderMovie(localMovie, "Canvas Güvenli Mod");
+            const data = await resp.json();
+            
+            // 2. Etiket Belirleme
+            let label = "Özel Seçki";
+            if (data.isLocal) {
+                label = "Canvas Güvenli Mod";
+            } else if (data.director_name) {
+                label = data.director_name === "Özel Seçki" ? "Kült Seçki" : "Yönetmen: " + data.director_name;
+            }
+
+            // 3. Ekrana Bas
+            renderMovieResult(data, label);
+
+        } catch (e) {
+            console.warn("Sistem Hatası, Yerel Listeye Geçiliyor:", e);
+            
+            // HER ŞEY ÇÖKERSE SON ÇARE (Frontend Fallback)
+            // Bu liste images3 klasöründeki dosyalarınla eşleşmeli
+            const emergencyList = [
+                 { title: "Bir Zamanlar Anadolu'da", poster_path: "images3/birzamanlar.jpg", isLocal: true, overview: "Bozkırın ortasında bir cinayet..." },
+                 { title: "Sevmek Zamanı", poster_path: "images3/sevmekzamani.jpg", isLocal: true, overview: "Surete aşık olan adam..." },
+                 { title: "Kış Uykusu", poster_path: "images3/kisuykusu.jpg", isLocal: true, overview: "Aydın'ın kış uykusu..." }
+            ];
+            
+            const fallbackMovie = emergencyList[Math.floor(Math.random() * emergencyList.length)];
+            renderMovieResult(fallbackMovie, "Canvas Güvenli Mod");
+            
         } finally {
-            document.getElementById('loading').classList.add('hidden');
+            loader.classList.add('hidden');
         }
     }
 
-    function renderMovie(data, label) {
+    function renderMovieResult(data, label) {
         const content = document.getElementById('recommendation-content');
         
-        // Resim yolu kontrolü: Yerelse olduğu gibi, API ise başına link ekle
-        const posterSrc = data.isLocal ? data.poster_path : `https://image.tmdb.org/t/p/w780${data.poster_path}`;
+        // Resim Yolu Kontrolü:
+        // Eğer yerelse (isLocal: true) -> olduğu gibi kullan (images3/...)
+        // Eğer API'den geliyorsa -> Başına TMDB linki ekle
+        let posterSrc = data.poster_path;
+        if (!data.isLocal && posterSrc) {
+            posterSrc = `https://image.tmdb.org/t/p/w780${data.poster_path}`;
+        }
+        
+        // Eğer resim yoksa placeholder koy
+        if (!posterSrc) posterSrc = "images2/fff.jpg";
 
-        currentMovie = { title: data.title, poster: posterSrc }; // Story için kaydet
+        // Global değişkene ata (Story paylaşımı için)
+        currentMovie = { 
+            title: data.title, 
+            poster: posterSrc,
+            overview: data.overview || "Açıklama bulunamadı.",
+            director: label
+        };
 
         content.innerHTML = `
             <div class="recommendation-item fade-in">
                 <img src="${posterSrc}" style="width:280px; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                <h2 style="margin: 1.5rem 0 0.5rem 0;">${data.title}</h2>
-                <p style="color:var(--primary-red); font-weight:bold;">${label}</p>
-                <p style="opacity:0.8;">${data.overview || ""}</p>
-            </div>
-        `;
+                <h2 style="margin: 1.5rem 0 0.5rem 0; font-size: 1.8rem;">${data.title}</h2>
+                <p style="color:var(--primary-red); font-weight:bold; letter-spacing:1px; margin-bottom:1rem;">${label}</p>
+                <p style="max-width:600px; margin:0 auto; opacity:0.8; line-height:1.6;">
+                    ${data.overview ? data.overview.substring(0, 300) + "..." : ""}
+                </p>
+            </div>`;
     }
 
     window.goHome = function() {
