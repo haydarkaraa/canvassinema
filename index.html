@@ -2,109 +2,88 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canvas Sinema | Ruh Haline Göre Film Önerileri</title>
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://canvassinema.com/">
-<meta property="og:title" content="Canvas Sinema | Ruh Haline Göre Film Önerileri">
-<meta property="og:description" content="Sanatsal kareler üzerinden ruh halini seç, sana en uygun kült film önerisini anında al.">
-<meta property="og:image" content="https://canvassinema.com/images/og-preview.jpg">
-
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://canvassinema.com/">
-<meta property="twitter:title" content="Canvas Sinema | Ruh Haline Göre Film Önerileri">
-<meta property="twitter:description" content="Ruh haline göre sanatsal film önerileri al. Nuri Bilge Ceylan'dan Kubrick'e özel seçkiler.">
-<meta property="twitter:image" content="https://canvassinema.com/images2/og-preview.jpg">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Canvas Sinema</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <link rel="icon" type="image/png" href="/images2/favicon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images2/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/images2/favicon-16x16.png">
-
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-
-<link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#C4A484"> 
-
 </head>
 <body data-theme="dark">
 
-    <div class="top-left-logo">
-        <img src="canvas-logo.svg" alt="Canvas Sinema Logosu">
+    <div class="top-icons">
+        <a href="mailto:canvassinema@gmail.com" class="icon-btn" title="İletişim">✉️</a>
+        <button class="icon-btn" onclick="toggleTheme()" title="Temayı Değiştir">🎨</button>
+        <button class="icon-btn" onclick="toggleLang()" title="Dil Değiştir">🌐</button>
     </div>
 
-    <div class="top-bar">
-        <div class="icon-nav">
-            <div class="nav-item">
-                <i class="fa-solid fa-plus" id="suggest-movie-btn"></i>
-                <span class="tooltip">canvassinema@gmail.com</span>
-            </div>
-            <div class="nav-item">
-                <i class="fa-solid fa-envelope" id="contact-btn"></i>
-                <span class="tooltip">canvassinema@gmail.com</span>
-            </div>
-            <div class="nav-item">
-                <i class="fa-solid fa-palette" id="theme-toggle-btn"></i>
-                <span class="tooltip" id="tooltip-theme">temayı değiştir</span>
-            </div>
-            <div class="nav-item">
-                <i class="fa-solid fa-language" id="lang-toggle-btn"></i>
-                <span class="tooltip" id="tooltip-lang">English</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div id="start-screen" class="screen">
-            <div class="hero-poster-wrapper">
-                <img id="random-hero-poster" src="" alt="Sinematik Keşif">
-            </div>
-            <button id="start-test-btn" class="main-cta-btn">Film tavsiyesi al</button>
+    <div id="landing-screen" class="screen">
+        <div class="main-logo-container">
+            <svg width="250" height="80" viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="100" height="80" rx="4" stroke="#D32F2F" stroke-width="8"/>
+                <rect x="18" y="20" width="8" height="8" rx="1" fill="#D32F2F"/>
+                <rect x="18" y="46" width="8" height="8" rx="1" fill="#D32F2F"/>
+                <rect x="18" y="72" width="8" height="8" rx="1" fill="#D32F2F"/>
+                <rect x="94" y="20" width="8" height="8" rx="1" fill="#D32F2F"/>
+                <rect x="94" y="46" width="8" height="8" rx="1" fill="#D32F2F"/>
+                <rect x="94" y="72" width="8" height="8" rx="1" fill="#D32F2F"/>
+                <text x="130" y="55" font-family="Montserrat, sans-serif" font-weight="800" font-size="34" fill="#D32F2F">CANVAS</text>
+                <text x="130" y="85" font-family="Montserrat, sans-serif" font-weight="300" font-size="28" fill="#D32F2F" letter-spacing="4">SINEMA</text>
+            </svg>
         </div>
 
-        <div id="selection-screen" class="screen hidden">
-            <h2 id="selection-question"></h2>
-            <div id="image-selection-grid" class="selection-grid"></div>
-        </div>
-
-        <div id="recommendation-screen" class="screen hidden">
-            <div id="loading" class="hidden">
-                <div class="spinner"></div>
-                <p id="loading-text"></p>
+        <div class="gateway-container">
+            <div class="gateway-card" onclick="startRecommender()">
+                <div class="card-image-box">
+                    <img id="mood-card-img" src="" alt="Ruh Hali Seçkisi">
+                </div>
+                <h2 id="txt-mood-select">RUH HALİ SEÇKİSİ</h2>
             </div>
-            <div id="recommendation-content" class="centered-content"></div>
-            
-            <div class="recommendation-buttons">
-                <button id="share-story-btn" class="main-cta-btn secondary">
-                    <i class="fa-brands fa-instagram"></i> <span id="text-share">Hikaye Olarak Paylaş</span>
-                </button>
-                <button id="main-page-button" class="main-cta-btn secondary">
-                    <span id="text-home">Ana Sayfa</span>
-                </button>
+
+            <div class="gateway-card" onclick="showCanvasList()">
+                <div class="card-image-box">
+                    <img src="images2/fff.jpg" alt="Canvas Listesi">
+                </div>
+                <h2 id="txt-canvas-list">CANVAS LİSTESİ</h2>
             </div>
         </div>
     </div>
 
-    <div id="insta-story-container">
-        <div class="story-branding">
-            <img src="canvas-logo.svg" alt="Logo" class="story-logo">
-            <h2 class="story-brand-name">Canvas Sinema</h2>
+    <div id="selection-screen" class="screen hidden">
+        <div class="header-image-container">
+            <img id="random-header-img" src="" alt="Atmosfer">
         </div>
         
-        <div class="story-movie-content">
-            <p class="story-label" id="story-label-rec">ÖNERİLEN FİLM</p>
-            <img id="story-movie-poster" src="" alt="Poster" crossorigin="anonymous">
-            <h1 id="story-movie-title"></h1>
-        </div>
+        <h2 id="selection-question" class="fade-in">Ruh halini hangi atmosfer yansıtıyor?</h2>
+        
+        <div class="selection-grid" id="image-selection-grid"></div>
+        <button class="back-text-btn" onclick="goHome()">Ana Menüye Dön</button>
+    </div>
 
-        <div class="story-user-choices">
-            <p class="story-label" id="story-label-mood">RUH HALİNİ YANSITAN SEÇİMLER</p>
-            <div id="story-choices-grid"></div>
-        </div>
+    <div id="top-list-screen" class="screen hidden">
+        <button class="back-text-btn" onclick="goHome()">← Geri</button>
+        <div id="top-list-content" class="list-container"></div>
+    </div>
 
-        <div class="story-footer">canvassinema.com</div>
+    <div id="recommendation-screen" class="screen hidden">
+        <div id="loading" class="hidden"><div class="spinner"></div></div>
+        <div id="recommendation-content"></div>
+        <div class="action-buttons">
+            <button id="share-story-btn" class="primary-btn">Hikaye Olarak Paylaş</button>
+            <button onclick="goHome()" class="secondary-btn">Ana Menü</button>
+        </div>
+    </div>
+
+    <div id="insta-story-container" style="position: absolute; left: -9999px;">
+        <div class="story-bg"></div>
+        <div class="story-content">
+            <h1 class="story-title" id="story-label-rec">ÖNERİLEN FİLM</h1>
+            <img id="story-movie-poster" src="" crossorigin="anonymous">
+            <h2 id="story-movie-title">Film Başlığı</h2>
+            <div class="story-divider"></div>
+            <p class="story-mood-label" id="story-label-mood">RUH HALİNİ YANSITAN SEÇİMLER</p>
+            <div class="story-choices" id="story-choices-grid"></div>
+            <div class="story-logo">CANVAS SINEMA</div>
+        </div>
     </div>
 
     <script src="script.js"></script>
