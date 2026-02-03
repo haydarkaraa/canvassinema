@@ -37,30 +37,51 @@ body {
 
 [data-theme="light"] .gateway-card { border-color: #ddd; }
 
+/* KARTLARI YAN YANA DİZEN KAPSANICI */
+.gateway-container {
+    display: flex;
+    flex-direction: row;       /* Yan yana (Satır) */
+    justify-content: center;   /* Ortala */
+    align-items: center;       /* Dikeyde ortala */
+    gap: 40px;                 /* Kartlar arası boşluk */
+    margin-top: 50px;
+    width: 100%;
+    flex-wrap: wrap;           /* Ekran çok küçülürse alt alta geçsin (taşmasın) */
+}
+
+/* KART TASARIMI */
+.gateway-card {
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 16px;
+    
+    /* Genişlik Ayarı: Yan yana sığmaları için ideal boyut */
+    width: 250px;              
+    height: 300px;             /* Kartların boyunu eşitleyelim */
+    
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #333;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* İçerik kartın ortasında dursun */
+    align-items: center;
+}
+
 .card-image-box {
     width: 100%;
-    height: 180px; /* Poster oranı */
+    height: 180px;
     overflow: hidden;
     border-radius: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-.card-image-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-}
-
-.gateway-card:hover .card-image-box img {
-    transform: scale(1.1);
-}
-
-.gateway-card h2 {
-    font-size: 0.9rem;
-    font-weight: 800;
-    margin: 0;
-    color: var(--text-main);
+/* Sadece Mobil İçin Özel Ayar (Telefonda mecburen alt alta olsun) */
+@media (max-width: 768px) {
+    .gateway-container {
+        flex-direction: column; /* Telefonta alt alta */
+    }
 }
 
 /* DİĞER STİLLER AYNI KALIYOR (Önceki cevaptaki gibi) */
