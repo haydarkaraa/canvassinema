@@ -69,19 +69,34 @@ body {
     align-items: center;
 }
 
+/* GÖRSEL KUTUSU (Çerçeve) */
 .card-image-box {
     width: 100%;
-    height: 180px;
+    /* Yüksekliği azalttık (180px'den 150px'e), böylece başlığa yer kalır */
+    height: 150px; 
     overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    background-color: #000; /* Resim yüklenmezse arkası siyah olsun */
 }
 
-/* Sadece Mobil İçin Özel Ayar (Telefonda mecburen alt alta olsun) */
-@media (max-width: 768px) {
-    .gateway-container {
-        flex-direction: column; /* Telefonta alt alta */
-    }
+/* GÖRSELİN KENDİSİ */
+.card-image-box img {
+    width: 100%;
+    height: 100%;
+    /* 'cover' resmi keserek doldurur, 'contain' ise resmi sıkıştırıp tamamını gösterir. */
+    /* Sıkıştırmak istediğin için 'contain' kullanabiliriz ama 'cover' daha şık durur. */
+    /* Eğer resim çok büyük görünüyorsa object-position ile odaklayabiliriz */
+    object-fit: cover; 
+    transition: transform 0.5s;
+}
+
+/* KARTIN KENDİSİ (Ufak bir padding ayarı) */
+.gateway-card {
+    /* ...diğer özellikler aynı... */
+    padding: 15px; /* İç boşluğu biraz azalttık ki görsel kenarlara yaklaşsın */
+    /* ... */
+
 }
 
 /* DİĞER STİLLER AYNI KALIYOR (Önceki cevaptaki gibi) */
