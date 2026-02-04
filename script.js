@@ -12,10 +12,101 @@ document.addEventListener('DOMContentLoaded', () => {
     // SEÇİM EKRANI İÇİN GÖRSEL HAVUZU (images klasörü)
     // Eğer images klasöründeki dosyaların f1, f2 şeklindeyse burayı ona göre güncelle.
     // Şimdilik örnek olarak f1...f29 listesi oluşturuyoruz:
-    const localImagePool = [];
-    for(let i=1; i<=29; i++) {
-        localImagePool.push({ id: `f${i}`, name: `Atmosfer ${i}` });
-    }
+    const localImagePool = [{ id: "13.66", name: "View of the Domaine Saint-Joseph" },
+{ id: "13.130", name: "A Ship in a Stormy Sea" },
+{ id: "1972.118.281", name: "Nursery on Schenkweg" },
+{ id: "1974.356.32", name: "A Road in Louveciennes" },
+{ id: "1975.1.160", name: "Trees and Houses Near the Jas de Bouffan" },
+{ id: "1975.1.163", name: "Valley with Fir " },
+{ id: "1975.1.164", name: "Pines Along the Shore" },
+{ id: "1975.1.167", name: "View of Saint-Valéry-sur-Somme" },
+{ id: "1975.1.168", name: "The Palace of Westminster" },
+{ id: "1975.1.180", name: "Railroad Bridge over the Marne at Joinville" },
+{ id: "1975.1.182", name: "The Rocky Path in the Morvan" },
+{ id: "1975.1.194", name: "Olive Trees at Collioure" },
+{ id: "1975.1.202", name: "Versailles" },
+{ id: "1975.1.208", name: "The Town Beach" },
+{ id: "1975.1.209", name: "Evening Calm" },
+{ id: "1975.1.642", name: "Landscape with a Distant Town" },
+{ id: "1975.1.644", name: "A View of Moulins" },
+{ id: "1975.1.691", name: "Landscape" },
+{ id: "1975.280.2", name: "Ship by Moonlight" },
+{ id: "1975.280.4", name: "Shepherd with a Flock of Sheep" },
+{ id: "1977.258.2", name: "New York Harbor with Brooklyn Bridge" },
+{ id: "1978.493", name: "The Outer Harbor of Brest" },
+{ id: "1979.272", name: "Mountain Lake Scene" },
+{ id: "1979.490.4", name: "Sea Cove" },
+{ id: "1980.342", name: "Landscape at Saint-Ouen" },
+{ id: "1985.117", name: "Newburyport Meadows" },
+{ id: "1988.221", name: "Porte de la Reine at Aigues-Mortes" },
+{ id: "1990.196", name: "A Forest at Dawn with a Deer Hunt" },
+{ id: "1991.130", name: "Arques-la-Bataille" },
+{ id: "1992.103.4", name: "The Seine at Bougival" },
+{ id: "1993.132", name: "Wheat Field with Cypresses" },
+{ id: "1994.420", name: "Mont Sainte-Victoire" },
+{ id: "1996.382", name: "Surf, Isles of Shoals" },
+{ id: "1997.149.2", name: "View of Cagnes" },
+{ id: "1998.325.1", name: "Olive Trees" },
+{ id: "1998.325.2", name: "Water Lilies" },
+{ id: "1999.442", name: "The Kearsarge at Boulogne" },
+
+
+
+{ id: "2001.202.5", name: "Poppy Fields near Argenteuil" },
+{ id: "2001.39", name: "Lago Avernus" },
+{ id: "2001.45", name: "View near Rouen" },
+{ id: "2002.62.3", name: "Gray Weather, Grande Jatte" },
+{ id: "2003.42.1", name: "Edge of a Wood" },
+{ id: "2003.42.3", name: "Classical Landscape with Figures" },
+{ id: "2003.42.4", name: "Lake Fucino and the Abruzzi Mountains" },
+{ id: "2003.42.12", name: "View of Beirut" },
+{ id: "2003.42.13", name: "Waterfall at Terni" },
+{ id: "2003.42.40", name: "A Shepherd and a Rider on a Country Lane" },
+{ id: "2003.42.44", name: "View in the Gardens of the Villa d'Este" },
+{ id: "2003.42.45", name: "View of Porta Pinciana from the Gardens of the Villa Ludovisi" },
+{ id: "2003.42.48", name: "View of the Colosseum and the Arch of Constantine from the Palatine" },
+{ id: "2003.42.54", name: "The Banks of the Rance, Brittany" },
+{ id: "2003.435", name: "The Brook in the Woods" },
+{ id: "2009.400.109", name: "Landscape with the Pyramid of Gaius Cestius, Rome" },
+{ id: "2009.400.110", name: "View of the Colosseum, Rome" },
+{ id: "29.100.64", name: "Mont Sainte-Victoire and the Viaduct of the Arc River Valley" },
+{ id: "29.100.67", name: "The Gulf of Marseille Seen from L'Estaque" },
+{ id: "29.100.112", name: "La Grenouillère" },
+{ id: "29.100.113", name: "Bridge over a Pond of Water Lilies" },
+{ id: "29.100.194", name: "Rocks at Fontainebleau" },
+
+
+
+
+
+
+
+
+{ id: "49.30", name: "Cypresses" },
+
+
+
+{ id: "54.143.2", name: "A Farm in Brittany" },
+{ id: "56.13", name: "The Flowering Orchard" },
+{ id: "56.135.1", name: "View of Vétheuil" },
+{ id: "56.135.4", name: "Morning on the Seine near Giverny" },
+{ id: "56.135.5", name: "Ile aux Fleurs near Vétheuil" },
+{ id: "56.135.7", name: "View of the Seacoast near Wargemont in Normandy" },
+{ id: "56.135.9", name: "Hills around the Bay of Moulin Huet, Guernsey" },
+{ id: "57.181", name: "Gardanne" },
+{ id: "59.16.5", name: "View of the Seine" },
+
+
+
+{ id: "61.190", name: "The Farm at Les Collettes, Cagnes" },
+{ id: "61.101.5", name: "The Pool at Jas de Bouffan" },
+{ id: "64.210", name: "The Bodmer Oak, Fontainebleau Forest" },
+
+
+
+{ id: "71.60", name: "The Farrier" }];
+  
+    
 
     // CANVAS SİNEMA PUAN LİSTESİ (images3 klasörü - Yerel)
     const canvasTopList = [
