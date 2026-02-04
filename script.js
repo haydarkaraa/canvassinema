@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { rank: 5, title: "One Flew Over the Cuckoo's Nest", director: "Miloš Forman", score: 91.38, year: 1975, poster: "images4/oneflew.webp" },
         { rank: 5, title: "Seven Samurai", director: "Akira Kurosawa", score: 93.37, year: 1954, poster: "images4/sevensamurai.webp" },
         { rank: 5, title: "The Silence of the Lambs", director: "Jonathan Demme", score: 89.33, year: 1991, poster: "images4/silenceofthelamb.webp" },
-        { rank: 5, title: "The Shawshank Redemption", director: "Frank Darabont", score: 89.2, year: 1994, poster: "images4/theshawshank.webp" },
+        { rank: 5, title: "The Shawshank Redemption", director: "Frank Darabont", score: 88.21, year: 1994, poster: "images4/theshawshank.webp" },
         { rank: 11, title: "The Dark Knight", director: "Christopher Nolan", score: 89.4, year: 2008, poster: "images4/thedarkknight.webp" },
         { rank: 5, title: "The Godfather Part II", director: "Francis Ford Coppola", score: 93.18, year: 1974, poster: "images4/godfather2.webp" },
         { rank: 5, title: "Schindler's List", director: "Steven Spielberg", score: 88.2, year: 1994, poster: "images4/schindlerslist.webp" },
@@ -148,9 +148,14 @@ document.addEventListener('DOMContentLoaded', () => {
         { rank: 51, title: "Üç Maymun", director: "Nuri Bilge Ceylan", score: 87.26, year: 2008, poster: "images4/ücmaymun.webp" },
         { rank: 5, title: "Kuru Otlar Üstüne", director: "Nuri Bilge Ceylan", score: 87.18, year: 2023, poster: "images4/kuruotlar.webp" },
         { rank: 5, title: "İklimler", director: "Nuri Bilge Ceylan", score: 87.12, year: 2006, poster: "images4/iklimler.webp" },
-        { rank: 5, title: "Kasaba", director: "Nuri Bilge Ceylan", score: 81.04, year: 1997, poster: "images4/kasaba.webp" },
-        
-    
+        { rank: 5, title: "American History X", director: "Tony Kaye", score: 88.32, year: 1998, poster: "images4/americanhistoryx.webp" },
+        { rank: 5, title: "Léon: The Professional", director: "Luc Besson", score: 87.23, year: 1994, poster: "images4/leon.webp" },
+        { rank: 5, title: "Cinema Paradiso", director: "Giuseppe Tornatore", score: 84.21, year: 1988, poster: "images4/cinemaparadiso.webp" },
+        { rank: 5, title: "Casablanca", director: "Michael Curtiz", score: 85.02, year: 1943, poster: "images4/casablanca.webp" },
+        { rank: 5, title: "Kader", director: "Zeki Demirkubuz", score: 89.41, year: 2006, poster: "images4/kader.webp" },
+        { rank: 5, title: "Masumiyet", director: "Zeki Demirkubuz", score: 88.26, year: 1997, poster: "images4/masumiyet.webp" },
+    { rank: 5, title: "C Blok", director: "Zeki Demirkubuz", score: 86.09, year: 1994, poster: "images4/cblok.webp" },
+    { rank: 61, title: "Yeraltı", director: "Zeki Demirkubuz", score: 83.1, year: 2012, poster: "images4/yeralti.webp" },
 
     ];
 
