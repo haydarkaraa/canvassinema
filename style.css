@@ -21,7 +21,7 @@
     --text-dim: #666666;
 }
 [data-theme="blue"] {
-    --bg-main: #4622e6;
+    --bg-main: #3b39b3;
     --bg-card: #ffffff;
     --text-main: #0A0A0A;
     --text-dim: #666666;
@@ -54,6 +54,9 @@ body {
 }
 
 [data-theme="light"] .gateway-card { border-color: #ddd; }
+[data-theme="rogue"] .gateway-card { border-color: #e62222; }
+[data-theme="light"] .gateway-card { border-color: #3b39b3; }
+[data-theme="light"] .gateway-card { border-color: #0f3b25; }
 
 /* KARTLARI YAN YANA DİZEN KAPSANICI */
 .gateway-container {
