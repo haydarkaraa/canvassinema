@@ -101,19 +101,27 @@ document.addEventListener('DOMContentLoaded', () => {
        { rank: 5, title: "2001: A Space Odyssey", director: "Stanley Kubrick", score: 92.22, year: 1968, poster: "images4/aspace.webp" },
 { rank: 5, title: "127 Hours", director: "Danny Boyle", score: 79.84, year: 2010, poster: "images4/127.webp" },
 { rank: 5, title: "1917", director: "Sam Mendes", score: 84.45, year: 2019, poster: "images4/1917.webp" },
-{ rank: 5, title: "1922", director: "Zak Hilditch", score: 57.5, year: 2017, poster: "images4/1922.webp" },
 { rank: 5, title: "20,000 Leagues Under the Sea", director: "Richard Fleischer", score: 80.51, year: 1954, poster: "images4/20000.webp" },
-{ rank: 5, title: "2012", director: "Roland Emmerich", score: 58.6, year: 2009, poster: "images4/2012.webp" },
 { rank: 5, title: "2046", director: "Wong Kar-Wai", score: 84.36, year: 2004, poster: "images4/2046.webp" },
 { rank: 5, title: "21", director: "Robert Luketic", score: 69.61, year: 2008, poster: "images4/21.webp" },
 { rank: 5, title: "25th Hour", director: "Spike Lee", score: 87.08, year: 2002, poster: "images4/25saat.webp" },
 { rank: 5, title: "28 Days", director: "Betty Thomas", score: 64.21, year: 2000, poster: "images4/28days.webp" },
 { rank: 5, title: "3 Idiots", director: "Rajkumar Hirani", score: 87.06, year: 2009, poster: "images4/3idiots.webp" },
-
+{ rank: 5, title: "9,75", director: "Uluç Bayraktar", score: 73.06, year: 2020, poster: "images4/975.webp" },
 
 
  { rank: 4, title: "A.I. Artificial Intelligence", director: "Steven Spielberg", score: 87.11, year: 2001, poster: "images4/ai.webp" },
+{ rank: 5, title: "A Clockwork Orange", director: "Stanley Kubrick", score: 91.45, year: 1971, poster: "images4/aclock.webp" },
+{ rank: 5, title: "American History X", director: "Tony Kaye", score: 88.32, year: 1998, poster: "images4/americanhistoryx.webp" },
+ { rank: 5, title: "Ahlat Ağacı", director: "Nuri Bilge Ceylan", score: 86.02, year: 2018, poster: "images4/ahlatagaci.webp" },
+{ rank: 5, title: "Adaptation", director: "Spike Jonze", score: 82.02, year: 2002, poster: "images4/adaptation.webp" },
+{ rank: 5, title: "Amelie", director: "Jean-Pierre Jeunet", score: 80.71, year: 2001, poster: "images4/amelie.webp" },
+{ rank: 5, title: "Ali'nin Sekiz Günü", director: "Cemal Şan", score: 70.39, year: 2009, poster: "images4/alinin.webp" },
 
+
+{ rank: 5, title: "C Blok", director: "Zeki Demirkubuz", score: 86.09, year: 1994, poster: "images4/cblok.webp" },
+
+ { rank: 5, title: "Dokuz", director: "Ümit Ünal", score: 72.13, year: 2002, poster: "images4/dokuz.webp" },
 
 
         { rank: 1, title: "The Lord of the Rings: The Return of the King", director: "Peter Jackson", score: 93.79, year: 2003, poster: "images4/lotr3.webp" },
@@ -158,25 +166,26 @@ document.addEventListener('DOMContentLoaded', () => {
         { rank: 5, title: "Perfect Days", director: "Wim Wenders", score: 92.13, year: 2023, poster: "images4/perfectdays.webp" },
         { rank: 41, title: "Oldboy", director: "Park Chan-wook", score: 91.26, year: 2003, poster: "images4/oldboy.webp" },
         { rank: 5, title: "Eyes Wide Shut", director: "Stanley Kubrick", score: 92.16, year: 1999, poster: "images4/eyeswide.webp" },
-        { rank: 5, title: "A Clockwork Orange", director: "Stanley Kubrick", score: 91.45, year: 1971, poster: "images4/aclock.webp" },
+        
         
         { rank: 5, title: "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb", director: "Stanley Kubrick", score: 88.34, year: 1964, poster: "images4/drstrangelove.webp" },
         { rank: 5, title: "Full Metal Jacket", director: "Stanley Kubrick", score: 87.32, year: 1987, poster: "images4/fullmetaljacket.webp" },
         { rank: 5, title: "Kış Uykusu", director: "Nuri Bilge Ceylan", score: 88.12, year: 2014, poster: "images4/kisuykusu.webp" },
         { rank: 5, title: "Bir Zamanlar Anadolu'da", director: "Nuri Bilge Ceylan", score: 91.28, year: 2011, poster: "images4/birzamanlaranadoluda.webp" },
-        { rank: 5, title: "Ahlat Ağacı", director: "Nuri Bilge Ceylan", score: 86.02, year: 2018, poster: "images4/ahlatagaci.webp" },
+       
         { rank: 5, title: "Uzak", director: "Nuri Bilge Ceylan", score: 89.37, year: 2002, poster: "images4/uzak.webp" },
         { rank: 51, title: "Üç Maymun", director: "Nuri Bilge Ceylan", score: 87.26, year: 2008, poster: "images4/ücmaymun.webp" },
         { rank: 5, title: "Kuru Otlar Üstüne", director: "Nuri Bilge Ceylan", score: 87.18, year: 2023, poster: "images4/kuruotlar.webp" },
         { rank: 5, title: "İklimler", director: "Nuri Bilge Ceylan", score: 87.12, year: 2006, poster: "images4/iklimler.webp" },
-        { rank: 5, title: "American History X", director: "Tony Kaye", score: 88.32, year: 1998, poster: "images4/americanhistoryx.webp" },
+        
         { rank: 5, title: "Léon: The Professional", director: "Luc Besson", score: 87.23, year: 1994, poster: "images4/leon.webp" },
         { rank: 5, title: "Cinema Paradiso", director: "Giuseppe Tornatore", score: 84.21, year: 1988, poster: "images4/cinemaparadiso.webp" },
         { rank: 5, title: "Casablanca", director: "Michael Curtiz", score: 85.02, year: 1943, poster: "images4/casablanca.webp" },
         { rank: 5, title: "Kader", director: "Zeki Demirkubuz", score: 89.41, year: 2006, poster: "images4/kader.webp" },
         { rank: 5, title: "Masumiyet", director: "Zeki Demirkubuz", score: 88.26, year: 1997, poster: "images4/masumiyet.webp" },
-    { rank: 5, title: "C Blok", director: "Zeki Demirkubuz", score: 86.09, year: 1994, poster: "images4/cblok.webp" },
+   
     { rank: 61, title: "Yeraltı", director: "Zeki Demirkubuz", score: 83.1, year: 2012, poster: "images4/yeralti.webp" },
+    { rank: 5, title: "The Age of Adaline", director: "Lee Toland Krieger", score: 71.14, year: 2015, poster: "images4/adaline.webp" },
 
     ];
 
