@@ -95,11 +95,32 @@ document.addEventListener('DOMContentLoaded', () => {
 { id: "71.60", name: "The Farrier" }
     ];
     const canvasTopList = [
+        { rank: 5, title: "12 Angry Men", director: "Sidney Lumet", score: 92.32, year: 1957, poster: "images4/12angryman.webp" },
+        { rank: 5, title: "100 metros", director: "Sidney Lumet", score: 75.13, year: 2016, poster: "images4/100m.webp" },
+       { rank: 5, title: "12 Years a Slave", director: "Steve McQueen", score: 85.08, year: 2013, poster: "images4/12year.webp" },
+       { rank: 5, title: "2001: A Space Odyssey", director: "Stanley Kubrick", score: 92.22, year: 1968, poster: "images4/aspace.webp" },
+{ rank: 5, title: "127 Hours", director: "Danny Boyle", score: 79.84, year: 2010, poster: "images4/127.webp" },
+{ rank: 5, title: "1917", director: "Sam Mendes", score: 84.45, year: 2019, poster: "images4/1917.webp" },
+{ rank: 5, title: "1922", director: "Zak Hilditch", score: 57.5, year: 2017, poster: "images4/1922.webp" },
+{ rank: 5, title: "20,000 Leagues Under the Sea", director: "Richard Fleischer", score: 80.51, year: 1954, poster: "images4/20000.webp" },
+{ rank: 5, title: "2012", director: "Roland Emmerich", score: 58.6, year: 2009, poster: "images4/2012.webp" },
+{ rank: 5, title: "2046", director: "Wong Kar-Wai", score: 84.36, year: 2004, poster: "images4/2046.webp" },
+{ rank: 5, title: "21", director: "Robert Luketic", score: 69.61, year: 2008, poster: "images4/21.webp" },
+{ rank: 5, title: "25th Hour", director: "Spike Lee", score: 87.08, year: 2002, poster: "images4/25saat.webp" },
+{ rank: 5, title: "28 Days", director: "Betty Thomas", score: 64.21, year: 2000, poster: "images4/28days.webp" },
+{ rank: 5, title: "3 Idiots", director: "Rajkumar Hirani", score: 87.06, year: 2009, poster: "images4/3idiots.webp" },
+
+
+
+ { rank: 4, title: "A.I. Artificial Intelligence", director: "Steven Spielberg", score: 87.11, year: 2001, poster: "images4/ai.webp" },
+
+
+
         { rank: 1, title: "The Lord of the Rings: The Return of the King", director: "Peter Jackson", score: 93.79, year: 2003, poster: "images4/lotr3.webp" },
         { rank:2, title: "The Godfather", director: "Francis Ford Coppola", score: 93.49, year: 1972, poster: "images4/godfather.webp" }, // Poster linkini güncelleyin
         { rank: 3, title: "The Shining", director: "Stanley Kubrick", score: 89.21, year: 1980, poster: "images4/theshining.webp" },
         { rank: 4, title: "Parasite", director: "Bong Joon-ho", score: 87.99, year: 2019, poster: "images4/parasite.webp" },
-        { rank: 5, title: "12 Angry Men", director: "Sidney Lumet", score: 92.32, year: 1957, poster: "images4/12angryman.webp" },
+       
         { rank: 5, title: "Interstellar", director: "Christopher Nolan", score: 92.28, year: 2014, poster: "images4/interstellar.webp" },
         { rank: 5, title: "One Flew Over the Cuckoo's Nest", director: "Miloš Forman", score: 91.38, year: 1975, poster: "images4/oneflew.webp" },
         { rank: 5, title: "Seven Samurai", director: "Akira Kurosawa", score: 93.37, year: 1954, poster: "images4/sevensamurai.webp" },
@@ -138,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { rank: 41, title: "Oldboy", director: "Park Chan-wook", score: 91.26, year: 2003, poster: "images4/oldboy.webp" },
         { rank: 5, title: "Eyes Wide Shut", director: "Stanley Kubrick", score: 92.16, year: 1999, poster: "images4/eyeswide.webp" },
         { rank: 5, title: "A Clockwork Orange", director: "Stanley Kubrick", score: 91.45, year: 1971, poster: "images4/aclock.webp" },
-        { rank: 5, title: "2001: A Space Odyssey", director: "Stanley Kubrick", score: 92.22, year: 1968, poster: "images4/aspace.webp" },
+        
         { rank: 5, title: "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb", director: "Stanley Kubrick", score: 88.34, year: 1964, poster: "images4/drstrangelove.webp" },
         { rank: 5, title: "Full Metal Jacket", director: "Stanley Kubrick", score: 87.32, year: 1987, poster: "images4/fullmetaljacket.webp" },
         { rank: 5, title: "Kış Uykusu", director: "Nuri Bilge Ceylan", score: 88.12, year: 2014, poster: "images4/kisuykusu.webp" },
