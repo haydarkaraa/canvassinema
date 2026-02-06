@@ -263,18 +263,13 @@ document.addEventListener('DOMContentLoaded', () => {
         initializePage();
     };
 
-    function initializePage() {
-        questionIndex = 0;
-        userSelections = [];
-        updateUI();
-        populateImageGrid();
-    }
+   
 
     // Görsel Grid'i Doldur (Örnek Data - images klasöründen)
   // --- MANUEL DÜZELTME BAŞLANGICI ---
 
     // 1. GÖRSEL LİSTESİ (Sadece burada tanımlı olsun, yukarıdakini sildiğinden emin ol)
-    const artImages = [
+    const artImages= [
         { id: "13.66", name: "View of the Domaine Saint-Joseph" },
         { id: "13.130", name: "A Ship in a Stormy Sea" },
         { id: "1972.118.281", name: "Nursery on Schenkweg" },
