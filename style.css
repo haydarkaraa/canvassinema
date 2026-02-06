@@ -1,5 +1,8 @@
-
+/* =========================================
+   1. TEMEL AYARLAR & DEĞİŞKENLER (10 TEMA)
+========================================= */
 :root {
+    /* TEMA 1: Varsayılan (Canvas Dark) */
     --primary-red: #D32F2F;
     --bg-dark: #0A0A0A;
     --bg-card: #121212;
@@ -8,11 +11,85 @@
     --font-main: 'Montserrat', sans-serif;
 }
 
+/* TEMA 2: Aydınlık (Light) */
 [data-theme="light"] {
+    --primary-red: #D32F2F;
     --bg-dark: #f4f4f4;
     --bg-card: #ffffff;
     --text-main: #121212;
     --text-dim: #555555;
+}
+
+/* TEMA 3: Okyanus (Ocean) */
+[data-theme="ocean"] {
+    --primary-red: #00B4D8;       /* Parlak Mavi */
+    --bg-dark: #03045E;           /* Derin Lacivert */
+    --bg-card: #0077B6;           /* Orta Mavi */
+    --text-main: #CAF0F8;         /* Açık Buz Mavisi */
+    --text-dim: #90E0EF;
+}
+
+/* TEMA 4: Orman (Forest) */
+[data-theme="forest"] {
+    --primary-red: #52B788;       /* Yaprak Yeşili */
+    --bg-dark: #081C15;           /* Koyu Orman */
+    --bg-card: #1B4332;           /* Çam Yeşili */
+    --text-main: #D8F3DC;         /* Açık Nane */
+    --text-dim: #95D5B2;
+}
+
+/* TEMA 5: Siber (Cyberpunk) */
+[data-theme="cyber"] {
+    --primary-red: #00FF41;       /* Neon Yeşil */
+    --bg-dark: #0D0208;           /* Siyah */
+    --bg-card: #191A19;           /* Koyu Gri */
+    --text-main: #FFFFFF;
+    --text-dim: #008F11;          /* Matrix Yeşili */
+}
+
+/* TEMA 6: Kahve (Coffee) */
+[data-theme="coffee"] {
+    --primary-red: #D7CCC8;       /* Sütlü Kahve */
+    --bg-dark: #3E2723;           /* Koyu Çekirdek */
+    --bg-card: #4E342E;           /* Espresso */
+    --text-main: #EFEBE9;
+    --text-dim: #BCAAA4;
+}
+
+/* TEMA 7: Gün Batımı (Sunset) */
+[data-theme="sunset"] {
+    --primary-red: #FF9E00;       /* Turuncu */
+    --bg-dark: #240046;           /* Gece Moru */
+    --bg-card: #3C096C;           /* Derin Mor */
+    --text-main: #FF9E00;         /* Sarı/Turuncu */
+    --text-dim: #E0AAFF;          /* Lila */
+}
+
+/* TEMA 8: Asil Mor (Royal Purple) */
+[data-theme="purple"] {
+    --primary-red: #C77DFF;       /* Parlak Mor */
+    --bg-dark: #10002B;           /* Çok Koyu Mor */
+    --bg-card: #240046;           /* İndigo */
+    --text-main: #E0AAFF;
+    --text-dim: #9D4EDD;
+}
+
+/* TEMA 9: Siyah & Beyaz (Monochrome) */
+[data-theme="mono"] {
+    --primary-red: #ffffff;       /* Beyaz */
+    --bg-dark: #000000;           /* Tam Siyah */
+    --bg-card: #1a1a1a;           /* Koyu Gri */
+    --text-main: #ffffff;
+    --text-dim: #888888;
+}
+
+/* TEMA 10: Gece Yarısı (Midnight) */
+[data-theme="midnight"] {
+    --primary-red: #F72585;       /* Neon Pembe */
+    --bg-dark: #0B132B;           /* Gece Mavisi */
+    --bg-card: #1C2541;           /* Metalik Mavi */
+    --text-main: #6FFFE9;         /* Turkuaz */
+    --text-dim: #3A506B;
 }
 
 * {
@@ -27,436 +104,15 @@ body {
     color: var(--text-main);
     font-family: var(--font-main);
     overflow-x: hidden;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.4s ease, color 0.4s ease; /* Renk geçişleri yumuşatıldı */
 }
 
 /* =========================================
-   2. EKRAN YÖNETİMİ (SCREENS)
+   2. EKRAN YÖNETİMİ
 ========================================= */
 .screen {
     min-height: 100vh;
     width: 100%;
     padding: 20px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: opacity 0.4s ease;
-}
-
-.hidden {
-    display: none !important;
-}
-
-/* Fade In Animasyonu */
-.fade-in {
-    animation: fadeIn 0.8s ease forwards;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* =========================================
-   3. ÜST BUTONLAR (Tema/Dil)
-========================================= */
-.top-icons {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 100;
-    display: flex;
-    gap: 15px;
-}
-
-.icon-btn {
-    background: rgba(255,255,255,0.1);
-    border: none;
-    color: var(--text-main);
-    font-size: 1.2rem;
-    padding: 8px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    backdrop-filter: blur(5px);
-    transition: transform 0.2s;
-    text-decoration: none;
-}
-
-.icon-btn:hover {
-    transform: scale(1.1);
-    background: rgba(211, 47, 47, 0.2);
-}
-
-/* =========================================
-   4. ANA SAYFA (LANDING)
-========================================= */
-#landing-screen {
-    justify-content: center; /* Dikey ortalama */
-}
-
-.main-logo-container {
-    margin-bottom: 50px;
-    animation: fadeIn 1s ease;
-}
-
-.gateway-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.gateway-card {
-    background: var(--bg-card);
-    border: 1px solid rgba(255,255,255,0.05);
-    border-radius: 16px;
-    padding: 15px;
-    width: 160px;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
-}
-
-.gateway-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    border-color: var(--primary-red);
-}
-
-.card-image-box {
-    width: 100%;
-    height: 150px;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 15px;
-    background-color: #000;
-}
-
-.card-image-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.gateway-card h2 {
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: var(--text-dim);
-}
-
-/* =========================================
-   5. SEÇİM EKRANI
-========================================= */
-#selection-screen {
-    justify-content: flex-start;
-    padding-top: 80px;
-}
-
-.header-image-container {
-    width: 100%;
-    height: 180px;
-    border-radius: 16px;
-    overflow: hidden;
-    margin-bottom: 30px;
-    position: relative;
-}
-
-.header-image-container::after {
-    content: '';
-    position: absolute;
-    top:0; left:0; right:0; bottom:0;
-    background: linear-gradient(to bottom, transparent, var(--bg-dark));
-}
-
-#random-header-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-#selection-question {
-    font-size: 1.5rem;
-    font-weight: 300;
-    text-align: center;
-    margin-bottom: 40px;
-    max-width: 600px;
-}
-
-.selection-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    width: 100%;
-    max-width: 500px;
-}
-
-.image-item {
-    aspect-ratio: 1 / 1;
-    border-radius: 12px;
-    overflow: hidden;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: transform 0.2s;
-}
-
-.image-item:hover {
-    transform: scale(1.03);
-    border-color: var(--primary-red);
-}
-
-.image-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.back-text-btn {
-    margin-top: 30px;
-    background: none;
-    border: none;
-    color: var(--text-dim);
-    cursor: pointer;
-    font-size: 0.9rem;
-    text-decoration: underline;
-}
-
-/* =========================================
-   6. TAVSİYE EKRANI (TAM ORTALAMA)
-========================================= */
-#recommendation-screen {
-    /* Burası sayfayı tam ortalar */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    text-align: center;
-    padding: 20px;
-}
-
-#recommendation-content {
-    width: 100%;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.recommendation-item img {
-    /* Film posteri boyutu */
-    width: 280px;
-    max-width: 80%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-    margin-bottom: 25px;
-}
-
-.action-buttons {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    max-width: 300px;
-}
-
-.primary-btn {
-    background: var(--primary-red);
-    color: white;
-    border: none;
-    padding: 16px;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.primary-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(211, 47, 47, 0.4);
-}
-
-.secondary-btn {
-    background: transparent;
-    color: var(--text-dim);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 14px;
-    border-radius: 50px;
-    cursor: pointer;
-}
-
-/* =========================================
-   7. CANVAS LİSTESİ EKRANI
-========================================= */
-#top-list-screen {
-    padding-top: 80px;
-}
-
-.list-container {
-    width: 100%;
-    max-width: 600px;
-}
-
-.top-list-item {
-    display: flex;
-    align-items: center;
-    background: var(--bg-card);
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 12px;
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-.rank {
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: var(--primary-red);
-    width: 40px;
-}
-
-.mini-poster {
-    width: 50px;
-    height: 75px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin-right: 15px;
-}
-
-.info {
-    flex: 1;
-    text-align: left;
-}
-
-.score-box {
-    background: rgba(255,255,255,0.1);
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
-/* Yükleniyor Spinner */
-.spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid rgba(255,255,255,0.1);
-    border-top-color: var(--primary-red);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: 20px auto;
-}
-
-@keyframes spin { to { transform: rotate(360deg); } }
-
-/* =========================================
-   8. INSTAGRAM STORY MODÜLÜ (GİZLİ & SABİT)
-   (Logo Üstte, Film Ortada, Seçimler Altta)
-========================================= */
-#insta-story-container {
-    position: fixed;
-    top: 0;
-    left: -9999px; /* Ekran dışına itiyoruz */
-    width: 1080px;
-    height: 1920px;
-    background-color: #0A0A0A;
-    /* Hafif radyal geçiş ile şıklık katıyoruz */
-    background-image: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Üst, Orta, Alt dağılımı */
-    align-items: center;
-    padding: 100px 50px;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-    z-index: -1;
-}
-
-/* Header: Logo */
-.story-header {
-    flex: 0 0 auto;
-    margin-bottom: 20px;
-}
-
-/* Main: Film Posteri ve Başlık */
-.story-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.story-label {
-    color: #D32F2F;
-    font-weight: 500;
-    letter-spacing: 6px;
-    font-size: 2rem;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-}
-
-.poster-frame {
-    padding: 20px;
-    background: #1a1a1a;
-    border-radius: 24px;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 0 2px rgba(211, 47, 47, 0.4);
-    margin-bottom: 40px;
-}
-
-#story-movie-poster {
-    width: 550px; /* Büyük poster */
-    height: auto;
-    border-radius: 12px;
-    display: block;
-}
-
-#story-movie-title {
-    color: #ffffff;
-    font-size: 3.5rem;
-    font-weight: 800;
-    text-align: center;
-    line-height: 1.2;
-    text-transform: uppercase;
-    max-width: 90%;
-    margin: 0;
-}
-
-/* Footer: Seçimler */
-.story-footer {
-    flex: 0 0 auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-top: 2px solid rgba(211, 47, 47, 0.3);
-    padding-top: 50px;
-    margin-bottom: 50px;
-}
-
-.story-label-small {
-    color: #888;
-    font-weight: 300;
-    letter-spacing: 4px;
-    font-size: 1.5rem;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-}
-
-.story-choices-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.story-choice-img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 16px;
-    border: 3px solid #333;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
+    flex-direction
