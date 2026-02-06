@@ -1,144 +1,462 @@
-/* DEĞİŞKENLER */
+
 :root {
-    --primary-red: #2fc8d3;
-    --bg-main: #0A0A0A;
-    --bg-card: #1E1E1E;
-    --text-main: #F5F5F5;
-    --text-dim: #9E9E9E;
+    --primary-red: #D32F2F;
+    --bg-dark: #0A0A0A;
+    --bg-card: #121212;
+    --text-main: #ffffff;
+    --text-dim: #b0b0b0;
+    --font-main: 'Montserrat', sans-serif;
 }
 
-/* AÇIK TEMA (LIGHT MODE) */
 [data-theme="light"] {
-    --bg-main: #F5F5F5;
-    --bg-card: #FFFFFF;
-    --text-main: #0A0A0A;
-    --text-dim: #666666;
-}
-[data-theme="rogue"] {
-    --bg-main: #e62222;
-    --bg-card: #ece8e8;
-    --text-main: #0A0A0A;
-    --text-dim: #666666;
-}
-[data-theme="blue"] {
-    --bg-main: #3b39b3;
+    --bg-dark: #f4f4f4;
     --bg-card: #ffffff;
-    --text-main: #0A0A0A;
-    --text-dim: #666666;
+    --text-main: #121212;
+    --text-dim: #555555;
 }
-[data-theme="haki"] {
-    --bg-main: #0f3b25;
-    --bg-card: #ffffff;
-    --text-main: #0A0A0A;
-    --text-dim: #666666;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
-    background-color: var(--bg-main);
+    background-color: var(--bg-dark);
     color: var(--text-main);
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    transition: background-color 0.3s, color 0.3s; /* Yumuşak geçiş */
+    font-family: var(--font-main);
+    overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* KART GÖRSELLERİ */
-.gateway-card {
-    background: var(--bg-card);
-    padding: 15px; /* Padding küçültüldü */
-    border-radius: 16px;
-    width: 140px;
-    text-align: center;
-    cursor: pointer;
-    border: 1px solid #333;
-    transition: 0.3s;
-}
-
-[data-theme="light"] .gateway-card { border-color: #ddd; }
-[data-theme="rogue"] .gateway-card { border-color: #e62222; }
-[data-theme="light"] .gateway-card { border-color: #3b39b3; }
-[data-theme="light"] .gateway-card { border-color: #0f3b25; }
-
-/* KARTLARI YAN YANA DİZEN KAPSANICI */
-.gateway-container {
-    display: flex;
-    flex-direction: row;       /* Yan yana (Satır) */
-    justify-content: center;   /* Ortala */
-    align-items: center;       /* Dikeyde ortala */
-    gap: 40px;                 /* Kartlar arası boşluk */
-    margin-top: 50px;
+/* =========================================
+   2. EKRAN YÖNETİMİ (SCREENS)
+========================================= */
+.screen {
+    min-height: 100vh;
     width: 100%;
-    flex-wrap: wrap;           /* Ekran çok küçülürse alt alta geçsin (taşmasın) */
-}
-
-/* KART TASARIMI */
-.gateway-card {
-    background: var(--bg-card);
     padding: 20px;
-    border-radius: 16px;
-    
-    /* Genişlik Ayarı: Yan yana sığmaları için ideal boyut */
-    width: 250px;              
-    height: 300px;             /* Kartların boyunu eşitleyelim */
-    
-    text-align: center;
-    cursor: pointer;
-    border: 1px solid #333;
-    transition: 0.3s;
     display: flex;
     flex-direction: column;
-    justify-content: center;   /* İçerik kartın ortasında dursun */
     align-items: center;
+    transition: opacity 0.4s ease;
 }
 
-/* GÖRSEL KUTUSU (Çerçeve) */
+.hidden {
+    display: none !important;
+}
+
+/* Fade In Animasyonu */
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   3. ÜST BUTONLAR (Tema/Dil)
+========================================= */
+.top-icons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    display: flex;
+    gap: 15px;
+}
+
+.icon-btn {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: var(--text-main);
+    font-size: 1.2rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: transform 0.2s;
+    text-decoration: none;
+}
+
+.icon-btn:hover {
+    transform: scale(1.1);
+    background: rgba(211, 47, 47, 0.2);
+}
+
+/* =========================================
+   4. ANA SAYFA (LANDING)
+========================================= */
+#landing-screen {
+    justify-content: center; /* Dikey ortalama */
+}
+
+.main-logo-container {
+    margin-bottom: 50px;
+    animation: fadeIn 1s ease;
+}
+
+.gateway-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gateway-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 15px;
+    width: 160px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.gateway-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    border-color: var(--primary-red);
+}
+
 .card-image-box {
     width: 100%;
-    /* Yüksekliği azalttık (180px'den 150px'e), böylece başlığa yer kalır */
-    height: 150px; 
-    overflow: hidden;
+    height: 150px;
     border-radius: 12px;
+    overflow: hidden;
     margin-bottom: 15px;
-    background-color: #000; /* Resim yüklenmezse arkası siyah olsun */
+    background-color: #000;
 }
 
-/* GÖRSELİN KENDİSİ */
 .card-image-box img {
     width: 100%;
     height: 100%;
-    /* 'cover' resmi keserek doldurur, 'contain' ise resmi sıkıştırıp tamamını gösterir. */
-    /* Sıkıştırmak istediğin için 'contain' kullanabiliriz ama 'cover' daha şık durur. */
-    /* Eğer resim çok büyük görünüyorsa object-position ile odaklayabiliriz */
-    object-fit: cover; 
-    transition: transform 0.5s;
+    object-fit: cover;
 }
 
-/* KARTIN KENDİSİ (Ufak bir padding ayarı) */
-.gateway-card {
-    /* ...diğer özellikler aynı... */
-    padding: 15px; /* İç boşluğu biraz azalttık ki görsel kenarlara yaklaşsın */
-    /* ... */
-
+.gateway-card h2 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--text-dim);
 }
 
-/* DİĞER STİLLER AYNI KALIYOR (Önceki cevaptaki gibi) */
-.top-icons { position: absolute; top: 20px; right: 20px; display: flex; gap: 15px; z-index: 1000; }
-.icon-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; filter: grayscale(100%); transition: 0.3s; }
-.icon-btn:hover { filter: grayscale(0%); transform: scale(1.1); }
-.screen { min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding-top: 60px; box-sizing: border-box; }
-.hidden { display: none !important; }
-.selection-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; width: 90%; max-width: 500px; height: 55vh; margin: 20px 0; }
-.image-item { width: 100%; height: 100%; overflow: hidden; border-radius: 8px; cursor: pointer; }
-.image-item img { width: 100%; height: 100%; object-fit: cover; }
-.header-image-container { width: 100%; max-width: 500px; height: 100px; border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
-.header-image-container img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
-.list-container { width: 100%; max-width: 800px; }
-.top-list-item { display: flex; align-items: center; background-color: var(--bg-card); padding: 15px; margin-bottom: 15px; border-radius: 12px; }
-.rank { font-size: 1.5rem; font-weight: 800; color: var(--text-dim); width: 40px; }
-.mini-poster { width: 50px; height: 75px; object-fit: cover; border-radius: 4px; margin: 0 15px; }
-.score-box { background-color: var(--primary-red); color: white; padding: 5px 10px; border-radius: 6px; font-weight: 800; margin-left: auto; }
-.back-text-btn { background: none; border: none; color: var(--text-dim); margin-top: 10px; cursor: pointer; text-decoration: underline; }
-/* Tavsiye Ekranını Tam Ortala */
+/* =========================================
+   5. SEÇİM EKRANI
+========================================= */
+#selection-screen {
+    justify-content: flex-start;
+    padding-top: 80px;
+}
+
+.header-image-container {
+    width: 100%;
+    height: 180px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.header-image-container::after {
+    content: '';
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    background: linear-gradient(to bottom, transparent, var(--bg-dark));
+}
+
+#random-header-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#selection-question {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.selection-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.image-item {
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s;
+}
+
+.image-item:hover {
+    transform: scale(1.03);
+    border-color: var(--primary-red);
+}
+
+.image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.back-text-btn {
+    margin-top: 30px;
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+/* =========================================
+   6. TAVSİYE EKRANI (TAM ORTALAMA)
+========================================= */
 #recommendation-screen {
-    justify-content: center; /* Dikey ortalama sağlar */
-    padding-top: 0;          /* Üst menü boşluğunu bu ekran için sıfırlar */
+    /* Burası sayfayı tam ortalar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+#recommendation-content {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recommendation-item img {
+    /* Film posteri boyutu */
+    width: 280px;
+    max-width: 80%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    margin-bottom: 25px;
+}
+
+.action-buttons {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.primary-btn {
+    background: var(--primary-red);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(211, 47, 47, 0.4);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--text-dim);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 14px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* =========================================
+   7. CANVAS LİSTESİ EKRANI
+========================================= */
+#top-list-screen {
+    padding-top: 80px;
+}
+
+.list-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.top-list-item {
+    display: flex;
+    align-items: center;
+    background: var(--bg-card);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.rank {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--primary-red);
+    width: 40px;
+}
+
+.mini-poster {
+    width: 50px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 15px;
+}
+
+.info {
+    flex: 1;
+    text-align: left;
+}
+
+.score-box {
+    background: rgba(255,255,255,0.1);
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Yükleniyor Spinner */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255,255,255,0.1);
+    border-top-color: var(--primary-red);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* =========================================
+   8. INSTAGRAM STORY MODÜLÜ (GİZLİ & SABİT)
+   (Logo Üstte, Film Ortada, Seçimler Altta)
+========================================= */
+#insta-story-container {
+    position: fixed;
+    top: 0;
+    left: -9999px; /* Ekran dışına itiyoruz */
+    width: 1080px;
+    height: 1920px;
+    background-color: #0A0A0A;
+    /* Hafif radyal geçiş ile şıklık katıyoruz */
+    background-image: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Üst, Orta, Alt dağılımı */
+    align-items: center;
+    padding: 100px 50px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    z-index: -1;
+}
+
+/* Header: Logo */
+.story-header {
+    flex: 0 0 auto;
+    margin-bottom: 20px;
+}
+
+/* Main: Film Posteri ve Başlık */
+.story-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.story-label {
+    color: #D32F2F;
+    font-weight: 500;
+    letter-spacing: 6px;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.poster-frame {
+    padding: 20px;
+    background: #1a1a1a;
+    border-radius: 24px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 0 2px rgba(211, 47, 47, 0.4);
+    margin-bottom: 40px;
+}
+
+#story-movie-poster {
+    width: 550px; /* Büyük poster */
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+#story-movie-title {
+    color: #ffffff;
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.2;
+    text-transform: uppercase;
+    max-width: 90%;
+    margin: 0;
+}
+
+/* Footer: Seçimler */
+.story-footer {
+    flex: 0 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid rgba(211, 47, 47, 0.3);
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+
+.story-label-small {
+    color: #888;
+    font-weight: 300;
+    letter-spacing: 4px;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.story-choices-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.story-choice-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 3px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }

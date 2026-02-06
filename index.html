@@ -83,16 +83,33 @@
         </div>
     </div>
 
-    <div id="insta-story-container" style="position: absolute; left: -9999px;">
-        <div class="story-bg"></div>
-        <div class="story-content">
-            <h1 class="story-title" id="story-label-rec">ÖNERİLEN FİLM</h1>
-            <img id="story-movie-poster" src="" crossorigin="anonymous">
-            <h2 id="story-movie-title">Film Başlığı</h2>
-            <div class="story-divider"></div>
-            <p class="story-mood-label" id="story-label-mood">RUH HALİNİ YANSITAN SEÇİMLER</p>
-            <div class="story-choices" id="story-choices-grid"></div>
-            <div class="story-logo">CANVAS SINEMA</div>
+   <div id="insta-story-container">
+        <div class="story-header">
+            <svg width="300" height="90" viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="100" height="80" rx="4" stroke="#D32F2F" stroke-width="8"/>
+                <rect x="18" y="20" width="8" height="8" rx="1" fill="#D32F2F"/>
+                <rect x="18" y="46" width="8" height="8" rx="1" fill="#D32F2F"/>
+                <rect x="18" y="72" width="8" height="8" rx="1" fill="#D32F2F"/>
+                <rect x="94" y="20" width="8" height="8" rx="1" fill="#D32F2F"/>
+                <rect x="94" y="46" width="8" height="8" rx="1" fill="#D32F2F"/>
+                <rect x="94" y="72" width="8" height="8" rx="1" fill="#D32F2F"/>
+                <text x="130" y="55" font-family="Montserrat, sans-serif" font-weight="800" font-size="34" fill="#D32F2F">CANVAS</text>
+                <text x="130" y="85" font-family="Montserrat, sans-serif" font-weight="300" font-size="28" fill="#D32F2F" letter-spacing="4">SINEMA</text>
+            </svg>
+        </div>
+
+        <div class="story-main">
+            <h2 class="story-label">ÖNERİLEN FİLM</h2>
+            <div class="poster-frame">
+                <img id="story-movie-poster" src="" crossorigin="anonymous" alt="Film Posteri">
+            </div>
+            <h1 id="story-movie-title">Film Başlığı</h1>
+        </div>
+
+        <div class="story-footer">
+            <h3 class="story-label-small">RUH HALİNİ YANSITAN ATMOSFERLER</h3>
+            <div class="story-choices-grid" id="story-choices-grid">
+                </div>
         </div>
     </div>
 
