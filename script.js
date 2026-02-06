@@ -192,11 +192,35 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('selection-question').textContent = t.questions[questionIndex];
     }
 
-    // 3. Tema Değiştirme
+   // 10 TEMAYI SIRAYLA GEZEN FONKSİYON
     window.toggleTheme = function() {
         const body = document.body;
-        const currentTheme = body.getAttribute('data-theme');
-        body.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
+        const themes = [
+            'default',  // Varsayılan
+            'light',    // Aydınlık
+            'ocean',    // Okyanus
+            'forest',   // Orman
+            'cyber',    // Siber
+            'coffee',   // Kahve
+            'sunset',   // Gün Batımı
+            'purple',   // Mor
+            'mono',     // Siyah Beyaz
+            'midnight'  // Gece Yarısı
+        ];
+        
+        // Mevcut temayı bul
+        let currentTheme = body.getAttribute('data-theme') || 'default';
+        let currentIndex = themes.indexOf(currentTheme);
+        
+        // Bir sonraki temaya geç (Listenin sonuna gelirse başa dön)
+        let nextIndex = (currentIndex + 1) % themes.length;
+        let nextTheme = themes[nextIndex];
+        
+        // Yeni temayı uygula
+        body.setAttribute('data-theme', nextTheme);
+        
+        // Konsola yaz (test için)
+        console.log("Tema değiştirildi:", nextTheme);
     };
 
     // 4. Canvas Listesi Sıralama ve Gösterme
