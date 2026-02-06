@@ -110,20 +110,46 @@ document.addEventListener('DOMContentLoaded', () => {
 { rank: 5, title: "9,75", director: "Uluç Bayraktar", score: 73.06, year: 2020, poster: "images4/975.webp" },
 
 
- { rank: 4, title: "A.I. Artificial Intelligence", director: "Steven Spielberg", score: 87.11, year: 2001, poster: "images4/ai.webp" },
-{ rank: 5, title: "A Clockwork Orange", director: "Stanley Kubrick", score: 91.45, year: 1971, poster: "images4/aclock.webp" },
-{ rank: 5, title: "American History X", director: "Tony Kaye", score: 88.32, year: 1998, poster: "images4/americanhistoryx.webp" },
- { rank: 5, title: "Ahlat Ağacı", director: "Nuri Bilge Ceylan", score: 86.02, year: 2018, poster: "images4/ahlatagaci.webp" },
-{ rank: 5, title: "Adaptation", director: "Spike Jonze", score: 82.02, year: 2002, poster: "images4/adaptation.webp" },
-{ rank: 5, title: "Amelie", director: "Jean-Pierre Jeunet", score: 80.71, year: 2001, poster: "images4/amelie.webp" },
-{ rank: 5, title: "Ali'nin Sekiz Günü", director: "Cemal Şan", score: 70.39, year: 2009, poster: "images4/alinin.webp" },
+ { rank: 4, title: "A.I. Artificial Intelligence", director: "Steven Spielberg", score: 87.11, year: 2001, poster: "images4/a/ai.webp" },
+{ rank: 5, title: "A Clockwork Orange", director: "Stanley Kubrick", score: 91.45, year: 1971, poster: "images4/a/aclock.webp" },
+{ rank: 5, title: "American History X", director: "Tony Kaye", score: 88.32, year: 1998, poster: "images4/a/americanhistoryx.webp" },
+ { rank: 5, title: "Ahlat Ağacı", director: "Nuri Bilge Ceylan", score: 86.02, year: 2018, poster: "images4/a/ahlatagaci.webp" },
+{ rank: 5, title: "Adaptation", director: "Spike Jonze", score: 82.02, year: 2002, poster: "images4/a/adaptation.webp" },
+{ rank: 5, title: "Amelie", director: "Jean-Pierre Jeunet", score: 80.71, year: 2001, poster: "images4/a/amelie.webp" },
+{ rank: 5, title: "Ali'nin Sekiz Günü", director: "Cemal Şan", score: 70.39, year: 2009, poster: "images4/a/alinin.webp" },
+{ rank: 5, title: "American Beauty", director: " Sam Mendes", score: 80.91, year: 1999, poster: "images4/a/americanbeauty.webp" },
+{ rank: 5, title: "American Fiction", director: " Cord Jefferson", score: 74.32, year: 2023, poster: "images4/a/americanfiction.webp" },
+{ rank: 5, title: "American Psycho", director: "Mary Harron", score: 84.71, year: 2000, poster: "images4/a/americanpsycho.webp" },
+{ rank: 5, title: "Anatomy of a Murder", director: "Otto Preminger", score: 88.71, year: 1959, poster: "images4/a/anatomyofamurder.webp" },
+{ rank: 5, title: "Another Round", director: "Thomas Vinterberg", score: 75.46, year: 2020, poster: "images4/a/anotherround.webp" },
+{ rank: 5, title: "Apocalypse Now", director: "Francis Ford Coppola", score: 89.71, year: 1979, poster: "images4/a/apocalypsenow.webp" },
+{ rank: 5, title: "Apocalypto", director: "Mel Gibson", score: 78.45, year: 2006, poster: "images4/a/apocalypto.webp" },
+{ rank: 5, title: "Arabesk", director: "Ertem Eğilmez", score: 80.44, year: 1989, poster: "images4/a/arabesk.webp" },
+{ rank: 5, title: "Arrival", director: "Denis Villeneuve", score: 77.62, year: 2016, poster: "images4/a/arrival.webp" },
+{ rank: 5, title: "As Far as I Can Walk", director: "Stefan Arsenijević", score: 76.21, year: 2021, poster: "images4/a/canwalk.webp" },
+{ rank: 5, title: "Asteroid City", director: "Wes Anderson", score: 73.83, year: 2023, poster: "images4/a/asteroidcity.webp" },
 
 
+
+{ rank: 5, title: "Bir Zamanlar Anadolu'da", director: "Nuri Bilge Ceylan", score: 91.28, year: 2011, poster: "images4/birzamanlaranadoluda.webp" },
+
+
+
+
+
+{ rank: 5, title: "City of God", director: "Fernando Meirelles", score: 91.39, year: 2002, poster: "images4/cityofgod.webp" },
 { rank: 5, title: "C Blok", director: "Zeki Demirkubuz", score: 86.09, year: 1994, poster: "images4/cblok.webp" },
+ { rank: 5, title: "Come and See", director: "Elem Klimov", score: 91.47, year: 1985, poster: "images4/comeandsee.webp" },
+ { rank: 5, title: "Cinema Paradiso", director: "Giuseppe Tornatore", score: 84.21, year: 1988, poster: "images4/cinemaparadiso.webp" },
+        { rank: 5, title: "Casablanca", director: "Michael Curtiz", score: 85.02, year: 1943, poster: "images4/casablanca.webp" },
 
  { rank: 5, title: "Dokuz", director: "Ümit Ünal", score: 72.13, year: 2002, poster: "images4/dokuz.webp" },
+ { rank: 5, title: "Das Boot", director: "Wolfgang Petersen", score: 88.35, year: 1981, poster: "images4/dasboot.webp" },
 
 
+
+
+ 
         { rank: 1, title: "The Lord of the Rings: The Return of the King", director: "Peter Jackson", score: 93.79, year: 2003, poster: "images4/lotr3.webp" },
         { rank:2, title: "The Godfather", director: "Francis Ford Coppola", score: 93.49, year: 1972, poster: "images4/godfather.webp" }, // Poster linkini güncelleyin
         { rank: 3, title: "The Shining", director: "Stanley Kubrick", score: 89.21, year: 1980, poster: "images4/theshining.webp" },
@@ -149,14 +175,14 @@ document.addEventListener('DOMContentLoaded', () => {
         { rank: 5, title: "Goodfellas", director: "Martin Scorsese", score: 87.2, year: 1990, poster: "images4/goodfellas.webp" },
         { rank: 5, title: "Se7en", director: "David Fincher", score: 86.11, year: 1995, poster: "images4/se7en.webp" },
         { rank: 5, title: "It's a Wonderful Life", director: "Frank Capra", score: 87.29, year: 1946, poster: "images4/wonderfullife.webp" },
-        { rank: 5, title: "Come and See", director: "Elem Klimov", score: 91.47, year: 1985, poster: "images4/comeandsee.webp" },
+       
         { rank: 5, title: "High and Low", director: "Akira Kurosawa", score: 91.34, year: 1963, poster: "images4/highandlow.webp" },
-        { rank: 5, title: "City of God", director: "Fernando Meirelles", score: 91.39, year: 2002, poster: "images4/cityofgod.webp" },
+        
         { rank: 5, title: "Ikiru", director: "Akira Kurosawa", score: 90.04, year:  1952 , poster: "images4/ikuru.webp" },
         { rank: 5, title: "La Haine", director: "Mathieu Kassovitz", score: 88.04, year: 1995, poster: "images4/lahaine.webp" },
         { rank: 31, title: "Paths of Glory", director: " Stanley Kubrick", score: 88.39, year:  1957 , poster: "images4/pathsofglory.webp" },
         { rank: 5, title: "Faraway, So Close!", director: "Wim Wenders", score: 90.19, year: 1993, poster: "images4/faraway.webp" },
-        { rank: 5, title: "Das Boot", director: "Wolfgang Petersen", score: 88.35, year: 1981, poster: "images4/dasboot.webp" },
+       
         { rank: 5, title: "Underground", director: "Emir Kusturica", score: 88.38, year: 1995, poster: "images4/underground.webp" },
         { rank: 5, title: "Paris, Texas", director: "Wim Wenders", score: 90.25, year: 1984, poster: "images4/paristexas.webp" },
         { rank: 5, title: "Three Colours: Red", director: "Krzysztof Kieślowski", score: 90.26, year: 1994, poster: "images4/red.webp" },
@@ -171,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { rank: 5, title: "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb", director: "Stanley Kubrick", score: 88.34, year: 1964, poster: "images4/drstrangelove.webp" },
         { rank: 5, title: "Full Metal Jacket", director: "Stanley Kubrick", score: 87.32, year: 1987, poster: "images4/fullmetaljacket.webp" },
         { rank: 5, title: "Kış Uykusu", director: "Nuri Bilge Ceylan", score: 88.12, year: 2014, poster: "images4/kisuykusu.webp" },
-        { rank: 5, title: "Bir Zamanlar Anadolu'da", director: "Nuri Bilge Ceylan", score: 91.28, year: 2011, poster: "images4/birzamanlaranadoluda.webp" },
+       
        
         { rank: 5, title: "Uzak", director: "Nuri Bilge Ceylan", score: 89.37, year: 2002, poster: "images4/uzak.webp" },
         { rank: 51, title: "Üç Maymun", director: "Nuri Bilge Ceylan", score: 87.26, year: 2008, poster: "images4/ücmaymun.webp" },
@@ -179,8 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { rank: 5, title: "İklimler", director: "Nuri Bilge Ceylan", score: 87.12, year: 2006, poster: "images4/iklimler.webp" },
         
         { rank: 5, title: "Léon: The Professional", director: "Luc Besson", score: 87.23, year: 1994, poster: "images4/leon.webp" },
-        { rank: 5, title: "Cinema Paradiso", director: "Giuseppe Tornatore", score: 84.21, year: 1988, poster: "images4/cinemaparadiso.webp" },
-        { rank: 5, title: "Casablanca", director: "Michael Curtiz", score: 85.02, year: 1943, poster: "images4/casablanca.webp" },
+       
         { rank: 5, title: "Kader", director: "Zeki Demirkubuz", score: 89.41, year: 2006, poster: "images4/kader.webp" },
         { rank: 5, title: "Masumiyet", director: "Zeki Demirkubuz", score: 88.26, year: 1997, poster: "images4/masumiyet.webp" },
    
