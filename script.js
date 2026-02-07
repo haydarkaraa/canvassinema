@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
    
     const canvasTopList = [
-        { rank: 5, title: "12 Angry Men", director: "Sidney Lumet", score: 92.32, year: 1957, poster: "images4/12angryman.webp" },
-        { rank: 5, title: "100 metros", director: "Sidney Lumet", score: 75.13, year: 2016, poster: "images4/100m.webp" },
-       { rank: 5, title: "12 Years a Slave", director: "Steve McQueen", score: 85.08, year: 2013, poster: "images4/12year.webp" },
-       { rank: 5, title: "2001: A Space Odyssey", director: "Stanley Kubrick", score: 92.22, year: 1968, poster: "images4/aspace.webp" },
-{ rank: 5, title: "127 Hours", director: "Danny Boyle", score: 79.84, year: 2010, poster: "images4/127.webp" },
-{ rank: 5, title: "1917", director: "Sam Mendes", score: 84.45, year: 2019, poster: "images4/1917.webp" },
-{ rank: 5, title: "20,000 Leagues Under the Sea", director: "Richard Fleischer", score: 80.51, year: 1954, poster: "images4/20000.webp" },
-{ rank: 5, title: "2046", director: "Wong Kar-Wai", score: 84.36, year: 2004, poster: "images4/2046.webp" },
-{ rank: 5, title: "21", director: "Robert Luketic", score: 69.61, year: 2008, poster: "images4/21.webp" },
-{ rank: 5, title: "25th Hour", director: "Spike Lee", score: 87.08, year: 2002, poster: "images4/25saat.webp" },
-{ rank: 5, title: "28 Days", director: "Betty Thomas", score: 64.21, year: 2000, poster: "images4/28days.webp" },
-{ rank: 5, title: "3 Idiots", director: "Rajkumar Hirani", score: 87.06, year: 2009, poster: "images4/3idiots.webp" },
-{ rank: 5, title: "9,75", director: "Uluç Bayraktar", score: 73.06, year: 2020, poster: "images4/975.webp" },
+        { rank: 5, title: "12 Angry Men", director: "Sidney Lumet", score: 92.32, year: 1957, poster: "images4/xxx/12angryman.webp" },
+        { rank: 5, title: "100 metros", director: "Sidney Lumet", score: 75.13, year: 2016, poster: "images4/xxx/100m.webp" },
+       { rank: 5, title: "12 Years a Slave", director: "Steve McQueen", score: 85.08, year: 2013, poster: "images4/xxx/12year.webp" },
+       { rank: 5, title: "2001: A Space Odyssey", director: "Stanley Kubrick", score: 92.22, year: 1968, poster: "images4/xxx/aspace.webp" },
+{ rank: 5, title: "127 Hours", director: "Danny Boyle", score: 79.84, year: 2010, poster: "images4/xxx/127.webp" },
+{ rank: 5, title: "1917", director: "Sam Mendes", score: 84.45, year: 2019, poster: "images4/xxx/1917.webp" },
+{ rank: 5, title: "20,000 Leagues Under the Sea", director: "Richard Fleischer", score: 80.51, year: 1954, poster: "images4/xxx/20000.webp" },
+{ rank: 5, title: "2046", director: "Wong Kar-Wai", score: 84.36, year: 2004, poster: "images4/xxx/2046.webp" },
+{ rank: 5, title: "21", director: "Robert Luketic", score: 69.61, year: 2008, poster: "images4/xxx/21.webp" },
+{ rank: 5, title: "25th Hour", director: "Spike Lee", score: 87.08, year: 2002, poster: "images4/xxx/25saat.webp" },
+{ rank: 5, title: "28 Days", director: "Betty Thomas", score: 64.21, year: 2000, poster: "images4/xxx/28days.webp" },
+{ rank: 5, title: "3 Idiots", director: "Rajkumar Hirani", score: 87.06, year: 2009, poster: "images4/xxx/3idiots.webp" },
+{ rank: 5, title: "9,75", director: "Uluç Bayraktar", score: 73.06, year: 2020, poster: "images4/xxx/975.webp" },
 
 
  { rank: 4, title: "A.I. Artificial Intelligence", director: "Steven Spielberg", score: 87.11, year: 2001, poster: "images4/a/ai.webp" },
@@ -35,9 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
 { rank: 5, title: "As Far as I Can Walk", director: "Stefan Arsenijević", score: 76.21, year: 2021, poster: "images4/a/canwalk.webp" },
 { rank: 5, title: "Asteroid City", director: "Wes Anderson", score: 73.83, year: 2023, poster: "images4/a/asteroidcity.webp" },
 
+{ rank: 5, title: "Babylon", director: "Damien Chazelle", score: 70.4, year: 2022, poster: "images4/b/babylon.webp" },
+{ rank: 5, title: "Banyo", director: "Mustafa Altıoklar", score: 60, year: 2005, poster: "images4/b/banyo.webp" },
+{ rank: 5, title: "Barda", director: "Serdar Akar", score: 70.4, year: 2007, poster: "images4/b/barda.webp" },
 
-
-{ rank: 5, title: "Bir Zamanlar Anadolu'da", director: "Nuri Bilge Ceylan", score: 91.28, year: 2011, poster: "images4/birzamanlaranadoluda.webp" },
+{ rank: 5, title: "Bir Zamanlar Anadolu'da", director: "Nuri Bilge Ceylan", score: 91.28, year: 2011, poster: "images4/b/birzamanlaranadoluda.webp" },
 
 
 
@@ -53,6 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
  { rank: 5, title: "Das Boot", director: "Wolfgang Petersen", score: 88.35, year: 1981, poster: "images4/dasboot.webp" },       
  { rank: 5, title: "Dokuz", director: "Ümit Ünal", score: 72.13, year: 2002, poster: "images4/dokuz.webp" },
  { rank: 5, title: "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb", director: "Stanley Kubrick", score: 88.34, year: 1964, poster: "images4/drstrangelove.webp" },
+
+
+
+ { rank: 5, title: "Eyes Wide Shut", director: "Stanley Kubrick", score: 92.16, year: 1999, poster: "images4/eyeswide.webp" },
+         { rank: 5, title: "Eşkıya", director: "Yavuz Turgul", score: 80.61, year: 1996, poster: "images4/eskiya.webp" },
+        
 
 
 
@@ -98,8 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { rank: 5, title: "Wings of Desire", director: "Wim Wenders", score: 91.49, year: 1987, poster: "images4/derhimmel.webp" },
         { rank: 5, title: "Perfect Days", director: "Wim Wenders", score: 92.13, year: 2023, poster: "images4/perfectdays.webp" },
         { rank: 41, title: "Oldboy", director: "Park Chan-wook", score: 91.26, year: 2003, poster: "images4/oldboy.webp" },
-        { rank: 5, title: "Eyes Wide Shut", director: "Stanley Kubrick", score: 92.16, year: 1999, poster: "images4/eyeswide.webp" },
-        
+       { rank: 5, title: "The Banshees of Inisherin", director: "Martin McDonagh", score: 84.17, year: 2022, poster: "images4/thebanshees.webp" },
         
        
         { rank: 5, title: "Full Metal Jacket", director: "Stanley Kubrick", score: 87.32, year: 1987, poster: "images4/fullmetaljacket.webp" },
@@ -118,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
    
     { rank: 61, title: "Yeraltı", director: "Zeki Demirkubuz", score: 83.1, year: 2012, poster: "images4/yeralti.webp" },
     { rank: 5, title: "The Age of Adaline", director: "Lee Toland Krieger", score: 71.14, year: 2015, poster: "images4/adaline.webp" },
-
+{ rank: 5, title: "The Ballad of Buster Scruggs", director: "Ethan Coen-Joel Coen", score: 76.41, year: 20018, poster: "images4/theballadbusters.webp" },
     ];
 
     // Fallback Listesi (TMDB Çökerse Buradan Çekecek - images3)
@@ -471,4 +478,4 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('landing-screen').classList.remove('hidden');
         setLandingImages(); // Ana sayfaya dönünce görseli yenile
     }
-})
+});
