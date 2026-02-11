@@ -18,6 +18,45 @@
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 body { background-color: var(--bg-dark); color: var(--text-main); font-family: var(--font-main); transition: background-color 0.4s ease, color 0.4s ease; overflow-x: hidden; }
 
+.gateway-card {
+    background: var(--bg-card);
+    padding: 15px; /* Padding küçültüldü */
+    border-radius: 16px;
+    width: 140px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+.gateway-container {
+    display: flex;
+    flex-direction: row;       /* Yan yana (Satır) */
+    justify-content: center;   /* Ortala */
+    align-items: center;       /* Dikeyde ortala */
+    gap: 40px;                 /* Kartlar arası boşluk */
+    margin-top: 50px;
+    width: 100%;
+    flex-wrap: wrap;           /* Ekran çok küçülürse alt alta geçsin (taşmasın) */
+}
+.gateway-card {
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 16px;
+    
+    /* Genişlik Ayarı: Yan yana sığmaları için ideal boyut */
+    width: 250px;              
+    height: 300px;             /* Kartların boyunu eşitleyelim */
+    
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #333;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* İçerik kartın ortasında dursun */
+    align-items: center;
+}
+
 /* 2. EKRANLAR */
 .screen { min-height: 100vh; width: 100%; padding: 20px; display: flex; flex-direction: column; align-items: center; transition: opacity 0.4s ease; }
 .hidden { display: none !important; }
