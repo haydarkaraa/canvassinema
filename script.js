@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 { rank: 5, title: "As Far as I Can Walk", director: "Stefan Arsenijević", score: 76.21, year: 2021, poster: "images4/a/canwalk.webp" },
 { rank: 5, title: "Asteroid City", director: "Wes Anderson", score: 73.83, year: 2023, poster: "images4/a/asteroidcity.webp" },
 
-{ rank: 5, title: "Babylon", director: "Damien Chazelle", score: 70.4, year: 2022, poster: "images4/b/babylon.webp" },
+{ rank: 5, title: "Babylon", director: "Damien Chazelle", score: 78.4, year: 2022, poster: "images4/b/babylon.webp" },
 { rank: 5, title: "Banyo", director: "Mustafa Altıoklar", score: 60, year: 2005, poster: "images4/b/banyo.webp" },
 { rank: 5, title: "Barda", director: "Serdar Akar", score: 70.4, year: 2007, poster: "images4/b/barda.webp" },
 { rank: 5, title: "Bekleme Odası", director: "Zeki Demirkubuz", score: 79.88, year: 2004, poster: "images4/b/bekleme.webp" },
@@ -153,10 +153,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
- { rank: 5, title: "Das Boot", director: "Wolfgang Petersen", score: 88.35, year: 1981, poster: "images4/dasboot.webp" },       
- { rank: 5, title: "Dokuz", director: "Ümit Ünal", score: 72.13, year: 2002, poster: "images4/dokuz.webp" },
- { rank: 5, title: "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb", director: "Stanley Kubrick", score: 88.34, year: 1964, poster: "images4/drstrangelove.webp" },
-
+ { rank: 5, title: "Das Boot", director: "Wolfgang Petersen", score: 88.35, year: 1981, poster: "images4/d/dasboot.webp" },       
+ { rank: 5, title: "Dokuz", director: "Ümit Ünal", score: 72.13, year: 2002, poster: "images4/d/dokuz.webp" },
+ { rank: 5, title: "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb", director: "Stanley Kubrick", score: 88.34, year: 1964, poster: "images4/d/drstrangelove.webp" },
+ { rank: 5, title: "Dances with Wolves", director: "Kevin Costner", score: 82.15, year: 1990, poster: "images4/d/danceswith.webp" },  
+ { rank: 5, title: "Davaro", director: "Kartal Tibet", score: 81.35, year: 1981, poster: "images4/d/davaro.webp" },  
+{ rank: 5, title: "Day of the Wacko", director: "Marek Koterski", score: 79.16, year: 2002, poster: "images4/d/dayofwacko.webp" },   
+{ rank: 5, title: "Dog Day Afternoon", director: "Sidney Lumet", score: 89.46, year: 1975, poster: "images4/d/dogday.webp" },   
+{ rank: 5, title: "Django Unchained", director: "Quentin Tarantino", score: 78.21, year: 2012, poster: "images4/d/django.webp" },   
+{ rank: 5, title: "Dilber’in Sekiz Günü", director: "Cemal Şan", score: 70.45, year: 2009, poster: "images4/d/dilber.webp" },   
+{ rank: 5, title: "Dead Poets Society", director: "Peter Weir", score: 86.61, year: 1989, poster: "images4/d/deadpoets.webp" },   
+{ rank: 5, title: "Decalogue I", director: "Krzysztof Kieślowski", score: 90.08, year: 1989, poster: "images4/d/dekalog1.webp" },   
+{ rank: 5, title: "Decalogue II", director: "Krzysztof Kieślowski", score: 85.59, year: 1989, poster: "images4/d/dekalog2.webp" },  
+{ rank: 5, title: "Decalogue III", director: "Krzysztof Kieślowski", score: 85.87, year: 1989, poster: "images4/d/dekalog3.webp" },  
+{ rank: 5, title: "Decalogue VI", director: "Krzysztof Kieślowski", score: 81.37, year: 1989, poster: "images4/d/dekalog4.webp" },  
+{ rank: 5, title: "Decalogue V", director: "Krzysztof Kieślowski", score: 89.96, year: 1989, poster: "images4/d/dekalog5.webp" },  
+{ rank: 5, title: "Decalogue VI", director: "Krzysztof Kieślowski", score: 88.92, year: 1989, poster: "images4/d/dekalog6.webp" },  
+{ rank: 5, title: "Decalogue VII", director: "Krzysztof Kieślowski", score: 88.78, year: 1989, poster: "images4/d/dekalog7.webp" },  
+{ rank: 5, title: "Decalogue VIII", director: "Krzysztof Kieślowski", score: 80.67, year: 1989, poster: "images4/d/dekalog8.webp" },  
+{ rank: 5, title: "Decalogue XI", director: "Krzysztof Kieślowski", score: 81.23, year: 1989, poster: "images4/d/dekalog9.webp" },  
+{ rank: 5, title: "Decalogue X", director: "Krzysztof Kieślowski", score: 82.76, year: 1989, poster: "images4/d/dekalog10.webp" },  
 
 
  { rank: 5, title: "Eyes Wide Shut", director: "Stanley Kubrick", score: 92.16, year: 1999, poster: "images4/eyeswide.webp" },
@@ -204,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { rank: 5, title: "Three Colours: Red", director: "Krzysztof Kieślowski", score: 90.26, year: 1994, poster: "images4/red.webp" },
         { rank: 5, title: "Three Colours: Blue", director: "Krzysztof Kieślowski", score: 90.45, year: 1993, poster: "images4/blue.webp" },
         { rank: 5, title: "Three Colours: White", director: "Krzysztof Kieślowski", score: 86.01, year: 1994, poster: "images4/white.webp" },
-        { rank: 5, title: "Wings of Desire", director: "Wim Wenders", score: 91.49, year: 1987, poster: "images4/derhimmel.webp" },
+        { rank: 5, title: "Wings of Desire", director: "Wim Wenders", score: 91.49, year: 1987, poster: "images4/wingofdesire.webp" },
         { rank: 5, title: "Perfect Days", director: "Wim Wenders", score: 92.13, year: 2023, poster: "images4/perfectdays.webp" },
         { rank: 41, title: "Oldboy", director: "Park Chan-wook", score: 91.26, year: 2003, poster: "images4/oldboy.webp" },
        { rank: 5, title: "The Banshees of Inisherin", director: "Martin McDonagh", score: 84.17, year: 2022, poster: "images4/thebanshees.webp" },
