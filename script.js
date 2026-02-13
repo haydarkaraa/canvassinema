@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- MANUEL DÜZELTME BAŞLANGICI ---
 
     // 1. GÖRSEL LİSTESİ (Sadece burada tanımlı olsun, yukarıdakini sildiğinden emin ol)
-    const artImages= [
+    const localImagePool= [
         { id: "13.66", name: "View of the Domaine Saint-Joseph" },
         { id: "13.130", name: "A Ship in a Stormy Sea" },
         { id: "1972.118.281", name: "Nursery on Schenkweg" },
@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
         await new Promise(r => setTimeout(r, 200));
 
         // Rastgele 4 görsel seç
-        const shuffled = [...artImages].sort(() => 0.5 - Math.random()).slice(0, 4);
+        const shuffled = [...localImagePool].sort(() => 0.5 - Math.random()).slice(0, 4);
 
         // HTML oluştur (images/ klasörünü kullanıyoruz)
         grid.innerHTML = shuffled.map(item => `
