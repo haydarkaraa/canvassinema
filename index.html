@@ -7,9 +7,11 @@
     
     <meta name="description" content="Ruh haline göre sanatsal film önerileri ve kült sinema listesi.">
 
-    <link rel="icon" type="image/png" href="images/logo.png"> 
-    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="icon" type="image/png" href="images/icon-192.png"> 
+    <link rel="apple-touch-icon" href="images/icon-192.png">
+
     <link rel="manifest" href="manifest.json">
+    
     <meta name="theme-color" content="#0A0A0A">
 
     <link rel="stylesheet" href="style.css">
@@ -49,7 +51,7 @@
 
             <div class="gateway-card" onclick="showCanvasList()">
                 <div class="card-image-box">
-                    <img src="images2/fff.jpg" alt="Canvas Listesi" onerror="this.style.display='none'">
+                    <img src="images2/fff.jpg" alt="Canvas Listesi">
                 </div>
                 <h2 id="txt-canvas-list">CANVAS SİNEMA PUANLARI</h2>
             </div>
@@ -60,7 +62,9 @@
         <div class="header-image-container">
             <img id="random-header-img" src="" alt="Atmosfer">
         </div>
+        
         <h2 id="selection-question" class="fade-in">Ruh halini hangi atmosfer yansıtıyor?</h2>
+        
         <div class="selection-grid" id="image-selection-grid"></div>
         <button class="back-text-btn" onclick="goHome()">Ana Menüye Dön</button>
     </div>
@@ -80,30 +84,15 @@
     </div>
 
     <div id="insta-story-container" style="position: absolute; left: -9999px;">
-        <div class="story-header">
-            <svg width="350" height="100" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <g transform="translate(50, 60) scale(0.8)">
-                    <rect x="0" y="0" width="100" height="80" rx="4" stroke="#D32F2F" stroke-width="8" fill="none"/>
-                    <rect x="8" y="10" width="8" height="8" rx="1" fill="#D32F2F"/>
-                    <rect x="8" y="36" width="8" height="8" rx="1" fill="#D32F2F"/>
-                    <rect x="8" y="62" width="8" height="8" rx="1" fill="#D32F2F"/>
-                    <rect x="84" y="10" width="8" height="8" rx="1" fill="#D32F2F"/>
-                    <rect x="84" y="36" width="8" height="8" rx="1" fill="#D32F2F"/>
-                    <rect x="84" y="62" width="8" height="8" rx="1" fill="#D32F2F"/>
-                </g>
-                <text x="100" y="105" font-family="Montserrat, sans-serif" font-weight="800" font-size="24" fill="#D32F2F" text-anchor="middle">CANVAS SİNEMA</text>
-            </svg>
-        </div>
-        <div class="story-main">
-            <h2 class="story-label">ÖNERİLEN FİLM</h2>
-            <div class="poster-frame">
-                <img id="story-movie-poster" src="" crossorigin="anonymous" alt="Film Posteri">
-            </div>
-            <h1 id="story-movie-title">Film Başlığı</h1>
-        </div>
-        <div class="story-footer">
-            <h3 class="story-label-small">RUH HALİNİ YANSITAN SEÇİMLER</h3>
-            <div class="story-choices-grid" id="story-choices-grid"></div>
+        <div class="story-bg"></div>
+        <div class="story-content">
+            <h1 class="story-title" id="story-label-rec">ÖNERİLEN FİLM</h1>
+            <img id="story-movie-poster" src="" crossorigin="anonymous">
+            <h2 id="story-movie-title">Film Başlığı</h2>
+            <div class="story-divider"></div>
+            <p class="story-mood-label" id="story-label-mood">RUH HALİNİ YANSITAN SEÇİMLER</p>
+            <div class="story-choices" id="story-choices-grid"></div>
+            <div class="story-logo">CANVAS SINEMA</div>
         </div>
     </div>
 
