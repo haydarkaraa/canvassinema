@@ -132,18 +132,25 @@ document.addEventListener('DOMContentLoaded', () => {
 { rank: 5, title: "Babylon", director: "Damien Chazelle", score: 70.4, year: 2022, poster: "images4/b/babylon.webp" },
 { rank: 5, title: "Banyo", director: "Mustafa Altıoklar", score: 60, year: 2005, poster: "images4/b/banyo.webp" },
 { rank: 5, title: "Barda", director: "Serdar Akar", score: 70.4, year: 2007, poster: "images4/b/barda.webp" },
-
+{ rank: 5, title: "Bekleme Odası", director: "Zeki Demirkubuz", score: 79.88, year: 2004, poster: "images4/b/bekleme.webp" },
 { rank: 5, title: "Bir Zamanlar Anadolu'da", director: "Nuri Bilge Ceylan", score: 91.28, year: 2011, poster: "images4/b/birzamanlaranadoluda.webp" },
+{ rank: 5, title: "Braveheart", director: "Mel Gibson", score: 87.34, year: 1995, poster: "images4/b/braveheart.webp" },
+{ rank: 5, title: "Burn After Reading", director: " Ethan Coen, Joel Coen", score: 77.34, year: 2008, poster: "images4/b/burnafter.webp" },
+{ rank: 5, title: "Brothers ", director: "Jim Sheridan", score: 80.34, year: 2009, poster: "images4/b/brothers.webp" },
 
 
+{ rank: 5, title: "City of God", director: "Fernando Meirelles", score: 91.39, year: 2002, poster: "images4/c/cityofgod.webp" },
+{ rank: 5, title: "C Blok", director: "Zeki Demirkubuz", score: 86.09, year: 1994, poster: "images4/c/cblok.webp" },
+ { rank: 5, title: "Come and See", director: "Elem Klimov", score: 91.47, year: 1985, poster: "images4/c/comeandsee.webp" },
+ { rank: 5, title: "Cinema Paradiso", director: "Giuseppe Tornatore", score: 84.21, year: 1988, poster: "images4/c/cinemaparadiso.webp" },
+        { rank: 5, title: "Casablanca", director: "Michael Curtiz", score: 85.02, year: 1943, poster: "images4/c/casablanca.webp" },
+{ rank: 5, title: "Captain Phillips", director: "Paul Greengrass", score: 75.02, year: 2013, poster: "images4/c/captainphil.webp" },
+{ rank: 5, title: "Caché", director: "Michael Haneke", score: 89.02, year: 2005, poster: "images4/c/cache.webp" },
+{ rank: 5, title: "Cherry", director: "Joe Russo, Anthony Russo", score: 63.42, year: 2021, poster: "images4/c/cherry.webp" },
+{ rank: 5, title: "Chimes at Midnight", director: "Orson Welles", score: 87.72, year: 1965, poster: "images4/c/chimes.webp" },
+{ rank: 5, title: "Cinderella Man", director: "Ron Howard", score: 80.27, year: 2005, poster: "images4/c/cindirellaman.webp" },
+{ rank: 5, title: "Citizen Kane", director: "Orson Welles", score: 92.30, year: 1948, poster: "images4/c/citizenkane.webp" },
 
-
-
-{ rank: 5, title: "City of God", director: "Fernando Meirelles", score: 91.39, year: 2002, poster: "images4/cityofgod.webp" },
-{ rank: 5, title: "C Blok", director: "Zeki Demirkubuz", score: 86.09, year: 1994, poster: "images4/cblok.webp" },
- { rank: 5, title: "Come and See", director: "Elem Klimov", score: 91.47, year: 1985, poster: "images4/comeandsee.webp" },
- { rank: 5, title: "Cinema Paradiso", director: "Giuseppe Tornatore", score: 84.21, year: 1988, poster: "images4/cinemaparadiso.webp" },
-        { rank: 5, title: "Casablanca", director: "Michael Curtiz", score: 85.02, year: 1943, poster: "images4/casablanca.webp" },
 
 
  { rank: 5, title: "Das Boot", director: "Wolfgang Petersen", score: 88.35, year: 1981, poster: "images4/dasboot.webp" },       
