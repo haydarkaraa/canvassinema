@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 { rank: 5, title: "As Far as I Can Walk", director: "Stefan Arsenijević", score: 76.21, year: 2021, poster: "images4/a/canwalk.webp" },
 { rank: 5, title: "Asteroid City", director: "Wes Anderson", score: 73.83, year: 2023, poster: "images4/a/asteroidcity.webp" },
 
-{ rank: 5, title: "Babylon", director: "Damien Chazelle", score: 78.4, year: 2022, poster: "images4/b/babylon.webp" },
+{ rank: 5, title: "Babylon", director: "Damien Chazelle", score: 88.4, year: 2022, poster: "images4/b/babylon.webp" },
 { rank: 5, title: "Banyo", director: "Mustafa Altıoklar", score: 60, year: 2005, poster: "images4/b/banyo.webp" },
 { rank: 5, title: "Barda", director: "Serdar Akar", score: 70.4, year: 2007, poster: "images4/b/barda.webp" },
 { rank: 5, title: "Bekleme Odası", director: "Zeki Demirkubuz", score: 79.88, year: 2004, poster: "images4/b/bekleme.webp" },
@@ -173,17 +173,41 @@ document.addEventListener('DOMContentLoaded', () => {
 { rank: 5, title: "Decalogue VIII", director: "Krzysztof Kieślowski", score: 80.67, year: 1989, poster: "images4/d/dekalog8.webp" },  
 { rank: 5, title: "Decalogue XI", director: "Krzysztof Kieślowski", score: 81.23, year: 1989, poster: "images4/d/dekalog9.webp" },  
 { rank: 5, title: "Decalogue X", director: "Krzysztof Kieślowski", score: 82.76, year: 1989, poster: "images4/d/dekalog10.webp" },  
+{ rank: 5, title: "Don’t Look Up", director: "Adam McKay", score: 73.48, year: 2021, poster: "images4/d/dontlookup.webp" },   
+{ rank: 5, title: "Donnie Brasco", director: "Mike Newell", score: 76.61, year: 1997, poster: "images4/d/donniebrasco.webp" },   
+ { rank: 5, title: "Donnie Darko", director: "Richard Kelly", score: 81.61, year: 2001, poster: "images4/d/donniedarko.webp" },   
+{ rank: 5, title: "Dream Scenario", director: "Kristoffer Borgli", score: 72.61, year:  2023, poster: "images4/d/dreamscenario.webp" },   
+{ rank: 5, title: "Dumb Money", director: "Craig Gillespie", score: 69.88, year: 2023, poster: "images4/d/dumbmoney.webp" },   
+{ rank: 5, title: "Dunkirk", director: "Christopher Nolan", score: 78.61, year: 1989, poster: "images4/d/dunkirk.webp" },   
+
+{ rank: 5, title: "Eyes Wide Shut", director: "Stanley Kubrick", score: 92.16, year: 1999, poster: "images4/e/eyeswide.webp" },
+         { rank: 5, title: "Eşkıya", director: "Yavuz Turgul", score: 80.61, year: 1996, poster: "images4/e/eskiya.webp" },
+     { rank: 5, title: "Edward Scissorhands", director: "Tim Burton", score: 72.16, year: 1990, poster: "images4/e/edwardscissor.webp" },   
+{ rank: 5, title: "El Camino: A Breaking Bad Movie", director: "Vince Gilligan", score: 62.16, year: 2019, poster: "images4/e/elcamino.webp" },
+{ rank: 5, title: "Enemy", director: "Denis Villeneuve", score: 69.87, year: 2013, poster: "images4/e/enemy.webp" },
 
 
- { rank: 5, title: "Eyes Wide Shut", director: "Stanley Kubrick", score: 92.16, year: 1999, poster: "images4/eyeswide.webp" },
-         { rank: 5, title: "Eşkıya", director: "Yavuz Turgul", score: 80.61, year: 1996, poster: "images4/eskiya.webp" },
-        
+       
+
+ { rank: 5, title: "Faraway, So Close!", director: "Wim Wenders", score: 90.19, year: 1993, poster: "images4/f/faraway.webp" },
+{ rank: 5, title: "Fight Club", director: "David Fincher", score: 87.34, year: 1999, poster: "images4/f/fightclub.webp" },
+{ rank: 5, title: "Forrest Gump", director: "Robert Zemeckis", score: 87.21, year: 1994, poster: "images4/f/forrestgump.webp" },
+{ rank: 5, title: "Full Metal Jacket", director: "Stanley Kubrick", score: 87.32, year: 1987, poster: "images4/f/fullmetaljacket.webp" },
 
 
 
 
-        { rank: 1, title: "The Lord of the Rings: The Return of the King", director: "Peter Jackson", score: 93.79, year: 2003, poster: "images4/lotr3.webp" },
-        { rank:2, title: "The Godfather", director: "Francis Ford Coppola", score: 93.49, year: 1972, poster: "images4/godfather.webp" }, // Poster linkini güncelleyin
+ { rank: 5, title: "Goodfellas", director: "Martin Scorsese", score: 87.2, year: 1990, poster: "images4/goodfellas.webp" },
+
+
+
+
+
+
+
+
+{ rank: 1, title: "The Lord of the Rings: The Return of the King", director: "Peter Jackson", score: 93.79, year: 2003, poster: "images4/lotr3.webp" },
+        { rank:2, title: "The Godfather", director: "Francis Ford Coppola", score: 93.49, year: 1972, poster: "images4/thegodfather.webp" }, // Poster linkini güncelleyin
         { rank: 3, title: "The Shining", director: "Stanley Kubrick", score: 89.21, year: 1980, poster: "images4/theshining.webp" },
         { rank: 4, title: "Parasite", director: "Bong Joon-ho", score: 87.99, year: 2019, poster: "images4/parasite.webp" },
        
@@ -193,18 +217,17 @@ document.addEventListener('DOMContentLoaded', () => {
         { rank: 5, title: "The Silence of the Lambs", director: "Jonathan Demme", score: 89.33, year: 1991, poster: "images4/silenceofthelamb.webp" },
         { rank: 5, title: "The Shawshank Redemption", director: "Frank Darabont", score: 88.21, year: 1994, poster: "images4/theshawshank.webp" },
         { rank: 11, title: "The Dark Knight", director: "Christopher Nolan", score: 89.4, year: 2008, poster: "images4/thedarkknight.webp" },
-        { rank: 5, title: "The Godfather Part II", director: "Francis Ford Coppola", score: 93.18, year: 1974, poster: "images4/godfather2.webp" },
+        { rank: 5, title: "The Godfather Part II", director: "Francis Ford Coppola", score: 93.18, year: 1974, poster: "images4/thegodfather2.webp" },
         { rank: 5, title: "Schindler's List", director: "Steven Spielberg", score: 88.2, year: 1994, poster: "images4/schindlerslist.webp" },
         { rank: 5, title: "The Lord of the Rings: The Fellowship of the Ring", director: "Peter Jackson", score: 92.59, year: 2001, poster: "images4/lotr1.webp" },
         { rank: 5, title: "Pulp Fiction", director: "Quentin Tarantino", score: 88.4, year: 1994, poster: "images4/pulpfiction.webp" },
         { rank: 5, title: "The Good, the Bad and the Ugly", director: "Sergio Leone", score: 90.7, year: 1966, poster: "images4/goodbadugly.webp" },
         { rank: 5, title: "The Lord of the Rings: The Two Towers", director: "Peter Jackson", score: 91.29, year: 2002, poster: "images4/lotr2.webp" },
-        { rank: 5, title: "Forrest Gump", director: "Robert Zemeckis", score: 87.21, year: 1994, poster: "images4/forrestgump.webp" },
-        { rank: 5, title: "Fight Club", director: "David Fincher", score: 87.34, year: 1999, poster: "images4/fightclub.webp" },
+        
         { rank: 5, title: "Inception", director: "Christopher Nolan", score: 87.24, year: 2010, poster: "images4/inception.webp" },
         { rank: 21, title: "Star Wars: Episode V - The Empire Strikes Back", director: "Irvin Kershner", score: 87.14, year: 1980, poster: "images4/starwars5.webp" },
         { rank: 5, title: "The Matrix", director: "Wachowski Brothers", score: 87.94, year: 1999, poster: "images4/matrix.webp" },
-        { rank: 5, title: "Goodfellas", director: "Martin Scorsese", score: 87.2, year: 1990, poster: "images4/goodfellas.webp" },
+       
         { rank: 5, title: "Se7en", director: "David Fincher", score: 86.11, year: 1995, poster: "images4/se7en.webp" },
         { rank: 5, title: "It's a Wonderful Life", director: "Frank Capra", score: 87.29, year: 1946, poster: "images4/wonderfullife.webp" },
        
@@ -213,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { rank: 5, title: "Ikiru", director: "Akira Kurosawa", score: 90.04, year:  1952 , poster: "images4/ikuru.webp" },
         { rank: 5, title: "La Haine", director: "Mathieu Kassovitz", score: 88.04, year: 1995, poster: "images4/lahaine.webp" },
         { rank: 31, title: "Paths of Glory", director: " Stanley Kubrick", score: 88.39, year:  1957 , poster: "images4/pathsofglory.webp" },
-        { rank: 5, title: "Faraway, So Close!", director: "Wim Wenders", score: 90.19, year: 1993, poster: "images4/faraway.webp" },
+       
        
         { rank: 5, title: "Underground", director: "Emir Kusturica", score: 88.38, year: 1995, poster: "images4/underground.webp" },
         { rank: 5, title: "Paris, Texas", director: "Wim Wenders", score: 90.25, year: 1984, poster: "images4/paristexas.webp" },
@@ -226,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
        { rank: 5, title: "The Banshees of Inisherin", director: "Martin McDonagh", score: 84.17, year: 2022, poster: "images4/thebanshees.webp" },
         
        
-        { rank: 5, title: "Full Metal Jacket", director: "Stanley Kubrick", score: 87.32, year: 1987, poster: "images4/fullmetaljacket.webp" },
+        
         { rank: 5, title: "Kış Uykusu", director: "Nuri Bilge Ceylan", score: 88.12, year: 2014, poster: "images4/kisuykusu.webp" },
        
        
