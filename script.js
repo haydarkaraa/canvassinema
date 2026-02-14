@@ -193,13 +193,46 @@ document.addEventListener('DOMContentLoaded', () => {
 { rank: 5, title: "Fight Club", director: "David Fincher", score: 87.34, year: 1999, poster: "images4/f/fightclub.webp" },
 { rank: 5, title: "Forrest Gump", director: "Robert Zemeckis", score: 87.21, year: 1994, poster: "images4/f/forrestgump.webp" },
 { rank: 5, title: "Full Metal Jacket", director: "Stanley Kubrick", score: 87.32, year: 1987, poster: "images4/f/fullmetaljacket.webp" },
+{ rank: 5, title: "Final Destination", director: "James Wong", score: 65.71, year: 2000, poster: "images4/f/finaldestination.webp" },
+{ rank: 5, title: "Final Destination 2", director: "David R. Ellis", score: 60.21, year: 2003, poster: "images4/f/finaldes2.webp" },
+{ rank: 5, title: "Final Destination 3", director: "James Wong", score: 63.37, year: 2006, poster: "images4/f/finaldes3.webp" },
+{ rank: 5, title: "Final Destination 4", director: "David R. Ellis", score: 60.01, year: 2009, poster: "images4/f/finaldes4.webp" },
+{ rank: 5, title: "Final Destination 5", director: "Steven Quale", score: 64.89, year: 2011, poster: "images4/f/finaldes5.webp" },
+
+
+
+ { rank: 5, title: "Goodfellas", director: "Martin Scorsese", score: 87.2, year: 1990, poster: "images4/g/goodfellas.webp" },
+{ rank: 5, title: "Good Bye, Lenin!", director: "Wolfgang Becker", score: 87.16, year: 2003, poster: "images4/g/goodbyelenin.webp" },
+ { rank: 5, title: "Get Out", director: "Jordan Peele", score: 81.36, year: 2017, poster: "images4/g/getout.webp" },
+ { rank: 5, title: "Gone Girl", director: "David Fincher", score: 80.64, year: 2014, poster: "images4/g/gonegirl.webp" },
+{ rank: 5, title: "Gangs of Wasseypur Part 1", director: "Anurag Kashyap", score: 81.27, year: 2012, poster: "images4/g/gwayseypur1.webp" },
+{ rank: 5, title: "Gangs of Wasseypur Part 2", director: "Anurag Kashyap", score: 82.11, year: 2012, poster: "images4/g/gwasseypur2.webp" },
+
+
+
+ { rank: 5, title: "High and Low", director: "Akira Kurosawa", score: 91.34, year: 1963, poster: "images4/highandlow.webp" },
 
 
 
 
- { rank: 5, title: "Goodfellas", director: "Martin Scorsese", score: 87.2, year: 1990, poster: "images4/goodfellas.webp" },
+ { rank: 5, title: "Ikiru", director: "Akira Kurosawa", score: 90.04, year:  1952 , poster: "images4/ikuru.webp" },
+{ rank: 5, title: "Inception", director: "Christopher Nolan", score: 87.24, year: 2010, poster: "images4/inception.webp" },
+ { rank: 5, title: "Interstellar", director: "Christopher Nolan", score: 92.28, year: 2014, poster: "images4/interstellar.webp" },
+{ rank: 5, title: "It's a Wonderful Life", director: "Frank Capra", score: 87.29, year: 1946, poster: "images4/wonderfullife.webp" },
+ { rank: 5, title: "İklimler", director: "Nuri Bilge Ceylan", score: 87.12, year: 2006, poster: "images4/iklimler.webp" },
+     
+ 
+
+{ rank: 5, title: "Kader", director: "Zeki Demirkubuz", score: 89.41, year: 2006, poster: "images4/kader.webp" },
+{ rank: 5, title: "Kış Uykusu", director: "Nuri Bilge Ceylan", score: 88.12, year: 2014, poster: "images4/kisuykusu.webp" },
+ { rank: 5, title: "Kuru Otlar Üstüne", director: "Nuri Bilge Ceylan", score: 87.18, year: 2023, poster: "images4/kuruotlar.webp" },
+
+ { rank: 5, title: "La Haine", director: "Mathieu Kassovitz", score: 88.04, year: 1995, poster: "images4/lahaine.webp" },
+ { rank: 5, title: "Léon: The Professional", director: "Luc Besson", score: 87.23, year: 1994, poster: "images4/leon.webp" },
 
 
+ 
+{ rank: 5, title: "Masumiyet", director: "Zeki Demirkubuz", score: 88.26, year: 1997, poster: "images4/masumiyet.webp" },
 
 
 
@@ -211,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { rank: 3, title: "The Shining", director: "Stanley Kubrick", score: 89.21, year: 1980, poster: "images4/theshining.webp" },
         { rank: 4, title: "Parasite", director: "Bong Joon-ho", score: 87.99, year: 2019, poster: "images4/parasite.webp" },
        
-        { rank: 5, title: "Interstellar", director: "Christopher Nolan", score: 92.28, year: 2014, poster: "images4/interstellar.webp" },
+        
         { rank: 5, title: "One Flew Over the Cuckoo's Nest", director: "Miloš Forman", score: 91.38, year: 1975, poster: "images4/oneflew.webp" },
         { rank: 5, title: "Seven Samurai", director: "Akira Kurosawa", score: 93.37, year: 1954, poster: "images4/sevensamurai.webp" },
         { rank: 5, title: "The Silence of the Lambs", director: "Jonathan Demme", score: 89.33, year: 1991, poster: "images4/silenceofthelamb.webp" },
@@ -224,17 +257,16 @@ document.addEventListener('DOMContentLoaded', () => {
         { rank: 5, title: "The Good, the Bad and the Ugly", director: "Sergio Leone", score: 90.7, year: 1966, poster: "images4/goodbadugly.webp" },
         { rank: 5, title: "The Lord of the Rings: The Two Towers", director: "Peter Jackson", score: 91.29, year: 2002, poster: "images4/lotr2.webp" },
         
-        { rank: 5, title: "Inception", director: "Christopher Nolan", score: 87.24, year: 2010, poster: "images4/inception.webp" },
+        
         { rank: 21, title: "Star Wars: Episode V - The Empire Strikes Back", director: "Irvin Kershner", score: 87.14, year: 1980, poster: "images4/starwars5.webp" },
         { rank: 5, title: "The Matrix", director: "Wachowski Brothers", score: 87.94, year: 1999, poster: "images4/matrix.webp" },
        
         { rank: 5, title: "Se7en", director: "David Fincher", score: 86.11, year: 1995, poster: "images4/se7en.webp" },
-        { rank: 5, title: "It's a Wonderful Life", director: "Frank Capra", score: 87.29, year: 1946, poster: "images4/wonderfullife.webp" },
-       
-        { rank: 5, title: "High and Low", director: "Akira Kurosawa", score: 91.34, year: 1963, poster: "images4/highandlow.webp" },
         
-        { rank: 5, title: "Ikiru", director: "Akira Kurosawa", score: 90.04, year:  1952 , poster: "images4/ikuru.webp" },
-        { rank: 5, title: "La Haine", director: "Mathieu Kassovitz", score: 88.04, year: 1995, poster: "images4/lahaine.webp" },
+       
+        
+       
+       
         { rank: 31, title: "Paths of Glory", director: " Stanley Kubrick", score: 88.39, year:  1957 , poster: "images4/pathsofglory.webp" },
        
        
@@ -250,18 +282,16 @@ document.addEventListener('DOMContentLoaded', () => {
         
        
         
-        { rank: 5, title: "Kış Uykusu", director: "Nuri Bilge Ceylan", score: 88.12, year: 2014, poster: "images4/kisuykusu.webp" },
        
        
         { rank: 5, title: "Uzak", director: "Nuri Bilge Ceylan", score: 89.37, year: 2002, poster: "images4/uzak.webp" },
         { rank: 51, title: "Üç Maymun", director: "Nuri Bilge Ceylan", score: 87.26, year: 2008, poster: "images4/ücmaymun.webp" },
-        { rank: 5, title: "Kuru Otlar Üstüne", director: "Nuri Bilge Ceylan", score: 87.18, year: 2023, poster: "images4/kuruotlar.webp" },
-        { rank: 5, title: "İklimler", director: "Nuri Bilge Ceylan", score: 87.12, year: 2006, poster: "images4/iklimler.webp" },
-        
-        { rank: 5, title: "Léon: The Professional", director: "Luc Besson", score: 87.23, year: 1994, poster: "images4/leon.webp" },
        
-        { rank: 5, title: "Kader", director: "Zeki Demirkubuz", score: 89.41, year: 2006, poster: "images4/kader.webp" },
-        { rank: 5, title: "Masumiyet", director: "Zeki Demirkubuz", score: 88.26, year: 1997, poster: "images4/masumiyet.webp" },
+       
+       
+       
+        
+        
    
     { rank: 61, title: "Yeraltı", director: "Zeki Demirkubuz", score: 83.1, year: 2012, poster: "images4/yeralti.webp" },
     { rank: 5, title: "The Age of Adaline", director: "Lee Toland Krieger", score: 71.14, year: 2015, poster: "images4/adaline.webp" },
@@ -273,19 +303,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const privateSpecialList = [
         {
             title: "Oldboy",
-            poster_path: "images3/oldboy.jpg", 
+            poster_path: "images4/oldboy.jpg", 
             overview: "15 yıl hapis kalan bir adamın intikam hikayesi.",
             director_name: "Park Chan-wook",
             isLocal: true
         },
         {
             title: "American History X",
-            poster_path: "images3/americanhistoryx.jpg",
+            poster_path: "images/a/americanhistoryx.jpg",
             overview: "Irkçılık ve kefaret üzerine çarpıcı bir dram.",
             director_name: "Tony Kaye",
             isLocal: true
         }
-        // Buraya images3 klasöründeki diğer filmlerini ekle
+        
     ];
 
     // Dil Çevirileri
