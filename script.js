@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { rank: 5, title: "12 Angry Men", director: "Sidney Lumet", score: 92.32, year: 1957, poster: "images4/xxx/12angryman.webp" },
         { rank: 5, title: "100 metros", director: "Sidney Lumet", score: 75.13, year: 2016, poster: "images4/xxx/100m.webp" },
        { rank: 5, title: "12 Years a Slave", director: "Steve McQueen", score: 85.08, year: 2013, poster: "images4/xxx/12year.webp" },
-       { rank: 5, title: "2001: A Space Odyssey", director: "Stanley Kubrick", score: 92.22, year: 1968, poster: "images4/xxx/aspace.webp" },
+       { rank: 5, title: "2001: A Space Odyssey", director: "Stanley Kubrick", score: 92.22, year: 1968, poster: "images4/xxx/2001aspace.webp" },
 { rank: 5, title: "127 Hours", director: "Danny Boyle", score: 79.84, year: 2010, poster: "images4/xxx/127.webp" },
 { rank: 5, title: "1917", director: "Sam Mendes", score: 84.45, year: 2019, poster: "images4/xxx/1917.webp" },
 { rank: 5, title: "20,000 Leagues Under the Sea", director: "Richard Fleischer", score: 80.51, year: 1954, poster: "images4/xxx/20000.webp" },
@@ -180,6 +180,8 @@ document.addEventListener('DOMContentLoaded', () => {
 { rank: 5, title: "Dumb Money", director: "Craig Gillespie", score: 69.88, year: 2023, poster: "images4/d/dumbmoney.webp" },   
 { rank: 5, title: "Dunkirk", director: "Christopher Nolan", score: 78.61, year: 1989, poster: "images4/d/dunkirk.webp" },   
 
+
+
 { rank: 5, title: "Eyes Wide Shut", director: "Stanley Kubrick", score: 92.16, year: 1999, poster: "images4/e/eyeswide.webp" },
          { rank: 5, title: "Eşkıya", director: "Yavuz Turgul", score: 80.61, year: 1996, poster: "images4/e/eskiya.webp" },
      { rank: 5, title: "Edward Scissorhands", director: "Tim Burton", score: 72.16, year: 1990, poster: "images4/e/edwardscissor.webp" },   
@@ -229,14 +231,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
  
 
-
-{ rank: 5, title: "Ikiru", director: "Akira Kurosawa", score: 90.04, year:  1952 , poster: "images4/ikuru.webp" },
-{ rank: 5, title: "Inception", director: "Christopher Nolan", score: 87.24, year: 2010, poster: "images4/inception.webp" },
- { rank: 5, title: "Interstellar", director: "Christopher Nolan", score: 92.28, year: 2014, poster: "images4/interstellar.webp" },
-{ rank: 5, title: "It's a Wonderful Life", director: "Frank Capra", score: 87.29, year: 1946, poster: "images4/wonderfullife.webp" },
- { rank: 5, title: "İklimler", director: "Nuri Bilge Ceylan", score: 87.12, year: 2006, poster: "images4/iklimler.webp" },
+{ rank: 5, title: "I Am Cuba", director: "Mikheil Kalatozishvili", score: 89.43, year:  1964 , poster: "images4/i/iamkuba.webp" },
+{ rank: 5, title: "I Am Legend", director: "Francis Lawrence", score: 66.43, year:  2007 , poster: "images4/i/iamlegend.webp" },
+{ rank: 5, title: "I, Daniel Blake", director: "Ken Loach", score: 82.13, year:  2016 , poster: "images4/i/idanielblake.webp" },
+{ rank: 5, title: "Identity", director: "James Mangold", score: 77.23, year:  2003 , poster: "images4/i/identity.webp" },
+{ rank: 5, title: "Ikiru", director: "Akira Kurosawa", score: 90.04, year:  1952 , poster: "images4/i/ikuru.webp" },
+{ rank: 5, title: "Inception", director: "Christopher Nolan", score: 87.24, year: 2010, poster: "images4/i/inception.webp" },
+{ rank: 5, title: "Inglourious Basterds", director: "Quentin Tarantino", score: 87.54, year: 2009, poster: "images4/i/ingbas.webp" },
+ { rank: 5, title: "Interstellar", director: "Christopher Nolan", score: 92.28, year: 2014, poster: "images4/i/interstellar.webp" },
+ { rank: 5, title: "In the Name of the Father", director: "Jim Sheridan", score: 88.96, year: 1993, poster: "images4/i/inthename.webp" },
+ { rank: 5, title: "In Time", director: "Andrew Niccol", score: 62.96, year: 2011, poster: "images4/i/intime.webp" },
+ { rank: 5, title: "Io Capitano", director: "Matteo Garrone", score: 83.96, year: 2023, poster: "images4/i/iocaptanio.webp" },
+{ rank: 5, title: "It's a Wonderful Life", director: "Frank Capra", score: 87.29, year: 1946, poster: "images4/i/itswonderfullife.webp" },
+{ rank: 5, title: "Ip Man", director: "Wilson Yip", score: 77.29, year: 2008, poster: "images4/i/ipman.webp" },
+{ rank: 5, title: "Ip Man 2", director: "Wilson Yip", score: 72.01, year: 2010, poster: "images4/i/ipman2.webp" },
+{ rank: 5, title: "Ip Man 3", director: "Wilson Yip", score: 67.08, year: 2015, poster: "images4/i/ipman3.webp" },
+{ rank: 5, title: "Ip Man 4", director: "Wilson Yip", score: 64.12, year: 2019, poster: "images4/i/ipman4.webp" },
+ { rank: 5, title: "İklimler", director: "Nuri Bilge Ceylan", score: 87.12, year: 2006, poster: "images4/i/iklimler.webp" },
      
  
+{ rank: 5, title: "John Wick", director: "Chad Stahelski", score: 78.41, year: 2014, poster: "images4/j/johnwick.webp" },
+{ rank: 5, title: "John Wick 2", director: "Chad Stahelski", score: 76.21, year: 2017, poster: "images4/j/johnwick2.webp" },
+{ rank: 5, title: "John Wick 3", director: "Chad Stahelski", score: 75.87, year: 2019, poster: "images4/j/johnwick3.webp" },
+{ rank: 5, title: "John Wick 4", director: "Chad Stahelski", score: 79.27, year: 2023, poster: "images4/j/johnwick4.webp" },
+{ rank: 5, title: "Jojo Rabbit", director: "Taika Waititi", score: 79.97, year: 2019, poster: "images4/j/jojorabbit.webp" },
+{ rank: 5, title: "Joker", director: "Todd Phillips", score: 78.97, year: 2019, poster: "images4/j/jojorabbit.webp" },
 
 { rank: 5, title: "Kader", director: "Zeki Demirkubuz", score: 89.41, year: 2006, poster: "images4/kader.webp" },
 { rank: 5, title: "Kış Uykusu", director: "Nuri Bilge Ceylan", score: 88.12, year: 2014, poster: "images4/kisuykusu.webp" },
