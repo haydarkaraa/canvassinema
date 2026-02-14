@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { rank: 5, title: "12 Angry Men", director: "Sidney Lumet", score: 92.32, year: 1957, poster: "images4/xxx/12angryman.webp" },
         { rank: 5, title: "100 metros", director: "Sidney Lumet", score: 75.13, year: 2016, poster: "images4/xxx/100m.webp" },
        { rank: 5, title: "12 Years a Slave", director: "Steve McQueen", score: 85.08, year: 2013, poster: "images4/xxx/12year.webp" },
-       { rank: 5, title: "2001: A Space Odyssey", director: "Stanley Kubrick", score: 92.22, year: 1968, poster: "images4/xxx/2001aspace.webp" },
+       { rank: 5, title: "2001: A Space Odyssey", director: "Stanley Kubrick", score: 92.22, year: 1968, poster: "images4/xxx/2001.webp" },
 { rank: 5, title: "127 Hours", director: "Danny Boyle", score: 79.84, year: 2010, poster: "images4/xxx/127.webp" },
 { rank: 5, title: "1917", director: "Sam Mendes", score: 84.45, year: 2019, poster: "images4/xxx/1917.webp" },
 { rank: 5, title: "20,000 Leagues Under the Sea", director: "Richard Fleischer", score: 80.51, year: 1954, poster: "images4/xxx/20000.webp" },
@@ -312,10 +312,10 @@ document.addEventListener('DOMContentLoaded', () => {
     { rank: 5, title: "Rambo", director: "Sylvester Stallone", score: 60.04, year: 2008, poster: "images4/r/ramborambo.webp" },
 
 
-{ rank: 5, title: "Schindler's List", director: "Steven Spielberg", score: 88.2, year: 1994, poster: "images4/schindlerslist.webp" },
- { rank: 5, title: "Seven Samurai", director: "Akira Kurosawa", score: 93.37, year: 1954, poster: "images4/sevensamurai.webp" },
- { rank: 5, title: "Se7en", director: "David Fincher", score: 86.11, year: 1995, poster: "images4/se7en.webp" },
-{ rank: 21, title: "Star Wars: Episode V - The Empire Strikes Back", director: "Irvin Kershner", score: 87.14, year: 1980, poster: "images4/starwars5.webp" },
+{ rank: 5, title: "Schindler's List", director: "Steven Spielberg", score: 88.2, year: 1994, poster: "images4/s/schindlerslist.webp" },
+ { rank: 5, title: "Seven Samurai", director: "Akira Kurosawa", score: 93.37, year: 1954, poster: "images4/s/sevensamurai.webp" },
+ { rank: 5, title: "Se7en", director: "David Fincher", score: 86.11, year: 1995, poster: "images4/s/se7en.webp" },
+{ rank: 21, title: "Star Wars: Episode V - The Empire Strikes Back", director: "Irvin Kershner", score: 87.14, year: 1980, poster: "images4/s/starwars5.webp" },
 
 
 
@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { rank: 5, title: "The Silence of the Lambs", director: "Jonathan Demme", score: 89.33, year: 1991, poster: "images4/t/silenceofthelamb.webp" },
         { rank: 5, title: "The Shawshank Redemption", director: "Frank Darabont", score: 88.21, year: 1994, poster: "images4/t/theshawshank.webp" },
         { rank: 11, title: "The Dark Knight", director: "Christopher Nolan", score: 89.4, year: 2008, poster: "images4/t/thedarkknight.webp" },
-    { rank: 5, title: "The Good, the Bad and the Ugly", director: "Sergio Leone", score: 90.7, year: 1966, poster: "images4/t/goodbadugly.webp" },
+    { rank: 5, title: "The Good, the Bad and the Ugly", director: "Sergio Leone", score: 90.7, year: 1966, poster: "images4/t/thegoodbadugly.webp" },
  { rank: 5, title: "The Matrix", director: "Lilly Wachowski,Lana Wachowski", score: 87.94, year: 1999, poster: "images4/t/thematrix.webp" },
     { rank: 5, title: "The Matrix Reloaded", director: "Lilly Wachowski,Lana Wachowski", score: 80.14, year: 2003, poster: "images4/t/thematrix2.webp" },
   { rank: 5, title: "The Matrix Revolutions", director: "Lilly Wachowski,Lana Wachowski", score: 82.94, year: 2003, poster: "images4/t/thematrix3.webp" },
