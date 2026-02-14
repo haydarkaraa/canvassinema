@@ -210,12 +210,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
- { rank: 5, title: "High and Low", director: "Akira Kurosawa", score: 91.34, year: 1963, poster: "images4/highandlow.webp" },
+ { rank: 5, title: "Hachi: A Dog’s Tale", director: "Lasse Hallström", score: 73.46, year: 2009, poster: "images4/h/hachi.webp" },
+ { rank: 5, title: "Hannibal", director: "Ridley Scott", score: 73.46, year: 2001, poster: "images4/h/hannibal.webp" },
+ { rank: 5, title: "High and Low", director: "Akira Kurosawa", score: 91.34, year: 1963, poster: "images4/h/highandlow.webp" },
+ { rank: 5, title: "Harry Potter and the Philosopher’s Stone", director: "Chris Columbus", score: 81.06, year: 2001, poster: "images4/h/harrypotter1.webp" },
+{ rank: 5, title: "Harry Potter and the Chamber of Secrets", director: "Chris Columbus", score: 80.16, year: 2002, poster: "images4/h/harrypotter2.webp" },
+{ rank: 5, title: "Harry Potter and the Prisoner of Azkaban", director: "Alfonso Cuarón", score: 87.30, year: 2004, poster: "images4/h/harrypotter3.webp" },
+{ rank: 5, title: "Harry Potter and the Goblet of Fire", director: "Mike Newell", score: 86.96, year: 2005, poster: "images4/h/harrypotter4.webp" },
+{ rank: 5, title: "Harry Potter and the Order of the Phoenix", director: "David Yates", score: 85.16, year: 2007, poster: "images4/h/harrypotter5.webp" },
+{ rank: 5, title: "Harry Potter and the Half-Blood Prince", director: "David Yates", score: 77.26, year: 2009, poster: "images4/h/harrypotter6.webp" },
+{ rank: 5, title: "Harry Potter and the Deathly Hallows: Part 1", director: "David Yates", score: 85.27, year: 2010, poster: "images4/h/harrypotter7.webp" },
+{ rank: 5, title: "Harry Potter and the Deathly Hallows: Part 2", director: "David Yates", score: 85.94, year: 2011, poster: "images4/h/harrypotter8.webp" },
+{ rank: 5, title: "Her", director: "Spike Jonze", score: 69.46, year: 2013, poster: "images4/h/her.webp" },
+{ rank: 5, title: "Holy Spider", director: "Ali Abbasi", score: 84.46, year: 2022, poster: "images4/h/holyspider.webp" },
+{ rank: 5, title: "Horrible Bosses", director: "Seth Gordon", score: 64.46, year: 2011, poster: "images4/h/hbosses1.webp" },
+{ rank: 5, title: "Horrible Bosses 2", director: "Sean Anders", score: 61.21, year: 2014, poster: "images4/h/hbosses2.webp" },
 
 
+ 
 
 
- { rank: 5, title: "Ikiru", director: "Akira Kurosawa", score: 90.04, year:  1952 , poster: "images4/ikuru.webp" },
+{ rank: 5, title: "Ikiru", director: "Akira Kurosawa", score: 90.04, year:  1952 , poster: "images4/ikuru.webp" },
 { rank: 5, title: "Inception", director: "Christopher Nolan", score: 87.24, year: 2010, poster: "images4/inception.webp" },
  { rank: 5, title: "Interstellar", director: "Christopher Nolan", score: 92.28, year: 2014, poster: "images4/interstellar.webp" },
 { rank: 5, title: "It's a Wonderful Life", director: "Frank Capra", score: 87.29, year: 1946, poster: "images4/wonderfullife.webp" },
