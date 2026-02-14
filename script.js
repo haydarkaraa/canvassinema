@@ -257,80 +257,120 @@ document.addEventListener('DOMContentLoaded', () => {
 { rank: 5, title: "Jojo Rabbit", director: "Taika Waititi", score: 79.97, year: 2019, poster: "images4/j/jojorabbit.webp" },
 { rank: 5, title: "Joker", director: "Todd Phillips", score: 78.97, year: 2019, poster: "images4/j/jojorabbit.webp" },
 
-{ rank: 5, title: "Kader", director: "Zeki Demirkubuz", score: 89.41, year: 2006, poster: "images4/kader.webp" },
-{ rank: 5, title: "Kış Uykusu", director: "Nuri Bilge Ceylan", score: 88.12, year: 2014, poster: "images4/kisuykusu.webp" },
- { rank: 5, title: "Kuru Otlar Üstüne", director: "Nuri Bilge Ceylan", score: 87.18, year: 2023, poster: "images4/kuruotlar.webp" },
-
- { rank: 5, title: "La Haine", director: "Mathieu Kassovitz", score: 88.04, year: 1995, poster: "images4/lahaine.webp" },
- { rank: 5, title: "Léon: The Professional", director: "Luc Besson", score: 87.23, year: 1994, poster: "images4/leon.webp" },
-
-
+{ rank: 5, title: "Kader", director: "Zeki Demirkubuz", score: 89.41, year: 2006, poster: "images4/k/kader.webp" },
+{ rank: 5, title: "Kış Uykusu", director: "Nuri Bilge Ceylan", score: 88.12, year: 2014, poster: "images4/k/kisuykusu.webp" },
+ { rank: 5, title: "Kuru Otlar Üstüne", director: "Nuri Bilge Ceylan", score: 87.18, year: 2023, poster: "images4/k/kuruotlar.webp" },
+ { rank: 5, title: "Kasaba", director: "Nuri Bilge Ceylan", score: 76.18, year: 1997, poster: "images4/k/kasaba.webp" },
+{ rank: 5, title: "Kill Bill: Vol. 1", director: "Quentin Tarantino", score: 88.98, year: 2003, poster: "images4/k/killbill.webp" },
+{ rank: 5, title: "Kill Bill: Vol. 2", director: "Quentin Tarantino", score: 89.18, year: 2004, poster: "images4/k/killbill2.webp" },
+{ rank: 5, title: "Kill Bill: The Whole Bloody Affair", director: "Quentin Tarantino", score: 91.25, year: 2006, poster: "images4/k/killbill3.webp" },
  
-{ rank: 5, title: "Masumiyet", director: "Zeki Demirkubuz", score: 88.26, year: 1997, poster: "images4/masumiyet.webp" },
+ { rank: 5, title: "La Haine", director: "Mathieu Kassovitz", score: 88.04, year: 1995, poster: "images4/L/lahaine.webp" },
+ { rank: 5, title: "Léon: The Professional", director: "Luc Besson", score: 87.23, year: 1994, poster: "images4/L/leon.webp" },
+{ rank: 5, title: "La La Land", director: "Damien Chazelle", score: 73.23, year: 2016, poster: "images4/L/lalaland.webp" },
+{ rank: 5, title: "L.A. Confidential", director: "Curtis Hanson", score: 83.23, year: 1997, poster: "images4/L/lacon.webp" },
+{ rank: 5, title: "Lady Vengeance", director: "Park Chan-wook", score: 86.93, year: 2005, poster: "images4/L/ladyvengance.webp" },
+
+
+
+
+{ rank: 5, title: "Manchester by the Sea", director: "Kenneth Lonergan", score: 90.86, year: 2016, poster: "images4/m/manchesterbythesea.webp" },
+{ rank: 5, title: "Marriage Story", director: "Noah Baumbach", score: 72.26, year: 2019, poster: "images4/m/marriagestory.webp" },
+{ rank: 5, title: "Masumiyet", director: "Zeki Demirkubuz", score: 88.26, year: 1997, poster: "images4/m/masumiyet.webp" },
+{ rank: 5, title: "Meet Joe Black", director: "Martin Brest", score: 71.26, year: 1998, poster: "images4/m/meetjoeblack.webp" },
+{ rank: 5, title: "Memento", director: "Christopher Nolan", score: 83.96, year: 2000, poster: "images4/m/memento.webp" },
+{ rank: 5, title: "Modern Times", director: "Charlie Chaplin", score: 89.29, year: 1936, poster: "images4/m/moderntimes.webp" },
+{ rank: 5, title: "Mulholland Drive", director: "David Lynch", score: 87.55, year: 2001, poster: "images4/m/mulhollanddrive.webp" },
+
+
+
+{ rank: 5, title: "Naked", director: "Mike Leigh", score: 88.59, year: 1993, poster: "images4/n/naked.webp" },
+{ rank: 5, title: "Napoleon", director: "Ridley Scott", score: 60.59, year: 2023, poster: "images4/n/napolyon.webp" },
+{ rank: 5, title: "Night at the Museum", director: "Shawn Levy", score: 69.96, year: 2006, poster: "images4/n/nightatthemuseum.webp" },
+{ rank: 5, title: "Night at the Museum", director: "Shawn Levy", score: 60.22, year: 2009, poster: "images4/n/nightatthemuseum2.webp" },
+{ rank: 5, title: "Night at the Museum", director: "Shawn Levy", score: 60.02, year: 2014, poster: "images4/n/nightatthemuseum3.webp" },
+
+
+
+{ rank: 41, title: "Oldboy", director: "Park Chan-wook", score: 88.26, year: 2003, poster: "images4/o/oldboy.webp" },
+ { rank: 5, title: "One Flew Over the Cuckoo's Nest", director: "Miloš Forman", score: 91.38, year: 1975, poster: "images4/o/oneflew.webp" },
+
+
+
+{ rank: 4, title: "Parasite", director: "Bong Joon-ho", score: 87.99, year: 2019, poster: "images4/p/parasite.webp" },
+{ rank: 5, title: "Paris, Texas", director: "Wim Wenders", score: 90.25, year: 1984, poster: "images4/p/paristexas.webp" },
+{ rank: 31, title: "Paths of Glory", director: " Stanley Kubrick", score: 88.39, year:  1957 , poster: "images4/p/pathsofglory.webp" },
+{ rank: 5, title: "Perfect Days", director: "Wim Wenders", score: 92.13, year: 2023, poster: "images4/p/perfectdays.webp" },
+ { rank: 5, title: "Pulp Fiction", director: "Quentin Tarantino", score: 88.4, year: 1994, poster: "images4/p/pulpfiction.webp" },
+
+
+ { rank: 5, title: "Rain Man", director: "Barry Levinson", score: 84.37, year: 1988, poster: "images4/r/rainman.webp" },
+ { rank: 5, title: "First Blood", director: "Ted Kotcheff", score: 68.32, year: 1982, poster: "images4/r/rambofb.webp" },
+  { rank: 5, title: "First Blood Part:2", director: "George P. Cosmatos", score: 63.12, year: 1985, poster: "images4/r/rambofb2.webp" },
+  { rank: 5, title: "Rambo III", director: "Peter MacDonald", score: 60.07, year: 1988, poster: "images4/r/rambo3.webp" },
+    { rank: 5, title: "Rambo: Last Blood", director: "Adrian Grünberg", score: 60.03, year: 2019, poster: "images4/r/rambolb.webp" },
+    { rank: 5, title: "Rambo", director: "Sylvester Stallone", score: 60.04, year: 2008, poster: "images4/r/ramborambo.webp" },
+
+
+{ rank: 5, title: "Schindler's List", director: "Steven Spielberg", score: 88.2, year: 1994, poster: "images4/schindlerslist.webp" },
+ { rank: 5, title: "Seven Samurai", director: "Akira Kurosawa", score: 93.37, year: 1954, poster: "images4/sevensamurai.webp" },
+ { rank: 5, title: "Se7en", director: "David Fincher", score: 86.11, year: 1995, poster: "images4/se7en.webp" },
+{ rank: 21, title: "Star Wars: Episode V - The Empire Strikes Back", director: "Irvin Kershner", score: 87.14, year: 1980, poster: "images4/starwars5.webp" },
 
 
 
 
 
 
-{ rank: 1, title: "The Lord of the Rings: The Return of the King", director: "Peter Jackson", score: 93.79, year: 2003, poster: "images4/lotr3.webp" },
-        { rank:2, title: "The Godfather", director: "Francis Ford Coppola", score: 93.49, year: 1972, poster: "images4/thegodfather.webp" }, // Poster linkini güncelleyin
-        { rank: 3, title: "The Shining", director: "Stanley Kubrick", score: 89.21, year: 1980, poster: "images4/theshining.webp" },
-        { rank: 4, title: "Parasite", director: "Bong Joon-ho", score: 87.99, year: 2019, poster: "images4/parasite.webp" },
-       
-        
-        { rank: 5, title: "One Flew Over the Cuckoo's Nest", director: "Miloš Forman", score: 91.38, year: 1975, poster: "images4/oneflew.webp" },
-        { rank: 5, title: "Seven Samurai", director: "Akira Kurosawa", score: 93.37, year: 1954, poster: "images4/sevensamurai.webp" },
-        { rank: 5, title: "The Silence of the Lambs", director: "Jonathan Demme", score: 89.33, year: 1991, poster: "images4/silenceofthelamb.webp" },
-        { rank: 5, title: "The Shawshank Redemption", director: "Frank Darabont", score: 88.21, year: 1994, poster: "images4/theshawshank.webp" },
-        { rank: 11, title: "The Dark Knight", director: "Christopher Nolan", score: 89.4, year: 2008, poster: "images4/thedarkknight.webp" },
-        { rank: 5, title: "The Godfather Part II", director: "Francis Ford Coppola", score: 93.18, year: 1974, poster: "images4/thegodfather2.webp" },
-        { rank: 5, title: "Schindler's List", director: "Steven Spielberg", score: 88.2, year: 1994, poster: "images4/schindlerslist.webp" },
-        { rank: 5, title: "The Lord of the Rings: The Fellowship of the Ring", director: "Peter Jackson", score: 92.59, year: 2001, poster: "images4/lotr1.webp" },
-        { rank: 5, title: "Pulp Fiction", director: "Quentin Tarantino", score: 88.4, year: 1994, poster: "images4/pulpfiction.webp" },
-        { rank: 5, title: "The Good, the Bad and the Ugly", director: "Sergio Leone", score: 90.7, year: 1966, poster: "images4/goodbadugly.webp" },
-        { rank: 5, title: "The Lord of the Rings: The Two Towers", director: "Peter Jackson", score: 91.29, year: 2002, poster: "images4/lotr2.webp" },
-        
-        
-        { rank: 21, title: "Star Wars: Episode V - The Empire Strikes Back", director: "Irvin Kershner", score: 87.14, year: 1980, poster: "images4/starwars5.webp" },
-        { rank: 5, title: "The Matrix", director: "Wachowski Brothers", score: 87.94, year: 1999, poster: "images4/matrix.webp" },
-       
-        { rank: 5, title: "Se7en", director: "David Fincher", score: 86.11, year: 1995, poster: "images4/se7en.webp" },
-        
-       
-        
-       
-       
-        { rank: 31, title: "Paths of Glory", director: " Stanley Kubrick", score: 88.39, year:  1957 , poster: "images4/pathsofglory.webp" },
-       
-       
-        { rank: 5, title: "Underground", director: "Emir Kusturica", score: 88.38, year: 1995, poster: "images4/underground.webp" },
-        { rank: 5, title: "Paris, Texas", director: "Wim Wenders", score: 90.25, year: 1984, poster: "images4/paristexas.webp" },
-        { rank: 5, title: "Three Colours: Red", director: "Krzysztof Kieślowski", score: 90.26, year: 1994, poster: "images4/red.webp" },
-        { rank: 5, title: "Three Colours: Blue", director: "Krzysztof Kieślowski", score: 90.45, year: 1993, poster: "images4/blue.webp" },
-        { rank: 5, title: "Three Colours: White", director: "Krzysztof Kieślowski", score: 86.01, year: 1994, poster: "images4/white.webp" },
-        { rank: 5, title: "Wings of Desire", director: "Wim Wenders", score: 91.49, year: 1987, poster: "images4/wingofdesire.webp" },
-        { rank: 5, title: "Perfect Days", director: "Wim Wenders", score: 92.13, year: 2023, poster: "images4/perfectdays.webp" },
-        { rank: 41, title: "Oldboy", director: "Park Chan-wook", score: 91.26, year: 2003, poster: "images4/oldboy.webp" },
-       { rank: 5, title: "The Banshees of Inisherin", director: "Martin McDonagh", score: 84.17, year: 2022, poster: "images4/thebanshees.webp" },
-        
-       
-        
-       
-       
-        { rank: 5, title: "Uzak", director: "Nuri Bilge Ceylan", score: 89.37, year: 2002, poster: "images4/uzak.webp" },
-        { rank: 51, title: "Üç Maymun", director: "Nuri Bilge Ceylan", score: 87.26, year: 2008, poster: "images4/ücmaymun.webp" },
+
+{ rank: 1, title: "The Lord of the Rings: The Return of the King", director: "Peter Jackson", score: 93.79, year: 2003, poster: "images4/t/thelotr3.webp" },
+  { rank: 5, title: "The Lord of the Rings: The Two Towers", director: "Peter Jackson", score: 91.29, year: 2002, poster: "images4/t/thelotr2.webp" },      
+{ rank: 5, title: "The Lord of the Rings: The Fellowship of the Ring", director: "Peter Jackson", score: 92.59, year: 2001, poster: "images4/t/thelotr1.webp" },
+  { rank:2, title: "The Godfather", director: "Francis Ford Coppola", score: 93.49, year: 1972, poster: "images4/t/thegodfather.webp" }, 
+       { rank: 5, title: "The Godfather Part II", director: "Francis Ford Coppola", score: 93.18, year: 1974, poster: "images4/t/thegodfather2.webp" },
+  { rank: 5, title: "The Godfather Part III", director: "Francis Ford Coppola", score: 77.08, year: 1990, poster: "images4/t/thegodfather3.webp" },
+  { rank: 3, title: "The Shining", director: "Stanley Kubrick", score: 89.21, year: 1980, poster: "images4/t/theshining.webp" },
+        { rank: 5, title: "The Silence of the Lambs", director: "Jonathan Demme", score: 89.33, year: 1991, poster: "images4/t/silenceofthelamb.webp" },
+        { rank: 5, title: "The Shawshank Redemption", director: "Frank Darabont", score: 88.21, year: 1994, poster: "images4/t/theshawshank.webp" },
+        { rank: 11, title: "The Dark Knight", director: "Christopher Nolan", score: 89.4, year: 2008, poster: "images4/t/thedarkknight.webp" },
+    { rank: 5, title: "The Good, the Bad and the Ugly", director: "Sergio Leone", score: 90.7, year: 1966, poster: "images4/t/goodbadugly.webp" },
+ { rank: 5, title: "The Matrix", director: "Lilly Wachowski,Lana Wachowski", score: 87.94, year: 1999, poster: "images4/t/thematrix.webp" },
+    { rank: 5, title: "The Matrix Reloaded", director: "Lilly Wachowski,Lana Wachowski", score: 80.14, year: 2003, poster: "images4/t/thematrix2.webp" },
+  { rank: 5, title: "The Matrix Revolutions", director: "Lilly Wachowski,Lana Wachowski", score: 82.94, year: 2003, poster: "images4/t/thematrix3.webp" },
+  { rank: 5, title: "The Matrix Resurrections", director: "Lilly Wachowski,Lana Wachowski", score: 60.07, year: 2021, poster: "images4/t/thematrix4.webp" },
+  { rank: 5, title: "Three Colours: Red", director: "Krzysztof Kieślowski", score: 90.26, year: 1994, poster: "images4/t/thered.webp" },
+        { rank: 5, title: "Three Colours: Blue", director: "Krzysztof Kieślowski", score: 90.45, year: 1993, poster: "images4/t/theblue.webp" },
+        { rank: 5, title: "Three Colours: White", director: "Krzysztof Kieślowski", score: 86.01, year: 1994, poster: "images4/t/thewhite.webp" },
+  { rank: 5, title: "The Banshees of Inisherin", director: "Martin McDonagh", score: 84.17, year: 2022, poster: "images4/t/thebanshees.webp" },
+{ rank: 5, title: "The Age of Adaline", director: "Lee Toland Krieger", score: 71.14, year: 2015, poster: "images4/t/theageofad.webp" },
+{ rank: 5, title: "The Ballad of Buster Scruggs", director: "Ethan Coen-Joel Coen", score: 76.41, year: 20018, poster: "images4/t/theballadbusters.webp" },
+
+
+
+
+
+
+ { rank: 5, title: "Underground", director: "Emir Kusturica", score: 88.38, year: 1995, poster: "images4/u/underground.webp" },
+  { rank: 5, title: "Uzak", director: "Nuri Bilge Ceylan", score: 89.37, year: 2002, poster: "images4/u/uzak.webp" },
+        { rank: 51, title: "Üç Maymun", director: "Nuri Bilge Ceylan", score: 87.26, year: 2008, poster: "images4/u/ücmaymun.webp" },       
        
        
        
        
-        
+       
+       
+        { rank: 5, title: "Wings of Desire", director: "Wim Wenders", score: 91.49, year: 1987, poster: "images4/vw/wingofdesire.webp" },
         
    
-    { rank: 61, title: "Yeraltı", director: "Zeki Demirkubuz", score: 83.1, year: 2012, poster: "images4/yeralti.webp" },
-    { rank: 5, title: "The Age of Adaline", director: "Lee Toland Krieger", score: 71.14, year: 2015, poster: "images4/adaline.webp" },
-{ rank: 5, title: "The Ballad of Buster Scruggs", director: "Ethan Coen-Joel Coen", score: 76.41, year: 20018, poster: "images4/theballadbusters.webp" },
-    ];
+  { rank: 61, title: "Yannick", director: "Quentin Dupieux", score: 73.1, year: 2023, poster: "images4/y/yannick.webp" },     
+ { rank: 61, title: "Yeraltı", director: "Zeki Demirkubuz", score: 83.1, year: 2012, poster: "images4/y/yeralti.webp" },
+ { rank: 61, title: "Yojimbo", director: "Akira Kurosawa", score: 89.57, year: 1961, poster: "images4/y/yeralti.webp" },   
+  { rank: 61, title: "You Me Lenin", director: "Akira Kurosawa", score: 69.57, year: 2021, poster: "images4/y/youmelenin.webp" }, 
+ { rank: 61, title: "Yozgat Blues", director: "Mahmut Fazıl Coşkun", score: 76.87, year: 2013, poster: "images4/y/yozgatblues.webp" },
+
+{ rank: 61, title: "Zodiac", director: "David Fincher", score: 82.87, year: 2007, poster: "images4/z/zodiac.webp" },
+
+];
 
 
     // Fallback Listesi (TMDB Çökerse Buradan Çekecek - images3)
