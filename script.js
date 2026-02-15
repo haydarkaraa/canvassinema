@@ -1,99 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const localImagePool = [
-        { id: "13.66", name: "View of the Domaine Saint-Joseph" },
-{ id: "13.130", name: "A Ship in a Stormy Sea" },
-{ id: "1972.118.281", name: "Nursery on Schenkweg" },
-{ id: "1974.356.32", name: "A Road in Louveciennes" },
-{ id: "1975.1.160", name: "Trees and Houses Near the Jas de Bouffan" },
-{ id: "1975.1.163", name: "Valley with Fir " },
-{ id: "1975.1.164", name: "Pines Along the Shore" },
-{ id: "1975.1.167", name: "View of Saint-Valéry-sur-Somme" },
-{ id: "1975.1.168", name: "The Palace of Westminster" },
-{ id: "1975.1.180", name: "Railroad Bridge over the Marne at Joinville" },
-{ id: "1975.1.182", name: "The Rocky Path in the Morvan" },
-{ id: "1975.1.194", name: "Olive Trees at Collioure" },
-{ id: "1975.1.202", name: "Versailles" },
-{ id: "1975.1.208", name: "The Town Beach" },
-{ id: "1975.1.209", name: "Evening Calm" },
-{ id: "1975.1.642", name: "Landscape with a Distant Town" },
-{ id: "1975.1.644", name: "A View of Moulins" },
-{ id: "1975.1.691", name: "Landscape" },
-{ id: "1975.280.2", name: "Ship by Moonlight" },
-{ id: "1975.280.4", name: "Shepherd with a Flock of Sheep" },
-{ id: "1977.258.2", name: "New York Harbor with Brooklyn Bridge" },
-{ id: "1978.493", name: "The Outer Harbor of Brest" },
-{ id: "1979.272", name: "Mountain Lake Scene" },
-{ id: "1979.490.4", name: "Sea Cove" },
-{ id: "1980.342", name: "Landscape at Saint-Ouen" },
-{ id: "1985.117", name: "Newburyport Meadows" },
-{ id: "1988.221", name: "Porte de la Reine at Aigues-Mortes" },
-{ id: "1990.196", name: "A Forest at Dawn with a Deer Hunt" },
-{ id: "1991.130", name: "Arques-la-Bataille" },
-{ id: "1992.103.4", name: "The Seine at Bougival" },
-{ id: "1993.132", name: "Wheat Field with Cypresses" },
-{ id: "1994.420", name: "Mont Sainte-Victoire" },
-{ id: "1996.382", name: "Surf, Isles of Shoals" },
-{ id: "1997.149.2", name: "View of Cagnes" },
-{ id: "1998.325.1", name: "Olive Trees" },
-{ id: "1998.325.2", name: "Water Lilies" },
-{ id: "1999.442", name: "The Kearsarge at Boulogne" },
+    console.log("Canvas Sinema Başlatılıyor...");
 
+    // ==========================================
+    // 1. VERİ HAVUZLARI (Her Soru İçin Ayrı Klasör)
+    // ==========================================
 
+    /* YAPILANDIRMA NOTLARI:
+       1. images/ klasörünün altına şu klasörleri açmalısın: soru1, soru2, soru3, soru4, yedek
+       2. soru1..4 klasörlerine .jpg resimlerini koy.
+       3. yedek klasörüne aynı isimlerde .webp resimlerini koy.
+    */
 
-{ id: "2001.202.5", name: "Poppy Fields near Argenteuil" },
-{ id: "2001.39", name: "Lago Avernus" },
-{ id: "2001.45", name: "View near Rouen" },
-{ id: "2002.62.3", name: "Gray Weather, Grande Jatte" },
-{ id: "2003.42.1", name: "Edge of a Wood" },
-{ id: "2003.42.3", name: "Classical Landscape with Figures" },
-{ id: "2003.42.4", name: "Lake Fucino and the Abruzzi Mountains" },
-{ id: "2003.42.12", name: "View of Beirut" },
-{ id: "2003.42.13", name: "Waterfall at Terni" },
-{ id: "2003.42.40", name: "A Shepherd and a Rider on a Country Lane" },
-{ id: "2003.42.44", name: "View in the Gardens of the Villa d'Este" },
-{ id: "2003.42.45", name: "View of Porta Pinciana from the Gardens of the Villa Ludovisi" },
-{ id: "2003.42.48", name: "View of the Colosseum and the Arch of Constantine from the Palatine" },
-{ id: "2003.42.54", name: "The Banks of the Rance, Brittany" },
-{ id: "2003.435", name: "The Brook in the Woods" },
-{ id: "2009.400.109", name: "Landscape with the Pyramid of Gaius Cestius, Rome" },
-{ id: "2009.400.110", name: "View of the Colosseum, Rome" },
-{ id: "29.100.64", name: "Mont Sainte-Victoire and the Viaduct of the Arc River Valley" },
-{ id: "29.100.67", name: "The Gulf of Marseille Seen from L'Estaque" },
-{ id: "29.100.112", name: "La Grenouillère" },
-{ id: "29.100.113", name: "Bridge over a Pond of Water Lilies" },
-{ id: "29.100.194", name: "Rocks at Fontainebleau" },
-
-
-
-
-
-
-
-
-{ id: "49.30", name: "Cypresses" },
-
-
-
-{ id: "54.143.2", name: "A Farm in Brittany" },
-{ id: "56.13", name: "The Flowering Orchard" },
-{ id: "56.135.1", name: "View of Vétheuil" },
-{ id: "56.135.4", name: "Morning on the Seine near Giverny" },
-{ id: "56.135.5", name: "Ile aux Fleurs near Vétheuil" },
-{ id: "56.135.7", name: "View of the Seacoast near Wargemont in Normandy" },
-{ id: "56.135.9", name: "Hills around the Bay of Moulin Huet, Guernsey" },
-{ id: "57.181", name: "Gardanne" },
-{ id: "59.16.5", name: "View of the Seine" },
-
-
-
-{ id: "61.190", name: "The Farm at Les Collettes, Cagnes" },
-{ id: "61.101.5", name: "The Pool at Jas de Bouffan" },
-{ id: "64.210", name: "The Bodmer Oak, Fontainebleau Forest" },
-
-
-
-{ id: "71.60", name: "The Farrier" }
-    ];
+    const questionPools = {
+        // 1. SORU İÇİN (images/soru1/*.jpg)
+        0: [
+            { id: "13.66", name: "Seçenek 1" }, { id: "49.30", name: "Seçenek 2" },
+            { id: "14.40.813", name: "Seçenek 3" }, { id: "51.30.2", name: "Seçenek 4" },
+            { id: "32.100.136", name: "Seçenek 5" }, { id: "54.143.2", name: "Seçenek 6" },
+            { id: "38.64", name: "Seçenek 7" }, { id: "56.13", name: "Seçenek 8" }
+        ],
+        // 2. SORU İÇİN (images/soru2/*.jpg)
+        1: [
+            { id: "11.45.4", name: "Seçenek 1" }, { id: "61.101.5", name: "Seçenek 2" },
+            { id: "13.130", name: "Seçenek 3" }, { id: "61.190", name: "Seçenek 4" },
+            { id: "56.135.1", name: "Seçenek 5" }, { id: "1974.3", name: "Seçenek 6" }
+        ],
+        // 3. SORU İÇİN (images/soru3/*.jpg)
+        2: [
+            { id: "07.162", name: "Seçenek 1" }, { id: "2", name: "Seçenek 2" },
+            { id: "3", name: "Seçenek 3" }, { id: "4", name: "Seçenek 4" },
+            { id: "5", name: "Seçenek 5" }, { id: "6", name: "Seçenek 6" }
+        ],
+        // 4. SORU İÇİN (images/soru4/*.jpg)
+        3: [
+            { id: "1", name: "Seçenek 1" }, { id: "2", name: "Seçenek 2" },
+            { id: "3", name: "Seçenek 3" }, { id: "4", name: "Seçenek 4" },
+            { id: "5", name: "Seçenek 5" }, { id: "6", name: "Seçenek 6" }
+        ]
+    };
     const canvasTopList = [
         { rank: 5, title: "12 Angry Men", director: "Sidney Lumet", score: 92.32, year: 1957, poster: "images4/xxx/12angryman.webp" },
         { rank: 5, title: "100 metros", director: "Sidney Lumet", score: 75.13, year: 2016, poster: "images4/xxx/100m.webp" },
@@ -330,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
        { rank: 5, title: "The Godfather Part II", director: "Francis Ford Coppola", score: 93.18, year: 1974, poster: "images4/t/thegodfather2.webp" },
   { rank: 5, title: "The Godfather Part III", director: "Francis Ford Coppola", score: 77.08, year: 1990, poster: "images4/t/thegodfather3.webp" },
   { rank: 3, title: "The Shining", director: "Stanley Kubrick", score: 89.21, year: 1980, poster: "images4/t/theshining.webp" },
-        { rank: 5, title: "The Silence of the Lambs", director: "Jonathan Demme", score: 89.33, year: 1991, poster: "images4/t/silenceofthelamb.webp" },
+        { rank: 5, title: "The Silence of the Lambs", director: "Jonathan Demme", score: 89.33, year: 1991, poster: "images4/t/thesilenceofthelamb.webp" },
         { rank: 5, title: "The Shawshank Redemption", director: "Frank Darabont", score: 88.21, year: 1994, poster: "images4/t/theshawshank.webp" },
         { rank: 11, title: "The Dark Knight", director: "Christopher Nolan", score: 89.4, year: 2008, poster: "images4/t/thedarkknight.webp" },
     { rank: 5, title: "The Good, the Bad and the Ugly", director: "Sergio Leone", score: 90.7, year: 1966, poster: "images4/t/thegoodbadugly.webp" },
@@ -497,141 +441,142 @@ document.addEventListener('DOMContentLoaded', () => {
         updateUI();
         populateImageGrid();
     }
+async function populateImageGrid() {
+        const grid = document.getElementById('image-selection-grid');
+        if (!grid) return;
+        grid.innerHTML = '<div class="spinner"></div>';
+        await new Promise(r => setTimeout(r, 200));
 
-    // Görsel Grid'i Doldur (Örnek Data - images klasöründen)
-   async function populateImageGrid() {
-    const grid = document.getElementById('image-selection-grid');
+        // Hangi sorudaysak o havuzu seç
+        const currentPool = questionPools[questionIndex];
+
+        if (!currentPool || currentPool.length === 0) {
+            grid.innerHTML = '<p>Görsel havuzu bulunamadı.</p>';
+            return;
+        }
+
+   const shuffled = [...currentPool].sort(() => 0.5 - Math.random()).slice(0, 4);
+
+        // Dinamik HTML oluştur (Klasör yolu: images/soruX/ID.jpg)
+        // Eğer yüklenemezse (onerror) -> images/yedek/ID.webp dene
+        const folderName = `soru${questionIndex + 1}`; // soru1, soru2...
     
-    // Yükleniyor animasyonu
-    grid.innerHTML = '<div class="spinner"></div>';
+grid.innerHTML = shuffled.map(item => `
+            <div class="image-item" onclick="handleChoice('images/${folderName}/${item.id}.jpg')">
+                <img src="images/${folderName}/${item.id}.jpg" 
+                     alt="${item.name}" 
+                     data-id="${item.id}"
+                     onerror="this.onerror=null; this.src='images/yedek/' + this.getAttribute('data-id') + '.webp';"> 
+            </div>
+        `).join('');
     
-    // Gecikme simülasyonu (daha yumuşak geçiş için)
-    await new Promise(r => setTimeout(r, 300));
-
-    // 1. localImagePool boş mu kontrol et
-    if (!localImagePool || localImagePool.length === 0) {
-        grid.innerHTML = '<p style="color:red">Görsel havuzu boş! Lütfen script.js dosyasındaki localImagePool listesini kontrol et.</p>';
-        return;
-    }
-
-    // 2. Havuzdan rastgele 4 görsel seç
-    const shuffled = [...localImagePool].sort(() => 0.5 - Math.random()).slice(0, 4);
-    
-    // 3. HTML'i oluştur
-    grid.innerHTML = shuffled.map(item => {
-        // Eğer listede sadece isim varsa ({id:...} değilse) düzelt
-        const imgId = typeof item === 'object' ? item.id : item;
-        const imgName = typeof item === 'object' ? item.name : "Seçim";
-
-        return `
-        <div class="image-item" onclick="handleChoice('images/${imgId}.jpg')">
-            <img src="images/${imgId}.jpg" 
-                 alt="${imgName}" 
-                 onerror="this.src='images2/fff.jpg'; this.alt='Görsel Yüklenemedi'"> 
-        </div>
-        `;
-    }).join('');
 }
-    window.handleChoice = function(src) {
+   window.handleChoice = function(src) {
         userSelections.push(src);
         questionIndex++;
-        if(questionIndex < 4) {
-            document.getElementById('selection-question').textContent = texts[currentLang].questions[questionIndex];
+        
+        // Seçileni Story'ye ekle
+        const storyGrid = document.getElementById('story-choices-grid');
+        if (storyGrid) {
+            if (questionIndex === 1) storyGrid.innerHTML = '';
+            storyGrid.innerHTML += `<img src="${src}" class="story-choice-img" crossorigin="anonymous">`;
+        }
+
+        if (questionIndex < 4) {
+            updateUI();
             populateImageGrid();
         } else {
             showRecommendation();
         }
     };
-
-// GELİŞMİŞ ÖNERİ ALGORİTMASI (Gerçek API Bağlantılı)
     async function showRecommendation() {
         const screen = document.getElementById('recommendation-screen');
         const content = document.getElementById('recommendation-content');
         const loader = document.getElementById('loading');
-        
-        // Ekran geçişleri
         document.getElementById('selection-screen').classList.add('hidden');
         screen.classList.remove('hidden');
         loader.classList.remove('hidden');
-        content.innerHTML = ''; // İçeriği temizle
+        content.innerHTML = '';
 
         try {
-            // 1. GERÇEK API İSTEĞİ (Simülasyon Değil!)
             const resp = await fetch(`/api/get-movie?lang=${currentLang}`);
-            
-            if (!resp.ok) throw new Error("API Bağlantı Hatası");
-            
+            if (!resp.ok) throw new Error("API Hatası");
             const data = await resp.json();
-            
-            // 2. Etiket Belirleme
             let label = "Özel Seçki";
-            if (data.isLocal) {
-                label = "Canvas Güvenli Mod";
-            } else if (data.director_name) {
-                label = data.director_name === "Özel Seçki" ? "Kült Seçki" : "Yönetmen: " + data.director_name;
-            }
-
-            // 3. Ekrana Bas
-            renderMovieResult(data, label);
-
-        } catch (e) {
-            console.warn("Sistem Hatası, Yerel Listeye Geçiliyor:", e);
-            
-            // HER ŞEY ÇÖKERSE SON ÇARE (Frontend Fallback)
-            // Bu liste images3 klasöründeki dosyalarınla eşleşmeli
-            const emergencyList = [
-                 { title: "Bir Zamanlar Anadolu'da", poster_path: "images3/birzamanlar.jpg", isLocal: true, overview: "Bozkırın ortasında bir cinayet..." },
-                 { title: "Sevmek Zamanı", poster_path: "images3/sevmekzamani.jpg", isLocal: true, overview: "Surete aşık olan adam..." },
-                 { title: "Kış Uykusu", poster_path: "images3/kisuykusu.jpg", isLocal: true, overview: "Aydın'ın kış uykusu..." }
-            ];
-            
-            const fallbackMovie = emergencyList[Math.floor(Math.random() * emergencyList.length)];
-            renderMovieResult(fallbackMovie, "Canvas Güvenli Mod");
-            
+            if (data.isLocal) label = "Canvas Güvenli Mod";
+            else if (data.director_name) label = "Yönetmen: " + data.director_name;
+            renderResult(data, label);
+        } catch (error) {
+            console.warn("API Hatası:", error);
+            const fallback = fallbackList[Math.floor(Math.random() * fallbackList.length)];
+            renderResult(fallback, "Canvas Güvenli Mod");
         } finally {
             loader.classList.add('hidden');
         }
     }
 
-    function renderMovieResult(data, label) {
-        const content = document.getElementById('recommendation-content');
-        
-        // Resim Yolu Kontrolü:
-        // Eğer yerelse (isLocal: true) -> olduğu gibi kullan (images3/...)
-        // Eğer API'den geliyorsa -> Başına TMDB linki ekle
-        let posterSrc = data.poster_path;
-        if (!data.isLocal && posterSrc) {
-            posterSrc = `https://image.tmdb.org/t/p/w780${data.poster_path}`;
+    function renderResult(data, label) {
+        let poster = data.poster_path;
+        if (!data.isLocal && poster && !poster.startsWith('http')) {
+            poster = `https://image.tmdb.org/t/p/w780${data.poster_path}`;
         }
-        
-        // Eğer resim yoksa placeholder koy
-        if (!posterSrc) posterSrc = "images2/fff.jpg";
+        if (!poster) poster = "images2/fff.jpg";
 
-        // Global değişkene ata (Story paylaşımı için)
-        currentMovie = { 
-            title: data.title, 
-            poster: posterSrc,
-            overview: data.overview || "Açıklama bulunamadı.",
-            director: label
-        };
+        currentMovie = { title: data.title, poster: poster, director: label };
 
+        const content = document.getElementById('recommendation-content');
         content.innerHTML = `
             <div class="recommendation-item fade-in">
-                <img src="${posterSrc}" style="width:280px; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <img src="${poster}" style="width:280px; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
                 <h2 style="margin: 1.5rem 0 0.5rem 0; font-size: 1.8rem;">${data.title}</h2>
                 <p style="color:var(--primary-red); font-weight:bold; letter-spacing:1px; margin-bottom:1rem;">${label}</p>
-                <p style="max-width:600px; margin:0 auto; opacity:0.8; line-height:1.6;">
-                    ${data.overview ? data.overview.substring(0, 300) + "..." : ""}
-                </p>
+                <p style="max-width:600px; margin:0 auto; opacity:0.8; line-height:1.6;">${data.overview ? data.overview.substring(0, 300) + "..." : "Detay yok."}</p>
             </div>`;
     }
 
-    window.goHome = function() {
-        document.querySelectorAll('.screen').forEach(el => el.classList.add('hidden'));
-        document.getElementById('landing-screen').classList.remove('hidden');
-        setLandingImages(); // Ana sayfaya dönünce görseli yenile
-    };
+    // 7. Hikaye Paylaş
+    const shareBtn = document.getElementById('share-story-btn');
+    if (shareBtn) {
+        shareBtn.addEventListener('click', async function() {
+            const btn = this;
+            const originalText = btn.textContent;
+            if (!currentMovie.title) return alert("Film verisi yok!");
+            btn.textContent = "Hazırlanıyor...";
+            btn.disabled = true;
 
-    // Başlangıçta ana sayfa görselini ayarla
-    setLandingImages();
+            try {
+                const container = document.getElementById('insta-story-container');
+                const imgEl = document.getElementById('story-movie-poster');
+                document.getElementById('story-movie-title').textContent = currentMovie.title;
+                imgEl.crossOrigin = "anonymous";
+                imgEl.src = currentMovie.poster;
+
+                await new Promise((resolve) => {
+                    if (imgEl.complete) resolve();
+                    else { imgEl.onload = resolve; imgEl.onerror = resolve; }
+                    setTimeout(resolve, 3000); 
+                });
+
+                const canvas = await html2canvas(container, { useCORS: true, scale: 2, backgroundColor: null });
+                canvas.toBlob(async (blob) => {
+                    const file = new File([blob], "canvas-story.png", { type: "image/png" });
+                    if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+                        await navigator.share({ files: [file], title: 'Canvas Sinema', text: `Ruh halim: ${currentMovie.title}` });
+                    } else {
+                        const link = document.createElement('a');
+                        link.download = `canvas-${currentMovie.title.replace(/\s+/g,'-')}.png`;
+                        link.href = canvas.toDataURL();
+                        link.click();
+                        alert("Görsel indirildi!");
+                    }
+                }, 'image/png');
+            } catch (err) {
+                console.error("Hata:", err);
+                alert("Hata oluştu.");
+            } finally {
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }
+        });
+    }
 });
